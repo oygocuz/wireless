@@ -1,0 +1,372 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR 8051 C/C++ Compiler V7.20A/W32                  21/Nov/2008  16:05:17 /
+// Copyright 2004-2005 IAR Systems. All rights reserved.                     /
+// Time limited license: 63 days left                                        /
+//                                                                           /
+//    Core               =  plain                                            /
+//    Code model         =  near                                             /
+//    Data model         =  small                                            /
+//    Calling convention =  idata reentrant                                  /
+//    Constant location  =  data                                             /
+//    Dptr setup         =  1,16                                             /
+//    Source file        =  C:\AudioplusData_CC2510\src\tw_mac.c             /
+//    Command line       =  -I "C:\Program Files\IAR Systems\Embedded        /
+//                          Workbench 4.05\8051\INC\CLIB\" -I                /
+//                          C:\AudioplusData_CC2510\inc\ -D CC2510 -D        /
+//                          chip=2510 --preprocess=l                         /
+//                          C:\AudioplusData_CC2510\Debug\List\ -lA          /
+//                          C:\AudioplusData_CC2510\Debug\List\ -o           /
+//                          C:\AudioplusData_CC2510\Debug\Obj\ -e -z3        /
+//                          --no_cse --no_unroll --no_inline                 /
+//                          --no_code_motion --no_tbaa --debug --core=plain  /
+//                          --dptr=16,1 --data_model=small                   /
+//                          --code_model=near --calling_convention=idata_ree /
+//                          ntrant --place_constants=data --nr_virtual_regs  /
+//                          8 C:\AudioplusData_CC2510\src\tw_mac.c           /
+//    List file          =  C:\AudioplusData_CC2510\Debug\List\tw_mac.s51    /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME tw_mac
+
+        RTMODEL "__calling_convention", "idata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN __INIT_XDATA_Z
+
+        PUBWEAK RFST
+        PUBWEAK T3CC0
+        PUBWEAK T3CCTL0
+        PUBWEAK T3CCTL1
+        PUBWEAK T3CTL
+        PUBWEAK _A_TIMIF
+        PUBLIC macAddrSet
+        PUBLIC macTimer3Init
+        FUNCTION macTimer3Init,0203H
+        PUBLIC macsetT3TimeoutAndWait
+        FUNCTION macsetT3TimeoutAndWait,0203H
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC setChannel
+        FUNCTION setChannel,0203H
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP DATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 Undefined
+        CFI DPH0 Undefined
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+// C:\AudioplusData_CC2510\src\tw_mac.c
+//    1 /*******************************************************************************************************
+//    2  *                                                                                                     *
+//    3  *        **********                                                                                   *
+//    4  *       ************                                                                                  *
+//    5  *      ***        ***                                                                                 *
+//    6  *      ***   +++   ***                                                                                *
+//    7  *      ***   + +   ***     Medium Access Control layer                                                *
+//    8  *      ***   +                                                                                        *
+//    9  *      ***   + +   ***                                                                                *
+//   10  *      ***   +++   ***     rs_mac.c                                                                   *
+//   11  *      ***        ***                                                                                 *
+//   12  *       ************                                                                                  *
+//   13  *        **********                                                                                   *
+//   14  *                                                                                                     *
+//   15  *******************************************************************************************************
+//   16  * Compiler:                IAR C Compiler for 8051                                                    *
+//   17  * Target platform:         Chipcon CC2510                                                             *
+//   18  * Author:                  TBR, KHO, ESY                                                              *
+//   19  *******************************************************************************************************
+//   20  * Revision history:        See end of file                                                            *
+//   21  ******************************************************************************************************/
+//   22 
+//   23 //-------------------------------------------------------------------------------------------------------
+//   24 // Global variables
+//   25 
+//   26 #include "twoway.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0cbH
+// unsigned char volatile __sfr T3CTL
+T3CTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ccH
+// unsigned char volatile __sfr T3CCTL0
+T3CCTL0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0cdH
+// unsigned char volatile __sfr T3CC0
+T3CC0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ceH
+// unsigned char volatile __sfr T3CCTL1
+T3CCTL1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e1H
+// unsigned char volatile __sfr RFST
+RFST:
+        DS 1
+//   27 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   28 BOOL __xdata macAddrSet;
+macAddrSet:
+        DS 1
+//   29 
+//   30 //-------------------------------------------------------------------------------------------------------
+//   31 // Function prototypes
+//   32 
+//   33 ////////////////////////////////////////////////////////////////////////////////
+//   34 /// @brief	Initialize timer3.
+//   35 ///
+//   36 /// Initialize for use as RX timeout timer. Register values is set in
+//   37 /// rs_karaoke.h
+//   38 ////////////////////////////////////////////////////////////////////////////////
+//   39 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   40 void macTimer3Init(void) {
+macTimer3Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function macTimer3Init
+        ; Saved register size: 0
+        ; Auto size: 0
+//   41   T3CCTL0 = 0;
+        MOV	0xcc,#0x0              ; * 
+//   42   T3CCTL1 = 0;
+        MOV	0xce,#0x0              ; * 
+//   43   T3CTL = 0xE5;               // tick frequency = 128/26.000 = 4.923076923 usec
+        MOV	0xcb,#-0x1b            ; * 
+//   44                               // interrupt on overflow disabled
+//   45                               // Clear the counter and set mode to Down (count from T3CCO to 0)  
+//   46 }
+        RET                        ; * 
+        CFI EndBlock cfiBlock0
+//   47 
+//   48 
+//   49 ////////////////////////////////////////////////////////////////////////////////
+//   50 /// @brief	Set the T3 timeout and start timer. Counts down twice before returns
+//   51 ////////////////////////////////////////////////////////////////////////////////
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   52 void macsetT3TimeoutAndWait(UINT8 timeout, UINT8 multiplier) {
+macsetT3TimeoutAndWait:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function macsetT3TimeoutAndWait
+        PUSH	?V0 + 0
+        CFI V0 Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH	?V0 + 1
+        CFI V1 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 2
+        ; Auto size: 0
+//   53 
+//   54   TIMIF &= ~T3OVFIF;          // Clear RX_TIMEOUT_TIMER_FLAG
+        CLR	0xd8.0                 ; * 
+//   55 
+//   56   for ( int i = 1; i <= multiplier; i++) {
+        MOV	R4,#0x1
+        MOV	R5,#0x0
+        SJMP	??macsetT3TimeoutAndWait_0
+//   57     T3CC0 = timeout;            // Set timeout period
+??macsetT3TimeoutAndWait_1:
+        MOV	0xcd,R1                ; * 
+//   58     TIMER3_RUN(TRUE);           // Start timer
+        ORL	0xcb,#0x10             ; * 
+//   59 
+//   60     while(!(TIMIF & T3OVFIF));  // Wait for timeout
+??macsetT3TimeoutAndWait_2:
+        MOV	C,0xd8.0               ; * 
+        JNC	??macsetT3TimeoutAndWait_2
+//   61 
+//   62     TIMIF &= ~T3OVFIF;          // Clear RX_TIMEOUT_TIMER_FLAG
+        CLR	0xd8.0                 ; * 
+//   63     TIMER3_RUN(FALSE);          // Stop timer
+        ANL	0xcb,#0xef             ; * 
+//   64   }
+        MOV	A,R4
+        ADD	A,#0x1
+        MOV	R4,A
+        MOV	A,R5
+        ADDC	A,#0x0
+        MOV	R5,A
+??macsetT3TimeoutAndWait_0:
+        MOV	?V0 + 0,R2
+        MOV	?V0 + 1,#0x0
+        CLR	C
+        MOV	A,?V0 + 0
+        SUBB	A,R4
+        MOV	A,?V0 + 1
+        SUBB	A,R5
+        MOV	C,0xD0 /* PSW */.2
+        XRL	A,PSW
+        RLC	A
+        JNC	??macsetT3TimeoutAndWait_1
+//   65 }
+        POP	?V0 + 1
+        CFI V1 SameValue
+        CFI CFA_SP SP+-3
+        POP	?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-2
+        RET                        ; * 
+        CFI EndBlock cfiBlock1
+//   66 
+//   67 
+//   68 ////////////////////////////////////////////////////////////////////////////////
+//   69 /// @brief	Set next channel after RX/TX completes
+//   70 ////////////////////////////////////////////////////////////////////////////////
+//   71 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   72 void setChannel (UINT8 ch) {
+setChannel:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function setChannel
+        ; Saved register size: 0
+        ; Auto size: 0
+        SJMP	??setChannel_0
+//   73   
+//   74   // Only change channel when radio state is IDLE, i.e. not in RX or TX
+//   75   // Include a "safety" check to escape from dead locks?
+//   76 
+//   77   while(MARCSTATE != 0x01)
+//   78     if (MARCSTATE == 0x11 || MARCSTATE == 0x16 || MARCSTATE == 0x0D) 
+??setChannel_1:
+        MOV	DPTR,#-0x20c5
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x11
+        JZ	??setChannel_2
+        MOV	DPTR,#-0x20c5
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x16
+        JZ	??setChannel_2
+        MOV	DPTR,#-0x20c5
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0xd
+        JNZ	??setChannel_0
+//   79       SIDLE();
+??setChannel_2:
+        MOV	0xe1,#0x4              ; * 
+??setChannel_0:
+        MOV	DPTR,#-0x20c5
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x1
+        JNZ	??setChannel_1
+//   80   
+//   81   CHANNR = ch;
+        MOV	A,R1
+        MOV	DPTR,#-0x20fa
+        MOVX	@DPTR,A               ; * 
+//   82 }
+        RET                        ; * 
+        CFI EndBlock cfiBlock2
+
+        ASEGN SFR_AN:DATA:NOROOT,0d8H
+// union <unnamed> volatile __sfr _A_TIMIF
+_A_TIMIF:
+        DS 1
+
+        END
+//   83 
+//   84 
+// 
+// 111 bytes in segment NEAR_CODE
+//   6 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_Z
+// 
+// 111 bytes of CODE  memory
+//   0 bytes of DATA  memory (+ 6 bytes shared)
+//   1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

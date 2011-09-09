@@ -1,0 +1,123 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR 8051 C/C++ Compiler V7.20A/W32                  21/Nov/2008  16:05:17 /
+// Copyright 2004-2005 IAR Systems. All rights reserved.                     /
+// Time limited license: 63 days left                                        /
+//                                                                           /
+//    Core               =  plain                                            /
+//    Code model         =  near                                             /
+//    Data model         =  small                                            /
+//    Calling convention =  idata reentrant                                  /
+//    Constant location  =  data                                             /
+//    Dptr setup         =  1,16                                             /
+//    Source file        =  C:\AudioplusData_CC2510\src\tw_fh.c              /
+//    Command line       =  -I "C:\Program Files\IAR Systems\Embedded        /
+//                          Workbench 4.05\8051\INC\CLIB\" -I                /
+//                          C:\AudioplusData_CC2510\inc\ -D CC2510 -D        /
+//                          chip=2510 --preprocess=l                         /
+//                          C:\AudioplusData_CC2510\Debug\List\ -lA          /
+//                          C:\AudioplusData_CC2510\Debug\List\ -o           /
+//                          C:\AudioplusData_CC2510\Debug\Obj\ -e -z3        /
+//                          --no_cse --no_unroll --no_inline                 /
+//                          --no_code_motion --no_tbaa --debug --core=plain  /
+//                          --dptr=16,1 --data_model=small                   /
+//                          --code_model=near --calling_convention=idata_ree /
+//                          ntrant --place_constants=data --nr_virtual_regs  /
+//                          8 C:\AudioplusData_CC2510\src\tw_fh.c            /
+//    List file          =  C:\AudioplusData_CC2510\Debug\List\tw_fh.s51     /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME tw_fh
+
+        RTMODEL "__calling_convention", "idata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN __INIT_IDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ActiveChIdx
+        PUBLIC HoppingChannels
+// C:\AudioplusData_CC2510\src\tw_fh.c
+//    1 /*******************************************************************************************************
+//    2  *                                                                                                     *
+//    3  *        **********                                                                                   *
+//    4  *       ************                                                                                  *
+//    5  *      ***        ***                                                                                 *
+//    6  *      ***   +++   ***                                                                                *
+//    7  *      ***   + +   ***     Radio functions                                                            *
+//    8  *      ***   +                                                                                        *
+//    9  *      ***   + +   ***                                                                                *
+//   10  *      ***   +++   ***     rs_fh.c                                                                    *
+//   11  *      ***        ***                                                                                 *
+//   12  *       ************                                                                                  *
+//   13  *        **********                                                                                   *
+//   14  *                                                                                                     *
+//   15  *******************************************************************************************************
+//   16  * Compiler:                IAR C Compiler for 8051                                                    *
+//   17  * Target platform:         Chipcon CC2510                                                             *
+//   18  * Author:                  MJB                                                                        *
+//   19  *******************************************************************************************************
+//   20  * Revision history:        See end of file                                                            *
+//   21  ******************************************************************************************************/
+//   22 
+//   23 //-------------------------------------------------------------------------------------------------------
+//   24 // Includes
+//   25 
+//   26 #include "twoway.h"
+//   27 
+//   28 
+//   29 //-------------------------------------------------------------------------------------------------------
+//   30 // Global variables
+//   31 
+//   32 // Current active frequency hopping sequence
+//   33 
+
+        RSEG IDATA_I:IDATA:NOROOT(0)
+//   34 const UINT8 HoppingChannels[TOTAL_NUM_CHANNELS] = {0, 10, 20, 30};
+HoppingChannels:
+        DS 4
+        REQUIRE `?<Initializer for HoppingChannels>`
+        REQUIRE __INIT_IDATA_I
+//   35 
+//   36 // Active table index variables 
+//   37 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   38 UINT8 __xdata ActiveChIdx;
+ActiveChIdx:
+        DS 1
+
+        RSEG IDATA_ID:CODE:NOROOT(0)
+`?<Initializer for HoppingChannels>`:
+        DB 0, 10, 20, 30
+
+        END
+//   39 
+//   40 
+// 
+// 4 bytes in segment IDATA_I
+// 4 bytes in segment IDATA_ID
+// 1 byte  in segment XDATA_Z
+// 
+// 4 bytes of CODE  memory
+// 1 byte  of XDATA memory
+// 4 bytes of IDATA memory
+//
+//Errors: none
+//Warnings: none

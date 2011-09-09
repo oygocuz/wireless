@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <batchBuild>
+    <batchDefinition>
+      <name>all</name>
+      <member>
+        <project>rf_modem</project>
+        <configuration>rfusb_cc2511</configuration>
+      </member>
+      <member>
+        <project>rf_modem</project>
+        <configuration>srf04_cc2510</configuration>
+      </member>
+      <member>
+        <project>rf_modem</project>
+        <configuration>rfusb_cc1111</configuration>
+      </member>
+      <member>
+        <project>rf_modem</project>
+        <configuration>srf04_cc1110</configuration>
+      </member>
+      <member>
+        <project>rf_modem</project>
+        <configuration>rfusb_cc2531</configuration>
+      </member>
+      <member>
+        <project>rf_modem</project>
+        <configuration>srf05_cc2530</configuration>
+      </member>
+      <member>
+        <project>simple_hid_dongle</project>
+        <configuration>rfusb_cc1111</configuration>
+      </member>
+      <member>
+        <project>simple_hid_dongle</project>
+        <configuration>rfusb_cc2511</configuration>
+      </member>
+      <member>
+        <project>simple_hid_dongle</project>
+        <configuration>rfusb_cc2531</configuration>
+      </member>
+      <member>
+        <project>simple_hid_eb</project>
+        <configuration>srf04_cc1110</configuration>
+      </member>
+      <member>
+        <project>simple_hid_eb</project>
+        <configuration>srf04_cc2510</configuration>
+      </member>
+      <member>
+        <project>simple_hid_eb</project>
+        <configuration>srf05_cc2530</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

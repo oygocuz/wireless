@@ -1,0 +1,952 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR 8051 C/C++ Compiler V7.20A/W32                  21/Nov/2008  16:05:16 /
+// Copyright 2004-2005 IAR Systems. All rights reserved.                     /
+// Time limited license: 63 days left                                        /
+//                                                                           /
+//    Core               =  plain                                            /
+//    Code model         =  near                                             /
+//    Data model         =  small                                            /
+//    Calling convention =  idata reentrant                                  /
+//    Constant location  =  data                                             /
+//    Dptr setup         =  1,16                                             /
+//    Source file        =  C:\AudioplusData_CC2510\src\tw_dma.c             /
+//    Command line       =  -I "C:\Program Files\IAR Systems\Embedded        /
+//                          Workbench 4.05\8051\INC\CLIB\" -I                /
+//                          C:\AudioplusData_CC2510\inc\ -D CC2510 -D        /
+//                          chip=2510 --preprocess=l                         /
+//                          C:\AudioplusData_CC2510\Debug\List\ -lA          /
+//                          C:\AudioplusData_CC2510\Debug\List\ -o           /
+//                          C:\AudioplusData_CC2510\Debug\Obj\ -e -z3        /
+//                          --no_cse --no_unroll --no_inline                 /
+//                          --no_code_motion --no_tbaa --debug --core=plain  /
+//                          --dptr=16,1 --data_model=small                   /
+//                          --code_model=near --calling_convention=idata_ree /
+//                          ntrant --place_constants=data --nr_virtual_regs  /
+//                          8 C:\AudioplusData_CC2510\src\tw_dma.c           /
+//    List file          =  C:\AudioplusData_CC2510\Debug\List\tw_dma.s51    /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME tw_dma
+
+        RTMODEL "__calling_convention", "idata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN __INIT_IDATA_Z
+        EXTERN __INIT_XDATA_Z
+
+        PUBWEAK DMAARM
+        PUBWEAK DMAIRQ
+        PUBLIC DmaDesc1_4
+        PUBWEAK T2CT
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IRCON
+        PUBWEAK _A_P1
+        PUBLIC dmaAudio
+        FUNCTION dmaAudio,0203H
+        PUBLIC dmaFromRadio
+        FUNCTION dmaFromRadio,0203H
+        LOCFRAME ISTACK, 1, STACK
+        PUBLIC dmaToRadio
+        FUNCTION dmaToRadio,0203H
+        LOCFRAME ISTACK, 1, STACK
+        PUBLIC dma_IRQ
+        FUNCTION dma_IRQ,080233H
+        LOCFRAME ISTACK, 6, STACK
+        PUBWEAK `dma_IRQ??INTVEC 67`
+        PUBLIC n
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP DATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 Undefined
+        CFI DPH0 Undefined
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 Undefined
+        CFI DPH0 Undefined
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+dma_IRQ             SYMBOL "dma_IRQ"
+`dma_IRQ??INTVEC 67` SYMBOL "??INTVEC 67", dma_IRQ
+
+        EXTERN activeIn
+        EXTERN activeOut
+        EXTERN audioFrameReady
+        EXTERN audioIn
+        EXTERN audioOut
+        EXTERN frametime
+
+// C:\AudioplusData_CC2510\src\tw_dma.c
+//    1 /*******************************************************************************************************
+//    2  *                                                                                                     *
+//    3  *        **********                                                                                   *
+//    4  *       ************                                                                                  *
+//    5  *      ***        ***                                                                                 *
+//    6  *      ***   +++   ***                                                                                *
+//    7  *      ***   + +   ***     Direct Memory Access functions                                             *
+//    8  *      ***   +                                                                                        *
+//    9  *      ***   + +   ***                                                                                *
+//   10  *      ***   +++   ***     tw_dma.c                                                                   *
+//   11  *      ***        ***                                                                                 *
+//   12  *       ************                                                                                  *
+//   13  *        **********                                                                                   *
+//   14  *                                                                                                     *
+//   15  *******************************************************************************************************
+//   16  * Compiler:                IAR C Compiler for 8051                                                    *
+//   17  * Target platform:         Chipcon CC2510                                                             *
+//   18  * Author:                  TBR, KHO, ESY, MJB                                                         *
+//   19  *******************************************************************************************************
+//   20  * Revision history:        See end of file                                                            *
+//   21  ******************************************************************************************************/
+//   22 
+//   23 //-------------------------------------------------------------------------------------------------------
+//   24 
+//   25 // Includes
+//   26 
+//   27 #include "twoway.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,09cH
+// unsigned char volatile __sfr T2CT
+T2CT:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d1H
+// unsigned char volatile __sfr DMAIRQ
+DMAIRQ:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d6H
+// unsigned char volatile __sfr DMAARM
+DMAARM:
+        DS 1
+//   28 
+//   29 //The following two #defines were lifted from "hal_CC2510.h' (Feb 2008)
+//   30 
+//   31 #define DMATRIG_ADC_I2S_RX DMATRIG_ADC_CH6      // I2S word/byte received
+//   32 #define DMATRIG_ADC_I2S_TX DMATRIG_ADC_CH7      // I2S word/byte transmitted
+//   33 
+//   34 // This #define, when uncommented, forces the I2S TX to send a fixed pattern of alternating ones and zeros
+//   35 //#define I2STXFIXEDPTRN
+//   36 
+//   37 #ifdef I2STXFIXEDPTRN
+//   38 WORD __xdata i2svalue = 0x55AA;
+//   39 #endif
+//   40 
+//   41 // Global variables
+//   42 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   43 DMA_DESC __xdata DmaDesc1_4[4];
+DmaDesc1_4:
+        DS 32
+//   44 extern UINT8 __xdata frametime;
+//   45 
+//   46 // Local Variable
+//   47 
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   48 BYTE n;
+n:
+        DS 1
+//   49 
+//   50 ////////////////////////////////////////////////////////////////////////////////
+//   51 /// @brief	Interrupt routine for DMA generated interrupts.
+//   52 ///
+//   53 /// This interrupt routine is run each time the DMA generates an interrupt.
+//   54 /// According to the interrupt flag of the DMA channel, the corresponding
+//   55 /// callBackFunction is called. The interrupt flags are cleared.
+//   56 ////////////////////////////////////////////////////////////////////////////////
+//   57 
+//   58 #pragma vector=DMA_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   59 __interrupt void dma_IRQ (void){
+dma_IRQ:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function dma_IRQ
+        PUSH	A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH	PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV	A,R0
+        CFI R0 A
+        PUSH	A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        MOV	A,R1
+        CFI R1 A
+        PUSH	A
+        CFI R1 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        PUSH	DPL
+        CFI DPL0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        PUSH	DPH
+        CFI DPH0 Frame(CFA_SP, 8)
+        CFI CFA_SP SP+-8
+        ; Saved register size: 6
+        ; Auto size: 0
+//   60   INT_GLOBAL_ENABLE(INT_OFF);       // Stop all other interrupts
+        CLR	0xa8.7                 ; * 
+//   61   DMAIF = 0;                        // Clear the main CPU interrupt flag
+        CLR	0xc0.0                 ; * 
+//   62 
+//   63   INT_SETFLAG(INUM_DMA, INT_CLR);   // Clear the DMA IRQ flag
+        CLR	0xc0.0                 ; * 
+//   64 
+//   65   if (DMAIRQ & DMA_CHANNEL_3) {     // DMA Channel 3 is used to transfer audio data from the audioIn buffer to the CODEC (I2STX)
+        MOV	A,0xd1                 ; * 
+        MOV	C,0xE0 /* A   */.3
+        JNC	??dma_IRQ_0
+//   66     DMAIRQ &= ~DMA_CHANNEL_3;
+        ANL	0xd1,#0xf7             ; * 
+//   67     frametime = T2CT;               // record the current frame timer count     
+        MOV	A,0x9c                 ; * 
+        MOV	DPTR,#frametime
+        MOVX	@DPTR,A
+//   68     activeIn ^= 0x01;               // Switch Buffers
+        MOV	DPTR,#activeIn
+        MOVX	A,@DPTR
+        XRL	A,#0x1
+        MOVX	@DPTR,A
+//   69 #ifndef I2STXFIXEDPTRN
+//   70     if (activeIn == 0) {
+        MOV	DPTR,#activeIn
+        MOVX	A,@DPTR
+        JNZ	??dma_IRQ_1
+//   71       SET_WORD(DmaDesc1_4[2].SRCADDRH, DmaDesc1_4[2].SRCADDRL, audioIn[1]);
+        MOV	R1,#(((audioIn + 54) >> 8) & 0xff)
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 16)
+        MOVX	@DPTR,A
+        MOV	A,#((audioIn + 54) & 0xff)
+        MOV	DPTR,#(DmaDesc1_4 + 17)
+        MOVX	@DPTR,A
+//   72       P1 &= ~0x02;                    // reset P1_1 (JP104 Pin 4) (Using Buffer A)
+        CLR	0x90.1                 ; * 
+        SJMP	??dma_IRQ_2
+//   73     }
+//   74     else {
+//   75       SET_WORD(DmaDesc1_4[2].SRCADDRH, DmaDesc1_4[2].SRCADDRL, audioIn[0]);
+??dma_IRQ_1:
+        MOV	R1,#((audioIn >> 8) & 0xff)
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 16)
+        MOVX	@DPTR,A
+        MOV	A,#(audioIn & 0xff)
+        MOV	DPTR,#(DmaDesc1_4 + 17)
+        MOVX	@DPTR,A
+//   76       P1 |= 0x02;                     // set P1_1 (JP104 Pin 4) (Using Buffer A)
+        SETB	0x90.1                ; * 
+//   77     }
+//   78 #endif
+//   79     DMA_ARM_CHANNEL(3);
+??dma_IRQ_2:
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        MOV	0xd6,#0x8              ; * 
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+//   80   }
+//   81 
+//   82   if (DMAIRQ & DMA_CHANNEL_4) {     // DMA Channel 4 is used to transfer audio data from the CODEC (I2SRX) to the audioOut buffer
+??dma_IRQ_0:
+        MOV	A,0xd1                 ; * 
+        MOV	C,0xE0 /* A   */.4
+        JNC	??dma_IRQ_3
+//   83     DMAIRQ &= ~DMA_CHANNEL_4;
+        ANL	0xd1,#0xef             ; * 
+//   84     activeOut ^= 0x01;               // Switch Buffers
+        MOV	DPTR,#activeOut
+        MOVX	A,@DPTR
+        XRL	A,#0x1
+        MOVX	@DPTR,A
+//   85     if (activeOut == 0)
+        MOV	DPTR,#activeOut
+        MOVX	A,@DPTR
+        JNZ	??dma_IRQ_4
+//   86       SET_WORD(DmaDesc1_4[3].DESTADDRH, DmaDesc1_4[3].DESTADDRL, audioOut[1]);
+        MOV	R1,#(((audioOut + 54) >> 8) & 0xff)
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 26)
+        MOVX	@DPTR,A
+        MOV	A,#((audioOut + 54) & 0xff)
+        MOV	DPTR,#(DmaDesc1_4 + 27)
+        MOVX	@DPTR,A
+        SJMP	??dma_IRQ_5
+//   87     else 
+//   88       SET_WORD(DmaDesc1_4[3].DESTADDRH, DmaDesc1_4[3].DESTADDRL, audioOut[0]);
+??dma_IRQ_4:
+        MOV	R1,#((audioOut >> 8) & 0xff)
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 26)
+        MOVX	@DPTR,A
+        MOV	A,#(audioOut & 0xff)
+        MOV	DPTR,#(DmaDesc1_4 + 27)
+        MOVX	@DPTR,A
+//   89     audioFrameReady = TRUE;
+??dma_IRQ_5:
+        MOV	A,#0x1
+        MOV	DPTR,#audioFrameReady
+        MOVX	@DPTR,A
+//   90     DMA_ARM_CHANNEL(4);
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        MOV	0xd6,#0x10             ; * 
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+//   91   }
+//   92 
+//   93   INT_GLOBAL_ENABLE(INT_ON);        // Re-enable interrupts
+??dma_IRQ_3:
+        SETB	0xa8.7                ; * 
+//   94 }
+        POP	DPH
+        CFI CFA_SP SP+-7
+        POP	DPL
+        CFI CFA_SP SP+-6
+        POP	A
+        CFI R1 A
+        CFI CFA_SP SP+-5
+        MOV	R1,A
+        CFI R1 SameValue
+        POP	A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV	R0,A
+        CFI R0 SameValue
+        POP	PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP	A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI                       ; * 
+        CFI EndBlock cfiBlock0
+//   95 
+//   96 ////////////////////////////////////////////////////////////////////////////////
+//   97 /// @brief	This function configures DMA transfer from the radio to an RX buffer.
+//   98 ///
+//   99 /// The first byte of the data to be transferred contains the number of bytes
+//  100 /// to be transferred (variable packet length). When done, the DMA channel may
+//  101 /// generate an interrupt.
+//  102 ///
+//  103 /// @param[in]  dstAddr
+//  104 ///             The start address in __xdata space to where the data is to be stored
+//  105 ///
+//  106 /// Uses DMA Channel 1
+//  107 ///
+//  108 ////////////////////////////////////////////////////////////////////////////////
+//  109 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  110 void dmaFromRadio(WORD length, WORD dstAddr){
+dmaFromRadio:
+        CFI Block cfiBlock1 Using cfiCommon1
+        CFI Function dmaFromRadio
+        ; Saved register size: 0
+        ; Auto size: 0
+//  111   SET_WORD(DmaDesc1_4[0].SRCADDRH, DmaDesc1_4[0].SRCADDRL, &X_RFD);     // Set RFD register as source
+        MOV	A,#-0x21
+        MOV	DPTR,#DmaDesc1_4
+        MOVX	@DPTR,A
+        MOV	A,#-0x27
+        MOV	DPTR,#(DmaDesc1_4 + 1)
+        MOVX	@DPTR,A
+//  112   SET_WORD(DmaDesc1_4[0].DESTADDRH, DmaDesc1_4[0].DESTADDRL, dstAddr);  // RX buffer address
+        MOV	A,R5
+        MOV	R1,A
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 2)
+        MOVX	@DPTR,A
+        MOV	A,R4
+        MOV	DPTR,#(DmaDesc1_4 + 3)
+        MOVX	@DPTR,A
+//  113   SET_WORD(DmaDesc1_4[0].LENH, DmaDesc1_4[0].LENL, length);             // Set the length of the transfer (bytes)
+        MOV	A,R3
+        MOV	R1,A
+        MOV	A,R1
+        ANL	A,#0x1f
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	DPTR,#(DmaDesc1_4 + 4)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        MOV	R4,A
+        POP	A
+        CFI CFA_SP SP+-2
+        ORL	A,R4
+        MOV	DPTR,#(DmaDesc1_4 + 4)
+        MOVX	@DPTR,A
+        MOV	A,R2
+        MOV	DPTR,#(DmaDesc1_4 + 5)
+        MOVX	@DPTR,A
+//  114   DmaDesc1_4[0].VLEN       = VLEN_USE_LEN;                              // Use the length field
+        MOV	DPTR,#(DmaDesc1_4 + 4)
+        MOVX	A,@DPTR
+        ANL	A,#0x1f
+        MOVX	@DPTR,A
+//  115   DmaDesc1_4[0].PRIORITY   = PRI_LOW;
+        MOV	DPTR,#(DmaDesc1_4 + 7)
+        MOVX	A,@DPTR
+        ANL	A,#0xfc
+        MOVX	@DPTR,A
+//  116   DmaDesc1_4[0].M8         = M8_USE_8_BITS;
+        MOV	DPTR,#(DmaDesc1_4 + 7)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.2
+        MOVX	@DPTR,A
+//  117   DmaDesc1_4[0].IRQMASK    = IRQMASK_DISABLE;     // No interrupt on DMA completion.
+        MOV	DPTR,#(DmaDesc1_4 + 7)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.3
+        MOVX	@DPTR,A
+//  118   DmaDesc1_4[0].DESTINC    = DESTINC_1;           // The destination is constant
+        MOV	DPTR,#(DmaDesc1_4 + 7)
+        MOVX	A,@DPTR
+        ANL	A,#0xcf
+        ORL	A,#0x10
+        MOV	DPTR,#(DmaDesc1_4 + 7)
+        MOVX	@DPTR,A
+//  119   DmaDesc1_4[0].SRCINC     = SRCINC_0;            // The source address increments by 1 byte for each transfer.
+        MOV	DPTR,#(DmaDesc1_4 + 7)
+        MOVX	A,@DPTR
+        ANL	A,#0x3f
+        MOVX	@DPTR,A
+//  120   DmaDesc1_4[0].TRIG       = DMATRIG_RADIO;       // DMA is started by the radio receiver.
+        MOV	DPTR,#(DmaDesc1_4 + 6)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        ORL	A,#0x13
+        MOV	DPTR,#(DmaDesc1_4 + 6)
+        MOVX	@DPTR,A
+//  121   DmaDesc1_4[0].TMODE      = TMODE_SINGLE;        // One byte is transferred at each DMA trigger.
+        MOV	DPTR,#(DmaDesc1_4 + 6)
+        MOVX	A,@DPTR
+        ANL	A,#0x9f
+        MOVX	@DPTR,A
+//  122   DmaDesc1_4[0].WORDSIZE   = WORDSIZE_BYTE;       // Byte transfer.
+        MOV	DPTR,#(DmaDesc1_4 + 6)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.7
+        MOVX	@DPTR,A
+//  123 
+//  124   return;
+        RET                        ; * 
+        CFI EndBlock cfiBlock1
+//  125 }
+//  126 
+//  127 ////////////////////////////////////////////////////////////////////////////////
+//  128 /// @brief	This function configures DMA transfer to the radio from a TX buffer.
+//  129 ///
+//  130 ///
+//  131 /// @param[in]  length
+//  132 ///             The length (bytes) of packet to move from TX buffer
+//  133 ///
+//  134 /// @param[in]  srcAddr
+//  135 ///             The start address in __xdata space into which the data to be transferred.
+//  136 ///
+//  137 /// Uses DMA Channel 2
+//  138 ///
+//  139 ////////////////////////////////////////////////////////////////////////////////
+//  140 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  141 void dmaToRadio(WORD length, WORD srcAddr){
+dmaToRadio:
+        CFI Block cfiBlock2 Using cfiCommon1
+        CFI Function dmaToRadio
+        ; Saved register size: 0
+        ; Auto size: 0
+//  142    SET_WORD(DmaDesc1_4[1].SRCADDRH, DmaDesc1_4[1].SRCADDRL, srcAddr);   // TX buffer address
+        MOV	A,R5
+        MOV	R1,A
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 8)
+        MOVX	@DPTR,A
+        MOV	A,R4
+        MOV	DPTR,#(DmaDesc1_4 + 9)
+        MOVX	@DPTR,A
+//  143    SET_WORD(DmaDesc1_4[1].DESTADDRH, DmaDesc1_4[1].DESTADDRL, &X_RFD);  // Set RFD register as destination
+        MOV	A,#-0x21
+        MOV	DPTR,#(DmaDesc1_4 + 10)
+        MOVX	@DPTR,A
+        MOV	A,#-0x27
+        MOV	DPTR,#(DmaDesc1_4 + 11)
+        MOVX	@DPTR,A
+//  144    SET_WORD(DmaDesc1_4[1].LENH, DmaDesc1_4[1].LENL, length);            // Set the length of the transfer (bytes)
+        MOV	A,R3
+        MOV	R1,A
+        MOV	A,R1
+        ANL	A,#0x1f
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	DPTR,#(DmaDesc1_4 + 12)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        MOV	R4,A
+        POP	A
+        CFI CFA_SP SP+-2
+        ORL	A,R4
+        MOV	DPTR,#(DmaDesc1_4 + 12)
+        MOVX	@DPTR,A
+        MOV	A,R2
+        MOV	DPTR,#(DmaDesc1_4 + 13)
+        MOVX	@DPTR,A
+//  145    DmaDesc1_4[1].VLEN      = VLEN_USE_LEN;                              // Use the length field
+        MOV	DPTR,#(DmaDesc1_4 + 12)
+        MOVX	A,@DPTR
+        ANL	A,#0x1f
+        MOVX	@DPTR,A
+//  146    DmaDesc1_4[1].PRIORITY  = PRI_LOW;
+        MOV	DPTR,#(DmaDesc1_4 + 15)
+        MOVX	A,@DPTR
+        ANL	A,#0xfc
+        MOVX	@DPTR,A
+//  147    DmaDesc1_4[1].M8        = M8_USE_8_BITS;       // Transferring all 8 bits in each byte.
+        MOV	DPTR,#(DmaDesc1_4 + 15)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.2
+        MOVX	@DPTR,A
+//  148    DmaDesc1_4[1].IRQMASK   = IRQMASK_DISABLE;     // No interrupt on DMA completion.
+        MOV	DPTR,#(DmaDesc1_4 + 15)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.3
+        MOVX	@DPTR,A
+//  149    DmaDesc1_4[1].DESTINC   = DESTINC_0;           // The destination address is constant
+        MOV	DPTR,#(DmaDesc1_4 + 15)
+        MOVX	A,@DPTR
+        ANL	A,#0xcf
+        MOVX	@DPTR,A
+//  150    DmaDesc1_4[1].SRCINC    = SRCINC_1;            // The address for data fetch is inremented by 1 byte
+        MOV	DPTR,#(DmaDesc1_4 + 15)
+        MOVX	A,@DPTR
+        ANL	A,#0x3f
+        ORL	A,#0x40
+        MOV	DPTR,#(DmaDesc1_4 + 15)
+        MOVX	@DPTR,A
+//  151                                                   // after each transfer.
+//  152    DmaDesc1_4[1].TRIG      = DMATRIG_RADIO;       // DMA is started by writing the radio
+        MOV	DPTR,#(DmaDesc1_4 + 14)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        ORL	A,#0x13
+        MOV	DPTR,#(DmaDesc1_4 + 14)
+        MOVX	@DPTR,A
+//  153    DmaDesc1_4[1].TMODE     = TMODE_SINGLE;        // Byte for byte is transferred.
+        MOV	DPTR,#(DmaDesc1_4 + 14)
+        MOVX	A,@DPTR
+        ANL	A,#0x9f
+        MOVX	@DPTR,A
+//  154    DmaDesc1_4[1].WORDSIZE  = WORDSIZE_BYTE;       // One byte is transferred each time.
+        MOV	DPTR,#(DmaDesc1_4 + 14)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.7
+        MOVX	@DPTR,A
+//  155 
+//  156    return;
+        RET                        ; * 
+        CFI EndBlock cfiBlock2
+//  157 }
+//  158 
+//  159 ////////////////////////////////////////////////////////////////////////////////
+//  160 /// This function configures DMA transfer from the AudioOut buffer to the CODEC (DMA Channel 3)
+//  161 /// And from the DODEC to the AudioIn buffer (DMA Channel 4)
+//  162 ////////////////////////////////////////////////////////////////////////////////
+//  163 
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  164 void dmaAudio(void){
+dmaAudio:
+        CFI Block cfiBlock3 Using cfiCommon1
+        CFI Function dmaAudio
+        ; Saved register size: 0
+        ; Auto size: 0
+//  165 // Setup DMA descriptor for Audio to CODEC using DMA Channel 3
+//  166 // Audio going to the CODEC comes from the AudioIn buffer  
+//  167 
+//  168 #ifdef I2STXFIXEDPTRN  
+//  169   SET_WORD(DmaDesc1_4[2].SRCADDRH, DmaDesc1_4[2].SRCADDRL, &i2svalue);
+//  170 //  SET_WORD(DmaDesc1_4[2].DESTADDRH, DmaDesc1_4[2].DESTADDRL, &I2SDATL);
+//  171   SET_WORD(DmaDesc1_4[2].DESTADDRH, DmaDesc1_4[2].DESTADDRL, &I2SDATH);
+//  172   DmaDesc1_4[2].VLEN       = VLEN_FIXED;
+//  173   DmaDesc1_4[2].LENH       = 0;
+//  174   DmaDesc1_4[2].LENL       = AF_BUF_SIZE;
+//  175 //  DmaDesc1_4[2].WORDSIZE   = WORDSIZE_WORD;
+//  176   DmaDesc1_4[2].WORDSIZE   = WORDSIZE_BYTE;
+//  177   DmaDesc1_4[2].TMODE      = TMODE_SINGLE;
+//  178   DmaDesc1_4[2].TRIG       = DMATRIG_ADC_I2S_TX;  
+//  179   DmaDesc1_4[2].SRCINC     = SRCINC_0;
+//  180   DmaDesc1_4[2].DESTINC    = DESTINC_0;
+//  181   DmaDesc1_4[2].IRQMASK    = IRQMASK_ENABLE;
+//  182   DmaDesc1_4[2].M8         = M8_USE_8_BITS;
+//  183   DmaDesc1_4[2].PRIORITY   = PRI_LOW;
+//  184   
+//  185 #else
+//  186 
+//  187   SET_WORD(DmaDesc1_4[2].SRCADDRH, DmaDesc1_4[2].SRCADDRL, audioIn[0]);
+        MOV	R1,#((audioIn >> 8) & 0xff)
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 16)
+        MOVX	@DPTR,A
+        MOV	A,#(audioIn & 0xff)
+        MOV	DPTR,#(DmaDesc1_4 + 17)
+        MOVX	@DPTR,A
+//  188 //  SET_WORD(DmaDesc1_4[2].DESTADDRH, DmaDesc1_4[2].DESTADDRL, &I2SDATL);
+//  189   SET_WORD(DmaDesc1_4[2].DESTADDRH, DmaDesc1_4[2].DESTADDRL, &I2SDATH);
+        MOV	A,#-0x21
+        MOV	DPTR,#(DmaDesc1_4 + 18)
+        MOVX	@DPTR,A
+        MOV	A,#0x43
+        MOV	DPTR,#(DmaDesc1_4 + 19)
+        MOVX	@DPTR,A
+//  190   DmaDesc1_4[2].VLEN       = VLEN_FIXED;
+        MOV	DPTR,#(DmaDesc1_4 + 20)
+        MOVX	A,@DPTR
+        ANL	A,#0x1f
+        MOVX	@DPTR,A
+//  191   DmaDesc1_4[2].LENH       = 0;
+        MOV	DPTR,#(DmaDesc1_4 + 20)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        MOVX	@DPTR,A
+//  192   DmaDesc1_4[2].LENL       = AF_BUF_SIZE;
+        MOV	A,#0x36
+        MOV	DPTR,#(DmaDesc1_4 + 21)
+        MOVX	@DPTR,A
+//  193 //  DmaDesc1_4[2].WORDSIZE   = WORDSIZE_WORD;
+//  194   DmaDesc1_4[2].WORDSIZE   = WORDSIZE_BYTE;
+        MOV	DPTR,#(DmaDesc1_4 + 22)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.7
+        MOVX	@DPTR,A
+//  195   DmaDesc1_4[2].TMODE      = TMODE_SINGLE;
+        MOV	DPTR,#(DmaDesc1_4 + 22)
+        MOVX	A,@DPTR
+        ANL	A,#0x9f
+        MOVX	@DPTR,A
+//  196   DmaDesc1_4[2].TRIG       = DMATRIG_ADC_I2S_TX;  
+        MOV	DPTR,#(DmaDesc1_4 + 22)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        ORL	A,#0x1c
+        MOV	DPTR,#(DmaDesc1_4 + 22)
+        MOVX	@DPTR,A
+//  197   DmaDesc1_4[2].SRCINC     = SRCINC_1;
+        MOV	DPTR,#(DmaDesc1_4 + 23)
+        MOVX	A,@DPTR
+        ANL	A,#0x3f
+        ORL	A,#0x40
+        MOV	DPTR,#(DmaDesc1_4 + 23)
+        MOVX	@DPTR,A
+//  198   DmaDesc1_4[2].DESTINC    = DESTINC_0;
+        MOV	DPTR,#(DmaDesc1_4 + 23)
+        MOVX	A,@DPTR
+        ANL	A,#0xcf
+        MOVX	@DPTR,A
+//  199   DmaDesc1_4[2].IRQMASK    = IRQMASK_ENABLE;
+        MOV	DPTR,#(DmaDesc1_4 + 23)
+        MOVX	A,@DPTR
+        SETB	0xE0 /* A   */.3
+        MOVX	@DPTR,A
+//  200   DmaDesc1_4[2].M8         = M8_USE_8_BITS;
+        MOV	DPTR,#(DmaDesc1_4 + 23)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.2
+        MOVX	@DPTR,A
+//  201   DmaDesc1_4[2].PRIORITY   = PRI_LOW;
+        MOV	DPTR,#(DmaDesc1_4 + 23)
+        MOVX	A,@DPTR
+        ANL	A,#0xfc
+        MOVX	@DPTR,A
+//  202   
+//  203 #endif  
+//  204   
+//  205 // Setup DMA descriptor for Audio from CODEC using DMA Channel 4
+//  206 // Audio from the CODEC goes into the 'audioOut' buffer to be transmitted
+//  207   
+//  208 //  SET_WORD(DmaDesc1_4[3].SRCADDRH, DmaDesc1_4[3].SRCADDRL, &I2SDATL);
+//  209   SET_WORD(DmaDesc1_4[3].SRCADDRH, DmaDesc1_4[3].SRCADDRL, &I2SDATH);
+        MOV	A,#-0x21
+        MOV	DPTR,#(DmaDesc1_4 + 24)
+        MOVX	@DPTR,A
+        MOV	A,#0x43
+        MOV	DPTR,#(DmaDesc1_4 + 25)
+        MOVX	@DPTR,A
+//  210   SET_WORD(DmaDesc1_4[3].DESTADDRH, DmaDesc1_4[3].DESTADDRL, audioOut[0]);
+        MOV	R1,#((audioOut >> 8) & 0xff)
+        MOV	A,R1
+        MOV	DPTR,#(DmaDesc1_4 + 26)
+        MOVX	@DPTR,A
+        MOV	A,#(audioOut & 0xff)
+        MOV	DPTR,#(DmaDesc1_4 + 27)
+        MOVX	@DPTR,A
+//  211   DmaDesc1_4[3].VLEN       = VLEN_FIXED;
+        MOV	DPTR,#(DmaDesc1_4 + 28)
+        MOVX	A,@DPTR
+        ANL	A,#0x1f
+        MOVX	@DPTR,A
+//  212   DmaDesc1_4[3].LENH       = 0;
+        MOV	DPTR,#(DmaDesc1_4 + 28)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        MOVX	@DPTR,A
+//  213   DmaDesc1_4[3].LENL       = AF_BUF_SIZE;
+        MOV	A,#0x36
+        MOV	DPTR,#(DmaDesc1_4 + 29)
+        MOVX	@DPTR,A
+//  214 //  DmaDesc1_4[3].WORDSIZE   = WORDSIZE_WORD;
+//  215   DmaDesc1_4[3].WORDSIZE   = WORDSIZE_BYTE;  
+        MOV	DPTR,#(DmaDesc1_4 + 30)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.7
+        MOVX	@DPTR,A
+//  216   DmaDesc1_4[3].TMODE      = TMODE_SINGLE;
+        MOV	DPTR,#(DmaDesc1_4 + 30)
+        MOVX	A,@DPTR
+        ANL	A,#0x9f
+        MOVX	@DPTR,A
+//  217   DmaDesc1_4[3].TRIG       = DMATRIG_ADC_I2S_RX;  
+        MOV	DPTR,#(DmaDesc1_4 + 30)
+        MOVX	A,@DPTR
+        ANL	A,#0xe0
+        ORL	A,#0x1b
+        MOV	DPTR,#(DmaDesc1_4 + 30)
+        MOVX	@DPTR,A
+//  218   DmaDesc1_4[3].SRCINC     = SRCINC_0;
+        MOV	DPTR,#(DmaDesc1_4 + 31)
+        MOVX	A,@DPTR
+        ANL	A,#0x3f
+        MOVX	@DPTR,A
+//  219   DmaDesc1_4[3].DESTINC    = DESTINC_1;
+        MOV	DPTR,#(DmaDesc1_4 + 31)
+        MOVX	A,@DPTR
+        ANL	A,#0xcf
+        ORL	A,#0x10
+        MOV	DPTR,#(DmaDesc1_4 + 31)
+        MOVX	@DPTR,A
+//  220   DmaDesc1_4[3].IRQMASK    = IRQMASK_ENABLE;
+        MOV	DPTR,#(DmaDesc1_4 + 31)
+        MOVX	A,@DPTR
+        SETB	0xE0 /* A   */.3
+        MOVX	@DPTR,A
+//  221   DmaDesc1_4[3].M8         = M8_USE_8_BITS;
+        MOV	DPTR,#(DmaDesc1_4 + 31)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.2
+        MOVX	@DPTR,A
+//  222   DmaDesc1_4[3].PRIORITY   = PRI_LOW;
+        MOV	DPTR,#(DmaDesc1_4 + 31)
+        MOVX	A,@DPTR
+        ANL	A,#0xfc
+        MOVX	@DPTR,A
+//  223 
+//  224   return;
+        RET                        ; * 
+        CFI EndBlock cfiBlock3
+//  225 }
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 67
+`dma_IRQ??INTVEC 67`:
+        LJMP       (dma_IRQ)
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c0H
+// union <unnamed> volatile __sfr _A_IRCON
+_A_IRCON:
+        DS 1
+
+        END
+//  226 
+//  227 
+//  228 
+//  229 
+// 
+//   1 byte  in segment IDATA_Z
+//   3 bytes in segment INTVEC
+// 660 bytes in segment NEAR_CODE
+//   6 bytes in segment SFR_AN
+//  32 bytes in segment XDATA_Z
+// 
+// 660 bytes of CODE  memory (+ 3 bytes shared)
+//   0 bytes of DATA  memory (+ 6 bytes shared)
+//  32 bytes of XDATA memory
+//   1 byte  of IDATA memory
+//
+//Errors: none
+//Warnings: none

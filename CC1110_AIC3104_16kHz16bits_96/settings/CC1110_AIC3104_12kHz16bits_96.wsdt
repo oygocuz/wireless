@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>CC1110_AIC3104_12kHz16bits_96/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>223</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Find-in-Files>
+        
+        
+        
+      <ColumnWidth0>436</ColumnWidth0><ColumnWidth1>62</ColumnWidth1><ColumnWidth2>747</ColumnWidth2></Find-in-Files>
+    <Build><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>906</ColumnWidth1><ColumnWidth2>241</ColumnWidth2><ColumnWidth3>60</ColumnWidth3></Build><TerminalIO/><Disassembly><MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow><InstrProfShow>0</InstrProfShow></Disassembly><Debug-Log><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1410</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-14517-6684</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>CC1110_AIC3104_12kHz16bits_96</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-8329-14169</Identity>
+            <TabName>Find in Files</TabName>
+            <Factory>Find-in-Files</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-20835-20485</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-24100-21880</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>1</SelectedTab></Wnd2></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_main.c</Filename><XPos>1</XPos><YPos>10</YPos><SelStart>902</SelStart><SelEnd>902</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\init_peripherals.c</Filename><XPos>0</XPos><YPos>33</YPos><SelStart>2722</SelStart><SelEnd>2722</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\i2c.c</Filename><XPos>0</XPos><YPos>13</YPos><SelStart>1114</SelStart><SelEnd>1114</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\inc\board.h</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>2444</SelStart><SelEnd>2444</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_dma.c</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>6152</SelStart><SelEnd>6152</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_rf.c</Filename><XPos>0</XPos><YPos>157</YPos><SelStart>6380</SelStart><SelEnd>6442</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_mac.c</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>2872</SelStart><SelEnd>2872</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_interrupt.c</Filename><XPos>0</XPos><YPos>48</YPos><SelStart>2533</SelStart><SelEnd>2533</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\init_Codec.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>19</SelStart><SelEnd>45</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\inc\TLV320AIC3104.h</Filename><XPos>0</XPos><YPos>91</YPos><SelStart>4553</SelStart><SelEnd>4569</SelEnd></Tab><ActiveTab>9</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\inc\hal.h</Filename><XPos>0</XPos><YPos>625</YPos><SelStart>25713</SelStart><SelEnd>25724</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00aba1c8><key>iaridepm.enu1</key></Toolbar-00aba1c8></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>720</Bottom><Right>297</Right><x>-2</x><y>-2</y><xscreen>235</xscreen><yscreen>200</yscreen><sizeHorzCX>157930</sizeHorzCX><sizeHorzCY>207900</sizeHorzCY><sizeVertCX>200941</sizeVertCX><sizeVertCY>750520</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>1490</Right><x>-2</x><y>-2</y><xscreen>1492</xscreen><yscreen>200</yscreen><sizeHorzCX>1002688</sizeHorzCX><sizeHorzCY>207900</sizeHorzCY><sizeVertCX>157930</sizeVertCX><sizeVertCY>207900</sizeVertCY></Rect></Wnd2></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

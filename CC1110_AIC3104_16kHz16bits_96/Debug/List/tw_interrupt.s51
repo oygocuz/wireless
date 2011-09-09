@@ -1,0 +1,949 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR 8051 C/C++ Compiler V7.20A/W32                  21/Nov/2008  16:05:16 /
+// Copyright 2004-2005 IAR Systems. All rights reserved.                     /
+// Time limited license: 63 days left                                        /
+//                                                                           /
+//    Core               =  plain                                            /
+//    Code model         =  near                                             /
+//    Data model         =  small                                            /
+//    Calling convention =  idata reentrant                                  /
+//    Constant location  =  data                                             /
+//    Dptr setup         =  1,16                                             /
+//    Source file        =  C:\AudioplusData_CC2510\src\tw_interrupt.c       /
+//    Command line       =  -I "C:\Program Files\IAR Systems\Embedded        /
+//                          Workbench 4.05\8051\INC\CLIB\" -I                /
+//                          C:\AudioplusData_CC2510\inc\ -D CC2510 -D        /
+//                          chip=2510 --preprocess=l                         /
+//                          C:\AudioplusData_CC2510\Debug\List\ -lA          /
+//                          C:\AudioplusData_CC2510\Debug\List\ -o           /
+//                          C:\AudioplusData_CC2510\Debug\Obj\ -e -z3        /
+//                          --no_cse --no_unroll --no_inline                 /
+//                          --no_code_motion --no_tbaa --debug --core=plain  /
+//                          --dptr=16,1 --data_model=small                   /
+//                          --code_model=near --calling_convention=idata_ree /
+//                          ntrant --place_constants=data --nr_virtual_regs  /
+//                          8 C:\AudioplusData_CC2510\src\tw_interrupt.c     /
+//    List file          =  C:\AudioplusData_CC2510\Debug\List\tw_interrupt. /
+//                          s51                                              /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME tw_interrupt
+
+        RTMODEL "__calling_convention", "idata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN __INIT_IDATA_I
+        EXTERN __INIT_IDATA_Z
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBWEAK IEN2
+        PUBWEAK RFIF
+        PUBWEAK RFIM
+        PUBWEAK S1CON
+        PUBLIC T1_IRQ
+        FUNCTION T1_IRQ,0233H
+        LOCFRAME ISTACK, 7, STACK
+        PUBWEAK `T1_IRQ??INTVEC 75`
+        PUBWEAK U0DBUF
+        PUBLIC URX0_IRQ
+        FUNCTION URX0_IRQ,0233H
+        LOCFRAME ISTACK, 7, STACK
+        PUBWEAK `URX0_IRQ??INTVEC 19`
+        PUBLIC UTX0_IRQ
+        FUNCTION UTX0_IRQ,0233H
+        LOCFRAME ISTACK, 7, STACK
+        PUBWEAK `UTX0_IRQ??INTVEC 59`
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IRCON2
+        PUBWEAK _A_P1
+        PUBLIC audioFrameReady
+        PUBLIC audioInindx
+        PUBLIC audioOutindx
+        PUBLIC current_pbtalk_state
+        PUBLIC heartbeat
+        PUBLIC k
+        PUBLIC msecs
+        PUBLIC pb_talk_msg_txt
+        PUBLIC prev_pbtalk_state
+        PUBLIC pwmsample
+        PUBLIC rxbyte
+        PUBLIC send_pbtalk_msg
+        PUBLIC sfdDetected
+        PUBLIC spp_rf_IRQ
+        FUNCTION spp_rf_IRQ,0233H
+        LOCFRAME ISTACK, 8, STACK
+        PUBWEAK `spp_rf_IRQ??INTVEC 131`
+        PUBLIC tone444Hz
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP DATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 Undefined
+        CFI DPH0 Undefined
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+T1_IRQ              SYMBOL "T1_IRQ"
+`T1_IRQ??INTVEC 75` SYMBOL "??INTVEC 75", T1_IRQ
+URX0_IRQ            SYMBOL "URX0_IRQ"
+`URX0_IRQ??INTVEC 19` SYMBOL "??INTVEC 19", URX0_IRQ
+UTX0_IRQ            SYMBOL "UTX0_IRQ"
+`UTX0_IRQ??INTVEC 59` SYMBOL "??INTVEC 59", UTX0_IRQ
+spp_rf_IRQ          SYMBOL "spp_rf_IRQ"
+`spp_rf_IRQ??INTVEC 131` SYMBOL "??INTVEC 131", spp_rf_IRQ
+
+        EXTERN rs232RXbufr
+        EXTERN rs232TXbufr
+        EXTERN rxPacketStatus
+        EXTERN rxStatus
+
+// C:\AudioplusData_CC2510\src\tw_interrupt.c
+//    1 /*******************************************************************************************************
+//    2  *                                                                                                     *
+//    3  *        **********                                                                                   *
+//    4  *       ************                                                                                  *
+//    5  *      ***        ***                                                                                 *
+//    6  *      ***   +++   ***                                                                                *
+//    7  *      ***   + +   ***     Interrupt handlers                                                         *
+//    8  *      ***   +                                                                                        *
+//    9  *      ***   + +   ***                                                                                *
+//   10  *      ***   +++   ***     tw_interrupt.c                                                             *
+//   11  *      ***        ***                                                                                 *
+//   12  *       ************                                                                                  *
+//   13  *        **********                                                                                   *
+//   14  *                                                                                                     *
+//   15  *******************************************************************************************************
+//   16  * Compiler:                IAR C Compiler for 8051                                                    *
+//   17  * Target platform:         Chipcon CC2510                                                             *
+//   18  * Author:                  MJB                                                                        *
+//   19  * Last Modified:           17 November 2008 (Rev E cards)                                             *
+//   20  ******************************************************************************************************/
+//   21 
+//   22 //-------------------------------------------------------------------------------------------------------
+//   23 // Includes
+//   24 
+//   25 #include "twoway.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,091H
+// unsigned char volatile __sfr RFIM
+RFIM:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09bH
+// unsigned char volatile __sfr S1CON
+S1CON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c1H
+// unsigned char volatile __sfr U0DBUF
+U0DBUF:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e9H
+// unsigned char volatile __sfr RFIF
+RFIF:
+        DS 1
+//   26 #include "string.h"
+//   27 
+//   28 //-------------------------------------------------------------------------------------------------------
+//   29 
+//   30 //  Global variables
+//   31 
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   32 UINT8 audioInindx = 0;
+audioInindx:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   33 UINT8 audioOutindx = 0;
+audioOutindx:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   34 INT16 pwmsample;
+pwmsample:
+        DS 2
+//   35 
+//   36 // External variables
+//   37 
+//   38 extern RS232_RXBUFR_STRUCT __xdata rs232RXbufr;
+//   39 extern RS232_TXBUFR_STRUCT __xdata rs232TXbufr; 
+//   40 
+//   41 // Local variables
+//   42 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   43 BOOL __xdata audioFrameReady = FALSE;
+audioFrameReady:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   44 BOOL sfdDetected;
+sfdDetected:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   45 UINT8 k;
+k:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   46 UINT8 heartbeat = 0;
+heartbeat:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   47 UINT8 __xdata rxbyte; 
+rxbyte:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   48 UINT8 __xdata msecs = 0;
+msecs:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   49 UINT8 __xdata current_pbtalk_state = 0;
+current_pbtalk_state:
+        DS 1
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//   50 UINT8 __xdata prev_pbtalk_state = PB_TALK;    // by default, PB Talk will be high
+prev_pbtalk_state:
+        DS 1
+        REQUIRE `?<Initializer for prev_pbtalk_state>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   51 UINT8 __xdata send_pbtalk_msg = 0;
+send_pbtalk_msg:
+        DS 1
+//   52             
+
+        RSEG IDATA_I:IDATA:NOROOT(0)
+//   53 const char pb_talk_msg_txt[] = "--> Talk PB Pushed\r\n";
+pb_talk_msg_txt:
+        DS 21
+        REQUIRE `?<Initializer for pb_talk_msg_txt>`
+        REQUIRE __INIT_IDATA_I
+//   54 
+//   55 #define AGCSAMPLES 100      // AGC update rate = 12.5 msec
+//   56 
+//   57 // ulaw compressed 440 Hz Sine Wave Tone
+//   58 
+
+        RSEG IDATA_I:IDATA:NOROOT(0)
+//   59 const INT16 tone444Hz[18] = {0,  5604, 10531, 14189, 16135, 16135, 14189, 10531, 5604,
+tone444Hz:
+        DS 36
+        REQUIRE `?<Initializer for tone444Hz>`
+        REQUIRE __INIT_IDATA_I
+//   60                        0, -5604, -10531, -14189, -16135, -16135, -14189, -10531, -5604};
+//   61 
+//   62 ///////////////////////////////////////////////////////////////////////////////
+//   63 /// @brief	This ISR handles the possible RF interrupts that may occur
+//   64 ///             when using the SPP
+//   65 ///
+//   66 /// When the start of a packet is received, the RX-state will be set
+//   67 /// accordingly. When a packet is sent and no ACK is requested, the TX_DONE
+//   68 /// interrupt will be run. Reception of a complete packet will only be used
+//   69 /// for receiving an ACK. This ISR will handle the ACK reception.
+//   70 ////////////////////////////////////////////////////////////////////////////////
+//   71 
+//   72 #pragma vector=RF_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   73 __interrupt void spp_rf_IRQ(void)
+spp_rf_IRQ:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function spp_rf_IRQ
+//   74 {
+        PUSH	A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH	PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV	A,R0
+        CFI R0 A
+        PUSH	A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        MOV	A,R1
+        CFI R1 A
+        PUSH	A
+        CFI R1 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        MOV	A,R2
+        CFI R2 A
+        PUSH	A
+        CFI R2 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        PUSH	?V0 + 0
+        CFI V0 Frame(CFA_SP, 8)
+        CFI CFA_SP SP+-8
+        PUSH	DPL
+        CFI DPL0 Frame(CFA_SP, 9)
+        CFI CFA_SP SP+-9
+        PUSH	DPH
+        CFI DPH0 Frame(CFA_SP, 10)
+        CFI CFA_SP SP+-10
+        ; Saved register size: 8
+        ; Auto size: 0
+//   75   BYTE enabledAndActiveInterrupt;
+//   76 
+//   77   INT_GLOBAL_ENABLE(INT_OFF);         // Disable all other interrupts
+        CLR	0xa8.7                 ; * 
+//   78   INT_SETFLAG(INUM_RF, INT_CLR);      // Clear main (MCU) interrupt flag
+        MOV	A,#-0x4
+        ANL	A,0x9b                 ; * 
+        MOV	R2,A
+        MOV	0x9b,R2                ; * 
+//   79   enabledAndActiveInterrupt = RFIF;
+        MOV	A,0xe9                 ; * 
+        MOV	?V0 + 0,A
+//   80   enabledAndActiveInterrupt &= RFIM;  // Mask local copy of interrupt flags
+        MOV	A,0x91                 ; * 
+        ANL	?V0 + 0,A
+//   81   RFIF = ~enabledAndActiveInterrupt;  // Clear all interrupt flags in RFIF register
+        MOV	A,?V0 + 0
+        CPL	A
+        MOV	0xe9,A                 ; * 
+//   82 
+//   83 // Start of frame delimiter (TX) or SYNC detected (RX)
+//   84 
+//   85   if(enabledAndActiveInterrupt & IRQ_SFD)
+        MOV	A,?V0 + 0
+        MOV	C,0xE0 /* A   */.0
+        JNC	??spp_rf_IRQ_0
+//   86   {
+//   87     sfdDetected = TRUE;
+        MOV	R0,#sfdDetected
+        MOV	@R0,#0x1
+//   88     rxStatus = RX_IN_PROGRESS;
+        MOV	A,#-0x80
+        MOV	DPTR,#rxStatus
+        MOVX	@DPTR,A               ; * 
+//   89     rxPacketStatus = 0x00;
+        MOV	A,#0x0
+        MOV	DPTR,#rxPacketStatus
+        MOVX	@DPTR,A               ; * 
+//   90     RFIM &= ~IRQ_SFD;                 // Clear interrupt mask for SFD in RFIM
+        ANL	0x91,#0xfe             ; * 
+//   91   }
+//   92 
+//   93 // Packet Done (TX) or Packet Received (RX)
+//   94 
+//   95   if(enabledAndActiveInterrupt & IRQ_DONE)
+??spp_rf_IRQ_0:
+        MOV	A,?V0 + 0
+        MOV	C,0xE0 /* A   */.4
+        JNC	??spp_rf_IRQ_1
+//   96   {
+//   97     rxStatus = PACKET_RECEIVED;
+        MOV	A,#0x40
+        MOV	DPTR,#rxStatus
+        MOVX	@DPTR,A               ; * 
+//   98     RFIM &= ~IRQ_DONE;                // Clear interrupt mask for DONE in RFIM
+        ANL	0x91,#0xef             ; * 
+//   99   }
+//  100 
+//  101   INT_GLOBAL_ENABLE(INT_ON);
+??spp_rf_IRQ_1:
+        SETB	0xa8.7                ; * 
+//  102 }
+        POP	DPH
+        CFI CFA_SP SP+-9
+        POP	DPL
+        CFI CFA_SP SP+-8
+        POP	?V0 + 0
+        CFI V0 SameValue
+        CFI CFA_SP SP+-7
+        POP	A
+        CFI R2 A
+        CFI CFA_SP SP+-6
+        MOV	R2,A
+        CFI R2 SameValue
+        POP	A
+        CFI R1 A
+        CFI CFA_SP SP+-5
+        MOV	R1,A
+        CFI R1 SameValue
+        POP	A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV	R0,A
+        CFI R0 SameValue
+        POP	PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP	A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI                       ; * 
+        CFI EndBlock cfiBlock0
+//  103 
+//  104 // Timer 1 interrupt handler
+//  105 // Timer 1 will generate an interrupt ever 1 millisecond
+//  106 
+//  107 #pragma vector=T1_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  108 __interrupt void T1_IRQ(void){
+T1_IRQ:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function T1_IRQ
+        PUSH	A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH	PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV	A,R0
+        CFI R0 A
+        PUSH	A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        MOV	A,R1
+        CFI R1 A
+        PUSH	A
+        CFI R1 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        PUSH	DPL
+        CFI DPL0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        PUSH	DPH
+        CFI DPH0 Frame(CFA_SP, 8)
+        CFI CFA_SP SP+-8
+        ; Saved register size: 6
+        ; Auto size: 0
+//  109   heartbeat++;
+        MOV	R0,#heartbeat
+        INC	@R0
+//  110   if (heartbeat == 250) {
+        MOV	R0,#heartbeat
+        MOV	A,@R0
+        XRL	A,#0xfa
+        JNZ	??T1_IRQ_0
+//  111     LED_BLUE_REG ^= LED_BLUE;     // toggle the heartbeat LED
+        XRL	0x90,#0x1              ; * 
+//  112     heartbeat = 0;
+        MOV	R0,#heartbeat
+        MOV	@R0,#0x0
+//  113   }
+//  114 
+//  115 // every 10 msec, check to see if the 'Talk' push button has transitioned from 'released' (high) to 'pushed' (low)  
+//  116   
+//  117   msecs++;
+??T1_IRQ_0:
+        MOV	DPTR,#msecs
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+//  118   if (msecs == 10) {
+        MOV	DPTR,#msecs
+        MOVX	A,@DPTR
+        XRL	A,#0xa
+        JNZ	??T1_IRQ_1
+//  119     msecs = 0;
+        MOV	A,#0x0
+        MOV	DPTR,#msecs
+        MOVX	@DPTR,A
+//  120     current_pbtalk_state = P1 & PB_TALK;
+        MOV	A,#0x10
+        ANL	A,0x90                 ; * 
+        MOV	DPTR,#current_pbtalk_state
+        MOVX	@DPTR,A
+//  121     if ((current_pbtalk_state == 0) && (prev_pbtalk_state > 0))   // if the state of the TALK PB has gone from released to pressed
+        MOV	DPTR,#current_pbtalk_state
+        MOVX	A,@DPTR
+        JNZ	??T1_IRQ_2
+        MOV	DPTR,#prev_pbtalk_state
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#0x1
+        JC	??T1_IRQ_2
+//  122       send_pbtalk_msg = 1;    
+        MOV	A,#0x1
+        MOV	DPTR,#send_pbtalk_msg
+        MOVX	@DPTR,A
+//  123     prev_pbtalk_state = current_pbtalk_state;
+??T1_IRQ_2:
+        MOV	DPTR,#current_pbtalk_state
+        MOVX	A,@DPTR
+        MOV	DPTR,#prev_pbtalk_state
+        MOVX	@DPTR,A
+//  124   }
+//  125  
+//  126 // send the 'Talk PB Depressed' message over RS232
+//  127 
+//  128   if ((send_pbtalk_msg > 0) && (rs232TXbufr.last_byte_sent == 0)) {  
+??T1_IRQ_1:
+        MOV	DPTR,#send_pbtalk_msg
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#0x1
+        JC	??T1_IRQ_3
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	A,@DPTR
+        JNZ	??T1_IRQ_3
+//  129     for (k = 0; k < 21; k++) 
+        MOV	R0,#k
+        MOV	@R0,#0x0
+        SJMP	??T1_IRQ_4
+//  130       rs232TXbufr.data[k] = pb_talk_msg_txt[k]; 
+??T1_IRQ_5:
+        MOV	R0,#k
+        MOV	A,@R0
+        ADD	A,#pb_talk_msg_txt
+        MOV	R0,A
+        MOV	A,@R0
+        PUSH	A
+        CFI CFA_SP SP+-9
+        MOV	R0,#k
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#((rs232TXbufr + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((rs232TXbufr + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-8
+        MOVX	@DPTR,A
+        MOV	R0,#k
+        INC	@R0
+??T1_IRQ_4:
+        MOV	R0,#k
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x15
+        JC	??T1_IRQ_5
+//  131       
+//  132     rs232TXbufr.length = 21;
+        MOV	A,#0x15
+        MOV	DPTR,#rs232TXbufr
+        MOVX	@DPTR,A
+//  133     U0DBUF = rs232TXbufr.data[0];         // TX first byte
+        MOV	DPTR,#(rs232TXbufr + 3)
+        MOVX	A,@DPTR
+        MOV	0xc1,A                 ; * 
+//  134     rs232TXbufr.last_byte_sent = 1;       // one byte has been sent
+        MOV	A,#0x1
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	@DPTR,A
+//  135     IEN2 |= UTX0IE;                       // and more data needs to be sent, so enable USART0 TX interrupts
+        ORL	0x9a,#0x4              ; * 
+//  136   }
+//  137   
+//  138   send_pbtalk_msg = 0;  
+??T1_IRQ_3:
+        MOV	A,#0x0
+        MOV	DPTR,#send_pbtalk_msg
+        MOVX	@DPTR,A
+//  139 }
+        POP	DPH
+        CFI CFA_SP SP+-7
+        POP	DPL
+        CFI CFA_SP SP+-6
+        POP	A
+        CFI R1 A
+        CFI CFA_SP SP+-5
+        MOV	R1,A
+        CFI R1 SameValue
+        POP	A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV	R0,A
+        CFI R0 SameValue
+        POP	PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP	A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI                       ; * 
+        CFI EndBlock cfiBlock1
+//  140 
+//  141 #pragma vector=UTX0_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  142 __interrupt void UTX0_IRQ(void){
+UTX0_IRQ:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function UTX0_IRQ
+        PUSH	A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH	PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV	A,R0
+        CFI R0 A
+        PUSH	A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        MOV	A,R1
+        CFI R1 A
+        PUSH	A
+        CFI R1 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        MOV	A,R2
+        CFI R2 A
+        PUSH	A
+        CFI R2 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        PUSH	DPL
+        CFI DPL0 Frame(CFA_SP, 8)
+        CFI CFA_SP SP+-8
+        PUSH	DPH
+        CFI DPH0 Frame(CFA_SP, 9)
+        CFI CFA_SP SP+-9
+        ; Saved register size: 7
+        ; Auto size: 0
+//  143     
+//  144   IRCON2 &= ~0x02;                                            // Clear the UTX0IF CPU interrupt flag
+        CLR	0xe8.1                 ; * 
+//  145   
+//  146   U0DBUF = rs232TXbufr.data[rs232TXbufr.last_byte_sent++];    // TX next byte
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	A,@DPTR
+        MOV	R1,#0x0
+        ADD	A,#((rs232TXbufr + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((rs232TXbufr + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        MOV	0xc1,A                 ; * 
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+//  147   if (rs232TXbufr.last_byte_sent == rs232TXbufr.length) {     // if the end of the buffer has been reached
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	A,@DPTR
+        MOV	R2,A
+        MOV	DPTR,#rs232TXbufr
+        MOVX	A,@DPTR
+        XRL	A,R2
+        JNZ	??UTX0_IRQ_0
+//  148     IEN2 &= ~UTX0IE;                                          // Disable UTX0 interrupts
+        ANL	0x9a,#0xfb             ; * 
+//  149     rs232TXbufr.last_byte_sent = 0;                           // and reset the 'lastbyte' pointer and the 'length'
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	@DPTR,A
+//  150     rs232TXbufr.length = 0;
+        MOV	A,#0x0
+        MOV	DPTR,#rs232TXbufr
+        MOVX	@DPTR,A
+//  151   }
+//  152 }
+??UTX0_IRQ_0:
+        POP	DPH
+        CFI CFA_SP SP+-8
+        POP	DPL
+        CFI CFA_SP SP+-7
+        POP	A
+        CFI R2 A
+        CFI CFA_SP SP+-6
+        MOV	R2,A
+        CFI R2 SameValue
+        POP	A
+        CFI R1 A
+        CFI CFA_SP SP+-5
+        MOV	R1,A
+        CFI R1 SameValue
+        POP	A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV	R0,A
+        CFI R0 SameValue
+        POP	PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP	A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI                       ; * 
+        CFI EndBlock cfiBlock2
+//  153 
+//  154 #pragma vector=URX0_VECTOR
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  155 __interrupt void URX0_IRQ(void){
+URX0_IRQ:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function URX0_IRQ
+        PUSH	A
+        CFI A Frame(CFA_SP, 3)
+        CFI CFA_SP SP+-3
+        PUSH	PSW
+        CFI PSW Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        MOV	A,R0
+        CFI R0 A
+        PUSH	A
+        CFI R0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        MOV	A,R1
+        CFI R1 A
+        PUSH	A
+        CFI R1 Frame(CFA_SP, 6)
+        CFI CFA_SP SP+-6
+        PUSH	DPL
+        CFI DPL0 Frame(CFA_SP, 7)
+        CFI CFA_SP SP+-7
+        PUSH	DPH
+        CFI DPH0 Frame(CFA_SP, 8)
+        CFI CFA_SP SP+-8
+        ; Saved register size: 6
+        ; Auto size: 0
+//  156     
+//  157   rxbyte = U0DBUF;                                            // read the byte in order to clear the RX buffer
+        MOV	A,0xc1                 ; * 
+        MOV	DPTR,#rxbyte
+        MOVX	@DPTR,A
+//  158   if (rs232RXbufr.data_available == 0) {                      // ignore characters if the 'data available' flag is set
+        MOV	DPTR,#(rs232RXbufr + 1)
+        MOVX	A,@DPTR
+        JNZ	??URX0_IRQ_0
+//  159     if (rs232RXbufr.index < RS232_RX_BUFR_LENGTH) {           // or if the buffer length has been exceeded
+        MOV	DPTR,#rs232RXbufr
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#0x20
+        JNC	??URX0_IRQ_0
+//  160       rs232RXbufr.data[rs232RXbufr.index++] = rxbyte;
+        MOV	DPTR,#rxbyte
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-9
+        MOV	DPTR,#rs232RXbufr
+        MOVX	A,@DPTR
+        MOV	R0,A
+        MOV	R1,#0x0
+        ADD	A,#((rs232RXbufr + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((rs232RXbufr + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-8
+        MOVX	@DPTR,A
+        MOV	DPTR,#rs232RXbufr
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+//  161       if (rxbyte == 0x0A) {                                   // if the last byte received was a 'Line Feed'
+        MOV	DPTR,#rxbyte
+        MOVX	A,@DPTR
+        XRL	A,#0xa
+        JNZ	??URX0_IRQ_0
+//  162         rs232RXbufr.data_available = RS232_DATA_AVAILABLE;    // set the 'data available' flag
+        MOV	A,#0x1
+        MOV	DPTR,#(rs232RXbufr + 1)
+        MOVX	@DPTR,A
+//  163         rs232RXbufr.last_byte_sent = 0; 
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	@DPTR,A
+//  164       }
+//  165     }
+//  166   }
+//  167 }
+??URX0_IRQ_0:
+        POP	DPH
+        CFI CFA_SP SP+-7
+        POP	DPL
+        CFI CFA_SP SP+-6
+        POP	A
+        CFI R1 A
+        CFI CFA_SP SP+-5
+        MOV	R1,A
+        CFI R1 SameValue
+        POP	A
+        CFI R0 A
+        CFI CFA_SP SP+-4
+        MOV	R0,A
+        CFI R0 SameValue
+        POP	PSW
+        CFI PSW SameValue
+        CFI CFA_SP SP+-3
+        POP	A
+        CFI A SameValue
+        CFI CFA_SP SP+-2
+        RETI                       ; * 
+        CFI EndBlock cfiBlock3
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 19
+`URX0_IRQ??INTVEC 19`:
+        LJMP       (URX0_IRQ)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 59
+`UTX0_IRQ??INTVEC 59`:
+        LJMP       (UTX0_IRQ)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 75
+`T1_IRQ??INTVEC 75`:
+        LJMP       (T1_IRQ)
+
+        COMMON INTVEC:CODE:ROOT(0)
+        ORG 131
+`spp_rf_IRQ??INTVEC 131`:
+        LJMP       (spp_rf_IRQ)
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for prev_pbtalk_state>`:
+        DB 16
+
+        RSEG IDATA_ID:CODE:NOROOT(0)
+`?<Initializer for pb_talk_msg_txt>`:
+        DB "--> Talk PB Pushed\015\012"
+
+        RSEG IDATA_ID:CODE:NOROOT(0)
+`?<Initializer for tone444Hz>`:
+        DW 0, 5604, 10531, 14189, 16135, 16135, 14189, 10531, 5604, 0, 59932
+        DW 55005, 51347, 49401, 49401, 51347, 55005, 59932
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DS 1
+
+        END
+// 
+//  57 bytes in segment IDATA_I
+//  57 bytes in segment IDATA_ID
+//   7 bytes in segment IDATA_Z
+//  12 bytes in segment INTVEC
+// 483 bytes in segment NEAR_CODE
+//   8 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_I
+//   1 byte  in segment XDATA_ID
+//   5 bytes in segment XDATA_Z
+// 
+// 541 bytes of CODE  memory (+ 12 bytes shared)
+//   0 bytes of DATA  memory (+  8 bytes shared)
+//   6 bytes of XDATA memory
+//  64 bytes of IDATA memory
+//
+//Errors: none
+//Warnings: none

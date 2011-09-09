@@ -1,0 +1,1804 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR 8051 C/C++ Compiler V7.20A/W32                  21/Nov/2008  16:05:18 /
+// Copyright 2004-2005 IAR Systems. All rights reserved.                     /
+// Time limited license: 63 days left                                        /
+//                                                                           /
+//    Core               =  plain                                            /
+//    Code model         =  near                                             /
+//    Data model         =  small                                            /
+//    Calling convention =  idata reentrant                                  /
+//    Constant location  =  data                                             /
+//    Dptr setup         =  1,16                                             /
+//    Source file        =  C:\AudioplusData_CC2510\src\tw_main.c            /
+//    Command line       =  -I "C:\Program Files\IAR Systems\Embedded        /
+//                          Workbench 4.05\8051\INC\CLIB\" -I                /
+//                          C:\AudioplusData_CC2510\inc\ -D CC2510 -D        /
+//                          chip=2510 --preprocess=l                         /
+//                          C:\AudioplusData_CC2510\Debug\List\ -lA          /
+//                          C:\AudioplusData_CC2510\Debug\List\ -o           /
+//                          C:\AudioplusData_CC2510\Debug\Obj\ -e -z3        /
+//                          --no_cse --no_unroll --no_inline                 /
+//                          --no_code_motion --no_tbaa --debug --core=plain  /
+//                          --dptr=16,1 --data_model=small                   /
+//                          --code_model=near --calling_convention=idata_ree /
+//                          ntrant --place_constants=data --nr_virtual_regs  /
+//                          8 C:\AudioplusData_CC2510\src\tw_main.c          /
+//    List file          =  C:\AudioplusData_CC2510\Debug\List\tw_main.s51   /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME tw_main
+
+        RTMODEL "__calling_convention", "idata_reentrant"
+        RTMODEL "__code_model", "near"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "small"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN __INIT_IDATA_I
+        EXTERN __INIT_IDATA_Z
+        EXTERN __INIT_XDATA_Z
+
+        PUBWEAK CLKCON
+        PUBWEAK DMA1CFGH
+        PUBWEAK DMA1CFGL
+        PUBWEAK DMAARM
+        PUBWEAK DMAIRQ
+        PUBWEAK IEN2
+        PUBWEAK P0DIR
+        PUBWEAK P0SEL
+        PUBWEAK P1DIR
+        PUBWEAK P1SEL
+        PUBWEAK P2DIR
+        PUBWEAK P2SEL
+        PUBWEAK PERCFG
+        PUBWEAK RFST
+        PUBLIC S1CON
+S1CON   EQU 0
+        PUBWEAK SLEEP
+        PUBLIC SendPacket
+        PUBWEAK T1CC0H
+        PUBWEAK T1CC0L
+        PUBWEAK T1CCTL0
+        PUBWEAK T1CTL
+        PUBWEAK T2CT
+        PUBWEAK T2CTL
+        PUBWEAK T2PR
+        PUBWEAK T4CC0
+        PUBWEAK T4CCTL0
+        PUBWEAK T4CTL
+        PUBWEAK U0BAUD
+        PUBWEAK U0CSR
+        PUBWEAK U0DBUF
+        PUBWEAK U0GCR
+        PUBWEAK U0UCR
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_IRCON
+        PUBLIC _A_IRCON2
+_A_IRCON2 EQU 0
+        PUBWEAK _A_P0
+        PUBWEAK _A_P1
+        PUBWEAK _A_P2
+        PUBLIC _A_S0CON
+_A_S0CON EQU 0
+        PUBLIC _A_TCON
+_A_TCON EQU 0
+        PUBLIC activeIn
+        PUBLIC activeOut
+        PUBLIC audioIn
+        PUBLIC audioOut
+        PUBLIC first_byte
+        PUBLIC frametime
+        PUBLIC i
+        PUBLIC initports
+        FUNCTION initports,0203H
+        PUBLIC j
+        PUBLIC lostpkts
+        PUBLIC main
+        FUNCTION main,0a1a03H
+        LOCFRAME ISTACK, 4, STACK
+        PUBLIC packets
+        PUBLIC rs232RXbufr
+        PUBLIC rs232TXbufr
+        PUBLIC rxStatus
+        PUBLIC sampleIn
+        PUBLIC sampleInCompressed
+        PUBLIC sampleOut
+        PUBLIC txStatus
+        PUBLIC waitingforbeacon
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP DATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource SP:8, PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:16, ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 Undefined
+        CFI DPH0 Undefined
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        EXTERN initRf
+        FUNCTION initRf,0202H
+        EXTERN dmaAudio
+        FUNCTION dmaAudio,0202H
+        EXTERN macTimer3Init
+        FUNCTION macTimer3Init,0202H
+        EXTERN setChannel
+        FUNCTION setChannel,0202H
+        EXTERN ListenforMaster
+        FUNCTION ListenforMaster,0202H
+        ARGFRAME ISTACK, 1, STACK
+        EXTERN rfReceivePacket
+        FUNCTION rfReceivePacket,0202H
+        ARGFRAME ISTACK, 4, STACK
+        EXTERN rfSendPacket
+        FUNCTION rfSendPacket,0202H
+        EXTERN ActiveChIdx
+        EXTERN DmaDesc1_4
+        EXTERN HoppingChannels
+        EXTERN SLVrxData
+        EXTERN SLVtxData
+        EXTERN rxPacketStatus
+
+// C:\AudioplusData_CC2510\src\tw_main.c
+//    1 /*
+//    2  *******************************************************************************************************
+//    3  * tw_main.c                For use with "CODEC EVM REV D" cards                                       *
+//    4  * Compiler:                IAR C Compiler for 8051                                                    *
+//    5  * Target platform:         Chipcon CC2510                                                             *
+//    6  * Author:                  MJB                                                                        *
+//    7  * Last Update:             03 Oct 2008  (Added code to support CC1110 PA cards)                       *
+//    8  *                          17 Nov 2008 (Support for Rev E cards only!)                                * 
+//    9  ******************************************************************************************************/
+//   10 
+//   11 // Uncomment the following #define to generate a missed packet ever 'howoften' packets
+//   12 
+//   13 //#define SKIPAPACKET
+//   14 #define HOWOFTEN 500
+//   15 
+//   16 //-------------------------------------------------------------------------------------------------------
+//   17 // Includes
+//   18 #include "twoway.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,086H
+// unsigned char volatile __sfr U0CSR
+U0CSR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09cH
+// unsigned char volatile __sfr T2CT
+T2CT:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09dH
+// unsigned char volatile __sfr T2PR
+T2PR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09eH
+// unsigned char volatile __sfr T2CTL
+T2CTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0beH
+// unsigned char volatile __sfr SLEEP
+SLEEP:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c1H
+// unsigned char volatile __sfr U0DBUF
+U0DBUF:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c2H
+// unsigned char volatile __sfr U0BAUD
+U0BAUD:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c4H
+// unsigned char volatile __sfr U0UCR
+U0UCR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c5H
+// unsigned char volatile __sfr U0GCR
+U0GCR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c6H
+// unsigned char volatile __sfr CLKCON
+CLKCON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d1H
+// unsigned char volatile __sfr DMAIRQ
+DMAIRQ:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d2H
+// unsigned char volatile __sfr DMA1CFGL
+DMA1CFGL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d3H
+// unsigned char volatile __sfr DMA1CFGH
+DMA1CFGH:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0d6H
+// unsigned char volatile __sfr DMAARM
+DMAARM:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0daH
+// unsigned char volatile __sfr T1CC0L
+T1CC0L:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0dbH
+// unsigned char volatile __sfr T1CC0H
+T1CC0H:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e1H
+// unsigned char volatile __sfr RFST
+RFST:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e4H
+// unsigned char volatile __sfr T1CTL
+T1CTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e5H
+// unsigned char volatile __sfr T1CCTL0
+T1CCTL0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ebH
+// unsigned char volatile __sfr T4CTL
+T4CTL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ecH
+// unsigned char volatile __sfr T4CCTL0
+T4CCTL0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0edH
+// unsigned char volatile __sfr T4CC0
+T4CC0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f1H
+// unsigned char volatile __sfr PERCFG
+PERCFG:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DS 1
+//   19 
+//   20 //-------------------------------------------------------------------------------------------------------
+//   21 
+//   22 // Global variables
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   23 volatile BYTE __xdata rxStatus = 0;
+rxStatus:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   24 volatile BYTE __xdata txStatus = 0;
+txStatus:
+        DS 1
+//   25 
+//   26 // External variables
+//   27 
+//   28 extern const UINT8 HoppingChannels[TOTAL_NUM_CHANNELS];
+//   29 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   30 UINT8 __xdata activeIn = 0;               // Audio In (to Codec) active buffer (0 | 1)
+activeIn:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   31 BYTE  __xdata audioIn[2][AF_BUF_SIZE];    // Audio In (to Codec) data buffer
+audioIn:
+        DS 108
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   32 UINT8 __xdata activeOut = 0;              // Audio Out (from Codec) active buffer (0 | 1)
+activeOut:
+        DS 1
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   33 BYTE  __xdata audioOut[2][AF_BUF_SIZE];   // Audio Out (from Codec) data buffer
+audioOut:
+        DS 108
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   34 UINT8 __xdata SendPacket = 0;             // Bit will be set high when the it's time to send a data packet
+SendPacket:
+        DS 1
+//   35 
+//   36 // Note: The concept of 'In' and 'Out' is rather confusing, as is the concept of 'RX' and 'TX'. Here, 'RX' and 'TX"
+//   37 // refer to the RF transceiver, NOT to the I2S RX and TX functions.
+//   38 //
+//   39 // The AudioIn buffer conatins audio samples to be sent to the Codec that were received (RX) from the Slave (if Master) or from the Master (if Slave).
+//   40 // The ActiveOut buffer conatins audio samples obtained from the Codec that will be sent (TX) to the Slave (if Master) or to the Master (if Slave). 
+//   41 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   42 UINT16 __xdata sampleIn;
+sampleIn:
+        DS 2
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   43 UINT16 __xdata sampleOut;
+sampleOut:
+        DS 2
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   44 UINT8 __xdata sampleInCompressed;
+sampleInCompressed:
+        DS 1
+//   45 
+//   46 // RS232 data buffers
+//   47 //
+//   48 // For the RS232 interface, 'RX' refers to data received from the local user over the RS232 port. It will be sent to the remote
+//   49 // transceiver 'over the air' once a 'line feed' is received.
+//   50 // 'TX' refers to data received from the remote user over 'over the air'. It will be passsed on to the local user
+//   51 // over the RS232 port once a 'line feed' is received.
+//   52 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   53 RS232_TXBUFR_STRUCT __xdata rs232TXbufr;      // Allocate RS232_TX buffer
+rs232TXbufr:
+        DS 35
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   54 RS232_RXBUFR_STRUCT __xdata rs232RXbufr;      // Allocate RS232_TX buffer
+rs232RXbufr:
+        DS 35
+//   55 
+//   56 //
+//   57 
+
+        RSEG IDATA_I:IDATA:NOROOT(0)
+//   58 BOOL   waitingforbeacon = TRUE;
+waitingforbeacon:
+        DS 1
+        REQUIRE `?<Initializer for waitingforbeacon>`
+        REQUIRE __INIT_IDATA_I
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   59 UINT8  i, j;
+i:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+j:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   60 UINT8  first_byte;
+first_byte:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   61 UINT8  lostpkts = 0;
+lostpkts:
+        DS 1
+
+        RSEG IDATA_Z:IDATA:NOROOT(0)
+        REQUIRE __INIT_IDATA_Z
+//   62 UINT16 packets = 0;
+packets:
+        DS 2
+//   63 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        REQUIRE __INIT_XDATA_Z
+//   64 UINT8 __xdata frametime;              // T2 (frametimer) count when DMA switches from using buffer B to using Buffer A
+frametime:
+        DS 1
+//   65 
+//   66 ////////////////////////////////////////////////////////////////////////////////
+//   67 /// @brief	Sets up IO for debug
+//   68 ////////////////////////////////////////////////////////////////////////////////
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//   69 void initports(void) {
+initports:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function initports
+        ; Saved register size: 0
+        ; Auto size: 0
+//   70 
+//   71   // Port 0
+//   72   // P0_0  PIO xx   I2S LR CLK
+//   73   // P0_1  PIO xx   I2S BCLK 
+//   74   // P0_2  PIO xx   UART RXD
+//   75   // P0_3  PIO xx   UART TXD
+//   76   // P0_4  I/0 DO   UART CTS
+//   77   // P0_5  I/O DO   Unused
+//   78   // P0_6  I/O DO   JP104 pin 2 (Debug) 
+//   79   // P0_7  I/O DO   T/R
+//   80 
+//   81   P0SEL = 0x0F;
+        MOV	0xf3,#0xf              ; * 
+//   82   P0DIR |= 0xF0;      
+        ORL	0xfd,#0xf0             ; * 
+//   83   P0 = 0x00;        
+        MOV	0x80,#0x0              ; * 
+//   84 
+//   85   // Port 1
+//   86   // P1_0  I/O DO   Blue LED (Heartbeat)
+//   87   // P1_1  I/O DO   JP104 pin 4 (Debug)
+//   88   // P1_2  I/O DO   Yellow LED (Waiting for Beacon)
+//   89   // P1_3  I/O DO   Red LED (Packet Lost)
+//   90   // P1_4  I/O DI   Talk PB
+//   91   // P1_5  PIO DO   GDO0
+//   92   // P1_6  PIO xx   I2S DIN
+//   93   // P1_7  PIO xx   I2S DOUT
+//   94 
+//   95   P1SEL = 0xC0;
+        MOV	0xf4,#-0x40            ; * 
+//   96   P1DIR |= 0x0F;
+        ORL	0xfe,#0xf              ; * 
+//   97   P1 = 0x00;
+        MOV	0x90,#0x0              ; * 
+//   98   
+//   99   // Port 2
+//  100   // P2_0  PIO DO   I2S MCLK / T4CH0 
+//  101   // Note: Timer 4 I/O location must be set to 'Alternate 2'
+//  102   // P2_1  I/O DO   DD/Orange LED (TALK)
+//  103   // P2_2  I/O DO   DC/Green LED (Paired)
+//  104   // P2_3  UNAVAILABLE (XOSC)
+//  105   // P2_4  UNAVAILABLE (XOSC)
+//  106 
+//  107   P2SEL = 0x01;
+        MOV	0xf5,#0x1              ; * 
+//  108   P2DIR = 0x07;         // Note: It is necessary to set PRIPO (bits 7:6) to b00 to insure that USART0 has control of pin P0_2 and PO_3
+        MOV	0xff,#0x7              ; * 
+//  109   P2 = 0x00;
+        MOV	0xa0,#0x0              ; * 
+//  110 
+//  111   PERCFG = 0x10;        // Timer 4: Use Alternate 2 location (P2_0)
+        MOV	0xf1,#0x10             ; * 
+//  112                         // USART1: Use Alternat1 locations
+//  113                         // I2S: Use Alternat 1 locations
+//  114   return;
+        RET                        ; * 
+        CFI EndBlock cfiBlock0
+//  115 }
+//  116 
+//  117 ////////////////////////////////////////////////////////////////////////////////
+//  118 /// @brief	Application main function.
+//  119 ////////////////////////////////////////////////////////////////////////////////
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  120 void main(void) {
+main:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function main
+        FUNCALL main, initports
+        FUNCALL main, initRf
+        FUNCALL main, dmaAudio
+        FUNCALL main, macTimer3Init
+        FUNCALL main, setChannel
+        FUNCALL main, ListenforMaster
+        LOCFRAME ISTACK, 1, STACK
+        ARGFRAME ISTACK, 1, STACK
+        FUNCALL main, rfReceivePacket
+        LOCFRAME ISTACK, 4, STACK
+        ARGFRAME ISTACK, 4, STACK
+        FUNCALL main, rfSendPacket
+        FUNCALL main, setChannel
+        ; Auto size: 0
+//  121 
+//  122   // Initializations
+//  123   SET_MAIN_CLOCK_SOURCE(CRYSTAL);
+        ANL	0xbe,#0xfb             ; * 
+??main_0:
+        MOV	A,0xbe                 ; * 
+        MOV	C,0xE0 /* A   */.6
+        JNC	??main_0
+        NOP
+        ANL	0xc6,#0xb8             ; * 
+        ORL	0xbe,#0x4              ; * 
+//  124   SET_MAIN_CLOCK_SPEED(MHZ_26);
+        ANL	0xc6,#0xf8             ; * 
+//  125   CLKCON = (CLKCON & 0xC7);
+        ANL	0xc6,#0xc7             ; * 
+//  126 
+//  127   initports();        // Initilize ports (P0, P1, P2)
+        ; Setup parameters for call to function initports
+        LCALL	initports
+//  128 
+//  129 // I2S Setup  
+//  130   
+//  131   I2SCFG0 = 0x3E;     // Bit 7 - TX Interrupts disabled
+        MOV	A,#0x3e
+        MOV	DPTR,#-0x20c0
+        MOVX	@DPTR,A               ; * 
+//  132                       // Bit 6 - RX Interrupts disabled
+//  133                       // Bit 5 - ulaw expansion enabled
+//  134                       // Bit 4 - ulaw compression enabled
+//  135                       // Bit 3 - TX mono mode enabled
+//  136                       // Bit 2 - RX mono mode enabled
+//  137                       // Bit 1 - mode set to Master
+//  138                       // Bit 0 - I2S interface disabled
+//  139   I2SCFG1 = 0x78;     // Bits 7:4 - WORDSIZE = 16 bits
+        MOV	A,#0x78
+        MOV	DPTR,#-0x20bf
+        MOVX	@DPTR,A               ; * 
+//  140                       // Bit 0 - IOLOC = 0 (Alternate 1)
+//  141   I2SCLKF2 = 0x06;    // Fsck = 256 kHz, Wordsize = 16 bits
+        MOV	A,#0x6
+        MOV	DPTR,#-0x20b8
+        MOVX	@DPTR,A               ; * 
+//  142   I2SCLKF1 = 0x59;    // Refer to Table 48 of CC1110 document
+        MOV	A,#0x59
+        MOV	DPTR,#-0x20b9
+        MOVX	@DPTR,A               ; * 
+//  143   I2SCLKF0 = 0x20;     
+        MOV	A,#0x20
+        MOV	DPTR,#-0x20ba
+        MOVX	@DPTR,A               ; * 
+//  144 
+//  145 // USART0 Set Up  
+//  146 
+//  147 // U0UCR
+//  148 //  FLUSH   bit 7 = 0     
+//  149 //  D9      bit 5 = 1     Odd parity
+//  150 //  BIT9    bit 4 = 1     9 bit transfer
+//  151 //  PARITY  bit 3 = 1     Parity enabled 
+//  152 //  SPB     bit 2 = 0     One Sop bit
+//  153 //  STOP    bit 1 = 1     High Stop bit
+//  154 //  START   bit 0 = 0     Low Start bit
+//  155 //
+//  156 // U0GCR
+//  157 //  ORDER   bit 5 = 0       LSB first
+//  158 //  BAUD_E  bits 4:0 = 8   9600 baud; see table 45
+//  159   
+//  160   U0CSR = 0x80;       // Select UART mode; Leave receiver disabled
+        MOV	0x86,#-0x80            ; * 
+//  161   U0UCR = 0x3A;       // See above
+        MOV	0xc4,#0x3a             ; * 
+//  162   U0BAUD = 131;       // Baud rate: 9600 kbps (See Table 45)
+        MOV	0xc2,#-0x7d            ; * 
+//  163   U0GCR = 8; 
+        MOV	0xc5,#0x8              ; * 
+//  164   
+//  165 // Timer 1 Setup
+//  166 //
+//  167 // Timer 1 is used in modulo mode to generate an interrupt every millisecond
+//  168 
+//  169   // T1CTL.DIV (b3:2)  - 01b Prescaler divider set to 16 (clock frequency = 26/8 = 3.250 MHz)
+//  170   // T1CTL.MODE (B1:0) - 10b Modulo Mode
+//  171   T1CTL = 0x06; 
+        MOV	0xe4,#0x6              ; * 
+//  172   
+//  173   // T1CCTL0.IM   (b6) - 1b Enable interrupt request
+//  174   // T1CCTL0.MODE (b2) - 0b Capture Mode
+//  175   // T1CCTL0.CAP  (b1:0) - 00b No capture
+//  176   T1CCTL0 = 0x40;
+        MOV	0xe5,#0x40             ; * 
+//  177   
+//  178   // Set Timer Terminal Count to 3250 (0xCB2)
+//  179   T1CC0L = 0xB2;
+        MOV	0xda,#-0x4e            ; * 
+//  180   T1CC0H = 0x0C;
+        MOV	0xdb,#0xc              ; * 
+//  181   
+//  182 // Timer 4 Setup
+//  183 //
+//  184 // Timer 4 is used to generate the CODEC MCLK (13 MHz) 
+//  185   
+//  186   T4CTL   = 0x06;     // Tick frequency/1, modulo mode; Clear the 'Start' bit
+        MOV	0xeb,#0x6              ; * 
+//  187   T4CCTL0 = 0x14;     // Compare mode, toggle output on compare
+        MOV	0xec,#0x14             ; * 
+//  188   T4CC0   = 0x00;     // Set timeout period
+        MOV	0xed,#0x0              ; * 
+//  189   T4CTL |= 0x10;      // Start Timer 4  
+        ORL	0xeb,#0x10             ; * 
+//  190 
+//  191   INT_SETFLAG(INUM_DMA, INT_CLR);         // clear the DMA interrupt flag
+        CLR	0xc0.0                 ; * 
+//  192   I2SCFG0 |= 0x01;                        // Enable the I2S interface 
+        MOV	DPTR,#-0x20c0
+        MOVX	A,@DPTR               ; * 
+        SETB	0xE0 /* A   */.0
+        MOVX	@DPTR,A               ; * 
+//  193 
+//  194   initRf();                               // Set radio base frequency and reserve DMA channels 1 and 2 for RX/TX buffers
+        ; Setup parameters for call to function initRf
+        LCALL	initRf
+//  195   dmaAudio();                             // Set up DMA channels 3 and 4 for the Audio In/Out buffers
+        ; Setup parameters for call to function dmaAudio
+        LCALL	dmaAudio
+//  196   DMA_SET_ADDR_DESC1234(&DmaDesc1_4[0]);  // Set up DMA configuration table for channels 1 - 4
+        MOV	R1,#((DmaDesc1_4 >> 8) & 0xff)
+        MOV	A,R1
+        MOV	0xd3,A                 ; * 
+        MOV	0xd2,#(DmaDesc1_4 & 0xff); * 
+//  197   DMAIRQ = 0;
+        MOV	0xd1,#0x0              ; * 
+//  198   DMA_ARM_CHANNEL(3);                     // Arm DMA channels 2 and 3 (CODEC)
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        MOV	0xd6,#0x8              ; * 
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+//  199   DMA_ARM_CHANNEL(4);
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        MOV	0xd6,#0x10             ; * 
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+//  200    
+//  201   macTimer3Init();
+        ; Setup parameters for call to function macTimer3Init
+        LCALL	macTimer3Init
+//  202 
+//  203   INT_ENABLE(INUM_T1, INT_ON);            // Enable Timer 1 interrupts
+        SETB	0xb8.1                ; * 
+//  204   INT_ENABLE(INUM_DMA, INT_ON);           // Enable DMA interrupts
+        SETB	0xb8.0                ; * 
+//  205   INT_GLOBAL_ENABLE(INT_ON);              // Enable Global interrupts
+        SETB	0xa8.7                ; * 
+//  206   
+//  207   rs232RXbufr.index = 0;
+        MOV	A,#0x0
+        MOV	DPTR,#rs232RXbufr
+        MOVX	@DPTR,A
+//  208   rs232RXbufr.data_available = 0;
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232RXbufr + 1)
+        MOVX	@DPTR,A
+//  209   rs232TXbufr.length = 0;
+        MOV	A,#0x0
+        MOV	DPTR,#rs232TXbufr
+        MOVX	@DPTR,A
+//  210   rs232TXbufr.index = 0;
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232TXbufr + 1)
+        MOVX	@DPTR,A
+//  211   
+//  212   U0UCR |= 0x80;                          // Flush the UART
+        ORL	0xc4,#0x80             ; * 
+//  213   U0CSR |= 0x40;                          // Enable the RS232 Receiver (USART0)
+        ORL	0x86,#0x40             ; * 
+//  214   IEN0 |= 0x04;                           // Enable URX0 interrupts
+        SETB	0xa8.2                ; * 
+//  215 
+//  216 #ifdef MASTER
+//  217 
+//  218 // Master Code
+//  219 
+//  220   MAStxData.macPayloadLen = TX_PAYLOAD_LEN;
+//  221   MAStxData.macField = MAC_ADDR;
+//  222   MAStxData.statusField = 0x00;
+//  223  
+//  224   while (1)  {        // main program loop
+//  225     setChannel(HoppingChannels[ActiveChIdx]);     // SetChannel will set the MARCSTATE to IDLE
+//  226     ActiveChIdx++;
+//  227     if (ActiveChIdx == TOTAL_NUM_CHANNELS)
+//  228       ActiveChIdx = 0;
+//  229 
+//  230     SCAL();           // Start PLL calibration at new channel
+//  231 
+//  232     MAStxData.channel[0] = HoppingChannels[0];
+//  233     MAStxData.channel[1] = HoppingChannels[1];
+//  234     MAStxData.channel[2] = HoppingChannels[2];
+//  235     MAStxData.channel[3] = HoppingChannels[3];
+//  236     
+//  237 // Send data received over the RS232 interface (if available)
+//  238 // Only 'DF_LEN' data bytes can be sent at a packet, so it may take multiple packets to get the message sent
+//  239 // The first byte of the first packet sent must contain the number of data bytes being sent 
+//  240     
+//  241     if (rs232RXbufr.data_available > 0) {                     // if RS232 data is available ...
+//  242       if (rs232RXbufr.last_byte_sent == 0) {                  // if this is the first byte sent
+//  243         MAStxData.databytes[0] = rs232RXbufr.index;           // 'index' contains the number of data bytes to be sent
+//  244         MAStxData.statusField |= RS232_DATA_AVAILABLE;   
+//  245         for (i = 1; i < DF_LEN; i++) {                        // transfer data from the RS2323 RX buffer into the RF TX buffer
+//  246           if (rs232RXbufr.last_byte_sent == rs232RXbufr.index) {
+//  247             rs232RXbufr.data_available = 0;                   // if the last byte has been sent, clear the 'data available' flag 
+//  248             rs232RXbufr.index = 0;                            // reset 'index'
+//  249             break;
+//  250           }     // end of inner 'if' 
+//  251           MAStxData.databytes[i] = rs232RXbufr.data[rs232RXbufr.last_byte_sent++];
+//  252         }       // end of 'for' loop
+//  253       }         // end of outer 'if'
+//  254       else {
+//  255         for (i = 0; i < DF_LEN; i++) {                        // transfer data from the RS2323 RX buffer into the RF TX buffer
+//  256           if (rs232RXbufr.last_byte_sent == rs232RXbufr.index) {
+//  257             rs232RXbufr.data_available = 0;                   // if the last byte has been sent, clear the 'data available' flag 
+//  258             rs232RXbufr.index = 0;                            // and reset 'index'
+//  259             break;
+//  260           }     // end of inner 'if' 
+//  261           MAStxData.databytes[i] = rs232RXbufr.data[rs232RXbufr.last_byte_sent++];
+//  262         }       // end of 'for' loop
+//  263       }         // end of 'else' clause
+//  264     }
+//  265     else                                                      // No RS232 data to be sent
+//  266       MAStxData.statusField &= ~RS232_DATA_AVAILABLE;         // clear the 'DATA AVAILABLE' flag in the TX buffer
+//  267 
+//  268 // Now wait for an audio frame signal     
+//  269     
+//  270     while (audioFrameReady == FALSE);     // Wait until an audioframe is ready to be transmitted
+//  271 
+//  272     audioFrameReady = FALSE;              // Reset the flag
+//  273     
+//  274 // Move data from the CODEC (audioOut) buffer to the TX buffer
+//  275     
+//  276     for (j = 0; j < AF_BUF_SIZE; j++) {
+//  277       if (activeOut == 0)
+//  278         MAStxData.payload[j] = audioOut[0][j];
+//  279       else 
+//  280         MAStxData.payload[j] = audioOut[1][j];
+//  281     }
+//  282 
+//  283     while (MARCSTATE != 0x01);            // Wait for calibration to complete
+//  284 
+//  285 #ifdef SKIPAPACKET
+//  286     packets++;
+//  287 
+//  288     if (packets == HOWOFTEN) {
+//  289       packets = 0;
+//  290       continue;
+//  291     }
+//  292 #endif
+//  293 
+//  294     T2CT = FRAME_TIMEOUT_DEFAULT;         // Reset the Frame Timer just prior to enabling the TX
+//  295     
+//  296     P0 |= 0xC0;             // set P0_6 (JP104 Pin 2) and P0_7 (TX On))
+//  297     rfSendPacket(MASTER_TX_TIMEOUT_WO_CALIB);
+//  298     P0 &= ~0xC0;            // reset P0_6 (JP104 pin 2) and P0_7 (TX On)
+//  299 
+//  300 // Listen for data from Slave
+//  301 
+//  302     rfReceivePacket(&MASrxData, MASTER_RX_SYNC_TIMEOUT, RXOFFMODE_IDLE, DMA_RX, RX_PAYLOAD_LEN, MASTER_RX_TIMEOUT);
+//  303 
+//  304     if (rxPacketStatus == TIMEOUT_ERROR) {
+//  305       LED_RED_REG |= LED_RED;       // Lite the Red LED
+//  306 
+//  307 // Fill the audioIn buffer with 'zeros'      
+//  308       
+//  309       for (i = 0; i < AF_BUF_SIZE; i++)   
+//  310         audioIn[activeIn][i] = 0xCE;
+//  311     }
+//  312     else {                                  // A packet was received
+//  313       LED_RED_REG &= ~LED_RED;              // Extingusih the Red LED
+//  314      
+//  315       if (rxPacketStatus == PKT_OK) {
+//  316         for (i = 0; i < AF_BUF_SIZE; i++)     // Move data from rxbuffer to audioIn buffer
+//  317           audioIn[activeIn][i] = MASrxData.payload[i];
+//  318  
+//  319         if ((MASrxData.statusField & RS232_DATA_AVAILABLE > 0) &&   // if a RS232 message was sent ...
+//  320            (rs232TXbufr.last_byte_sent == 0)) {                     // and the RS232 TX data buffer is free                                
+//  321           if (rs232TXbufr.length == 0) {                            // if this is the first byte of the message
+//  322             rs232TXbufr.length = MASrxData.databytes[0];            // first byte of message is the length
+//  323             rs232TXbufr.index = 0;                                  // reset index
+//  324             first_byte = 1;
+//  325           }
+//  326           else
+//  327             first_byte = 0;
+//  328           for (i = first_byte; i < DF_LEN; i++) {                   // transfer message data from the RF buffer to the RS232 buffer
+//  329             rs232TXbufr.data[rs232TXbufr.index++] = MASrxData.databytes[i];
+//  330             if (rs232TXbufr.index == rs232TXbufr.length) {          // if the end of the message has been reached
+//  331               U0DBUF = rs232TXbufr.data[0];                         // TX first byte
+//  332               rs232TXbufr.last_byte_sent = 1;                       // one byte has been sent
+//  333               IEN2 |= UTX0IE;                                       // and more data needs to be sent, so enable USART0 TX interrupts
+//  334               break;                                                // and exit the loop
+//  335             }     // end of 'index = length' if
+//  336           }       // end of 'for' loop
+//  337         }         // end of 'data available' if
+//  338       }
+//  339       else {
+//  340         for (UINT8 i = 0; i < AF_BUF_SIZE; i++)     // Mute the audio for the duration of the packet 
+//  341           audioIn[activeIn][i] = 0xCF;
+//  342       }
+//  343     }     // end of TIMEOUT_ERROR 'else' (i.e., packet received)
+//  344   }   // end of 'while (1)' loop
+//  345 
+//  346 #else
+//  347 
+//  348 // Slave Code
+//  349 
+//  350 // Initilize Timer 2 (Frame Timer)
+//  351 
+//  352   T2CT = 0;         // Stop the timer
+        MOV	0x9c,#0x0              ; * 
+//  353   T2PR = 6;         // Timer Prescale Multipler
+        MOV	0x9d,#0x6              ; * 
+//  354   T2CTL = 0x01;     // Set Tick period to 128 * T2PR clock cycles (128*6/26.0 = 29.538 usec)
+        MOV	0x9e,#0x1              ; * 
+//  355                     // Interrupts Disabled
+//  356 
+//  357   SLVtxData.macPayloadLen = TX_PAYLOAD_LEN;
+        MOV	A,#0x48
+        MOV	DPTR,#SLVtxData
+        MOVX	@DPTR,A
+//  358 //  SLVtxData.macField = MAC_ADDR;
+//  359   SLVtxData.macField = 0x3C;
+        MOV	A,#0x3c
+        MOV	DPTR,#(SLVtxData + 1)
+        MOVX	@DPTR,A
+        SJMP	??main_1
+//  360 
+//  361   while (1)  {                              // main program loop
+//  362     if (waitingforbeacon) {
+//  363       LED_GREEN_REG &= ~LED_GREEN;          // Extinguish the Green (paired) LED
+//  364       LED_YELLOW_REG |= LED_YELLOW;         // Light the Yellow LED (Waiting for Beacon)
+//  365       setChannel(HoppingChannels[0]);       // Listen on channel[0] for the beacon
+//  366       SCAL();                               // Start PLL calibration at new channel
+//  367       while (MARCSTATE != MARCSTATE_IDLE);  // Wait for calibration to complete
+//  368 
+//  369       while (1) {                           // Stay in this loop until the Beacon is heard
+//  370         P0 |= 0x04;                         // set P0_2 (JP102 pin 4) (RX On)
+//  371         ListenforMaster(&SLVrxData, LISTEN_FOR_BEACON_TIMEOUT, DMA_RX, RX_PAYLOAD_LEN);
+//  372         P0 &= ~0x04;                        // reset P0_2 (JP102 pin 4) (RX On)
+//  373 
+//  374         if (rxPacketStatus == PKT_OK)
+//  375           break;
+//  376       }   // end of 'while (1)' loop
+//  377 
+//  378       LED_YELLOW_REG &= ~LED_YELLOW;        // Extinguish the Yellow LED (Waiting for Beacon)
+//  379       LED_GREEN_REG |= LED_GREEN;           // Light the Green ('Paired') LED
+//  380       lostpkts = 0;
+//  381       ActiveChIdx = 1;                      // set up next channel
+//  382       waitingforbeacon = FALSE;             // Exit 'waitingforbeacon' mode
+//  383       T2CT = FRAME_TIMEOUT_DEFAULT;         // Reset the Frame Timer
+//  384     }     // end of 'waitingforbeacon' if
+//  385 
+//  386     else {                                // We are 'Paired'
+//  387 
+//  388 // Listen for packet from Master
+//  389 
+//  390       if ((frametime > 0x80) && (frametime < 0x9C))     // if in the so called 'bad zone' ...
+//  391         I2SCLKF1 -= 1;                                  // speed up the I2S bit clock
+//  392         
+//  393       if ((frametime > 0x10) && (frametime < 0x5F))     // if in the so called 'good zone' ...
+//  394         I2SCLKF1 = 0x59;                                // reset the bit clock frequency to 256 kbps
+//  395    
+//  396       while (MARCSTATE != MARCSTATE_IDLE);      // Wait for calibration to complete (Machine State = Idle)
+//  397 
+//  398       while (T2CT > LISTENFORMASTER);           // Wait until it's time to listen for the Master
+//  399 
+//  400       P0 |= 0x04;                         // set P0_2 (JP102 pin 4) (RX On)
+//  401       rfReceivePacket(&SLVrxData, SLAVE_RX_SYNC_TIMEOUT, RXOFFMODE_IDLE, DMA_RX, RX_PAYLOAD_LEN, 0);
+//  402       P0 &= ~0x04;                        // reset P0_2 (JP102 pin 4) (RX On)
+//  403  
+//  404       if (rxPacketStatus == TIMEOUT_ERROR)
+//  405         while (T2CT > END_OF_FRAME);            // let the frame timer run down to the end of a frame
+//  406 
+//  407       T2CT = FRAME_TIMEOUT_DEFAULT;       // Reset the Frame Timer
+//  408     }     // end of waitingforbeacon 'else' loop
+//  409 
+//  410 // Send Data to Master
+//  411 
+//  412 // Move data from the Codec (audioOut) to the txbuffer    
+//  413     
+//  414     for (i = 0; i < AF_BUF_SIZE; i++) {
+//  415       if (activeOut == 1) {
+//  416         SLVtxData.payload[i] = audioOut[1][i];
+//  417       }
+//  418       else {
+//  419         SLVtxData.payload[i] = audioOut[0][i];
+//  420       }
+//  421     }
+//  422 
+//  423 // Send data received over the RS232 interface (if available)
+//  424 // Only 'DF_LEN' data bytes can be sent at a packet, so it may take multiple packets to get the message sent
+//  425 // The first byte of the first packet sent must contain the number of data bytes being sent 
+//  426     
+//  427     if (rs232RXbufr.data_available > 0) {                     // if RS232 data is available ...
+//  428       if (rs232RXbufr.last_byte_sent == 0) {                  // if this is the first byte sent
+//  429         SLVtxData.databytes[0] = rs232RXbufr.index;           // 'index' contains the number of data bytes to be sent
+//  430         SLVtxData.statusField |= RS232_DATA_AVAILABLE;   
+//  431         for (i = 1; i < DF_LEN; i++) {                        // transfer data from the RS2323 RX buffer into the RF TX buffer
+//  432           if (rs232RXbufr.last_byte_sent == rs232RXbufr.index) {
+//  433             rs232RXbufr.data_available = 0;                   // if the last byte has been sent, clear the 'data available' flag 
+//  434             rs232RXbufr.index = 0;                            // reset 'index'
+//  435             break;
+//  436           }     // end of inner 'if' 
+//  437           SLVtxData.databytes[i] = rs232RXbufr.data[rs232RXbufr.last_byte_sent++];
+//  438         }       // end of 'for' loop
+//  439       }         // end of outer 'if'
+//  440       else {
+//  441         for (i = 0; i < DF_LEN; i++) {                        // transfer data from the RS2323 RX buffer into the RF TX buffer
+//  442           if (rs232RXbufr.last_byte_sent == rs232RXbufr.index) {
+//  443             rs232RXbufr.data_available = 0;                   // if the last byte has been sent, clear the 'data available' flag 
+//  444             rs232RXbufr.index = 0;                            // and reset 'index'
+//  445             break;
+//  446           }     // end of inner 'if' 
+//  447           SLVtxData.databytes[i] = rs232RXbufr.data[rs232RXbufr.last_byte_sent++];
+//  448         }       // end of 'for' loop
+//  449       }         // end of 'else' clause
+//  450     }
+//  451     else                                                      // No RS232 data to be sent
+//  452       SLVtxData.statusField &= ~RS232_DATA_AVAILABLE;         // clear the 'DATA AVAILABLE' flag in the TX buffer
+//  453 
+//  454     
+//  455     P0 |= 0xC0;             // set P0_6 (JP104 Pin 2) and P0_7 (TX On))
+//  456     rfSendPacket(SLAVE_TX_TIMEOUT_WO_CALIB);
+//  457     P0 &= ~0xC0;            // reset P0_6 (JP104 Pin 2) and P0_7 (TX On)
+//  458 
+//  459     SIDLE();          // Force the Receiver into the Idle state
+//  460     
+//  461 // Set the next channel and initiate calibration
+//  462 
+//  463     setChannel(HoppingChannels[ActiveChIdx]);     // SetChannel will force the MARCSTATE to IDLE
+//  464     ActiveChIdx++;
+//  465     if (ActiveChIdx == TOTAL_NUM_CHANNELS)
+//  466       ActiveChIdx = 0;
+//  467     SCAL();                         // Start PLL calibration at new channel
+//  468 
+//  469     if (rxPacketStatus == TIMEOUT_ERROR) {
+//  470       LED_RED_REG |= LED_RED;       // light the Red (Paket Lost) LED
+//  471  
+//  472       for (j = 0; j < AF_BUF_SIZE; j++)      // Mute the audio for the duration of the packet  
+//  473         audioIn[activeIn][j] = 0xCF;
+??main_2:
+        MOV	A,#-0x31
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R0,#j
+        MOV	A,@R0
+        MOV	R2,A
+        MOV	R3,#0x0
+        MOV	DPTR,#activeIn
+        MOVX	A,@DPTR
+        MOV	R0,A
+        MOV	R1,#0x0
+        MOV	A,R0
+        MOV	B,#0x36
+        MUL	AB
+        XCH	A,R0
+        MOV	R4,B
+        MOV	B,#0x0
+        MUL	AB
+        ADD	A,R4
+        MOV	R4,A
+        MOV	B,#0x36
+        MOV	A,R1
+        MUL	AB
+        ADD	A,R4
+        MOV	R1,A
+        MOV	A,R0
+        ADD	A,#(audioIn & 0xff)
+        MOV	R0,A
+        MOV	A,R1
+        ADDC	A,#((audioIn >> 8) & 0xff)
+        MOV	R1,A
+        MOV	A,R2
+        ADD	A,R0
+        MOV	DPL,A
+        MOV	A,R3
+        ADDC	A,R1
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        MOV	R0,#j
+        INC	@R0
+??main_3:
+        MOV	R0,#j
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x36
+        JC	??main_2
+//  474       
+//  475       lostpkts++;
+        MOV	R0,#lostpkts
+        INC	@R0
+//  476       if (lostpkts > 4) {           // if 4 consecutive packets have been lost
+        MOV	R0,#lostpkts
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x5
+        JC	??main_1
+//  477         lostpkts = 0;
+        MOV	R0,#lostpkts
+        MOV	@R0,#0x0
+//  478         waitingforbeacon = TRUE;    // enter 'waiting for beacon' (resync) mode
+        MOV	R0,#waitingforbeacon
+        MOV	@R0,#0x1
+//  479       }
+??main_1:
+        MOV	R0,#waitingforbeacon
+        MOV	A,@R0
+        JZ	??main_4
+        CLR	0xa0.2                 ; * 
+        SETB	0x90.2                ; * 
+        ; Setup parameters for call to function setChannel
+        MOV	R0,#HoppingChannels
+        MOV	A,@R0
+        MOV	R1,A
+        LCALL	setChannel
+        MOV	0xe1,#0x1              ; * 
+??main_5:
+        MOV	DPTR,#-0x20c5
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x1
+        JNZ	??main_5
+??main_6:
+        SETB	0x80.2                ; * 
+        ; Setup parameters for call to function ListenforMaster
+        MOV	A,#0x4c
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R5,#0x1
+        MOV	R4,#0x18
+        MOV	R1,#-0x1b
+        MOV	R2,#(SLVrxData & 0xff)
+        MOV	R3,#((SLVrxData >> 8) & 0xff)
+        LCALL	ListenforMaster
+        DEC	SP                     ; * 
+        CFI CFA_SP SP+-2
+        CLR	0x80.2                 ; * 
+        MOV	DPTR,#rxPacketStatus
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x1
+        JNZ	??main_6
+        CLR	0x90.2                 ; * 
+        SETB	0xa0.2                ; * 
+        MOV	R0,#lostpkts
+        MOV	@R0,#0x0
+        MOV	A,#0x1
+        MOV	DPTR,#ActiveChIdx
+        MOVX	@DPTR,A
+        MOV	R0,#waitingforbeacon
+        MOV	@R0,#0x0
+        MOV	0x9c,#-0x13            ; * 
+        SJMP	??main_7
+??main_4:
+        MOV	DPTR,#frametime
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#-0x7f
+        JC	??main_8
+        MOV	DPTR,#frametime
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#-0x64
+        JNC	??main_8
+        MOV	DPTR,#-0x20b9
+        MOVX	A,@DPTR
+        ADD	A,#-0x1
+        MOVX	@DPTR,A               ; * 
+??main_8:
+        MOV	DPTR,#frametime
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#0x11
+        JC	??main_9
+        MOV	DPTR,#frametime
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#0x5f
+        JNC	??main_9
+        MOV	A,#0x59
+        MOV	DPTR,#-0x20b9
+        MOVX	@DPTR,A               ; * 
+??main_9:
+        MOV	DPTR,#-0x20c5
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x1
+        JNZ	??main_9
+??main_10:
+        MOV	A,0x9c                 ; * 
+        CLR	C
+        SUBB	A,#0x65
+        JNC	??main_10
+        SETB	0x80.2                ; * 
+        ; Setup parameters for call to function rfReceivePacket
+        MOV	A,#0x0
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	A,#0x4c
+        PUSH	A
+        CFI CFA_SP SP+-4
+        MOV	A,#0x0
+        PUSH	A
+        CFI CFA_SP SP+-5
+        MOV	A,#0x0
+        PUSH	A
+        CFI CFA_SP SP+-6
+        MOV	R5,#0x1
+        MOV	R4,#0x1
+        MOV	R1,#-0x1
+        MOV	R2,#(SLVrxData & 0xff)
+        MOV	R3,#((SLVrxData >> 8) & 0xff)
+        LCALL	rfReceivePacket
+        MOV	A,SP
+        ADD	A,#-0x4
+        MOV	SP,A                   ; * 
+        CFI CFA_SP SP+-2
+        CLR	0x80.2                 ; * 
+        MOV	DPTR,#rxPacketStatus
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x4
+        JNZ	??main_11
+??main_12:
+        MOV	A,0x9c                 ; * 
+        CLR	C
+        SUBB	A,#0x9
+        JNC	??main_12
+??main_11:
+        MOV	0x9c,#-0x13            ; * 
+??main_7:
+        MOV	R0,#i
+        MOV	@R0,#0x0
+        SJMP	??main_13
+??main_14:
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#(audioOut & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#((audioOut >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R0,A
+        MOV	R1,#0x0
+        ADD	A,#((SLVtxData + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((SLVtxData + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+??main_15:
+        MOV	R0,#i
+        INC	@R0
+??main_13:
+        MOV	R0,#i
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x36
+        JNC	??main_16
+        MOV	DPTR,#activeOut
+        MOVX	A,@DPTR
+        XRL	A,#0x1
+        JNZ	??main_14
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#((audioOut + 54) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((audioOut + 54) >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R0,A
+        MOV	R1,#0x0
+        ADD	A,#((SLVtxData + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((SLVtxData + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        SJMP	??main_15
+??main_16:
+        MOV	DPTR,#(rs232RXbufr + 1)
+        MOVX	A,@DPTR
+        CLR	C
+        SUBB	A,#0x1
+        JNC	$+5
+        LJMP	??main_17
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        JNZ	??main_18
+        MOV	DPTR,#rs232RXbufr
+        MOVX	A,@DPTR
+        MOV	DPTR,#(SLVtxData + 57)
+        MOVX	@DPTR,A
+        MOV	DPTR,#(SLVtxData + 2)
+        MOVX	A,@DPTR
+        SETB	0xE0 /* A   */.0
+        MOVX	@DPTR,A
+        MOV	R0,#i
+        MOV	@R0,#0x1
+        SJMP	??main_19
+??main_20:
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        MOV	R1,#0x0
+        ADD	A,#((rs232RXbufr + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((rs232RXbufr + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#((SLVtxData + 57) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((SLVtxData + 57) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+        MOV	R0,#i
+        INC	@R0
+??main_19:
+        MOV	R0,#i
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x10
+        JNC	??main_21
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        MOV	R2,A
+        MOV	DPTR,#rs232RXbufr
+        MOVX	A,@DPTR
+        XRL	A,R2
+        JNZ	??main_20
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232RXbufr + 1)
+        MOVX	@DPTR,A
+        MOV	A,#0x0
+        MOV	DPTR,#rs232RXbufr
+        MOVX	@DPTR,A
+        SJMP	??main_21
+??main_18:
+        MOV	R0,#i
+        MOV	@R0,#0x0
+        SJMP	??main_22
+??main_23:
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        MOV	R1,#0x0
+        ADD	A,#((rs232RXbufr + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((rs232RXbufr + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#((SLVtxData + 57) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((SLVtxData + 57) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+        MOV	R0,#i
+        INC	@R0
+??main_22:
+        MOV	R0,#i
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x10
+        JNC	??main_21
+        MOV	DPTR,#(rs232RXbufr + 2)
+        MOVX	A,@DPTR
+        MOV	R2,A
+        MOV	DPTR,#rs232RXbufr
+        MOVX	A,@DPTR
+        XRL	A,R2
+        JNZ	??main_23
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232RXbufr + 1)
+        MOVX	@DPTR,A
+        MOV	A,#0x0
+        MOV	DPTR,#rs232RXbufr
+        MOVX	@DPTR,A
+        SJMP	??main_21
+??main_17:
+        MOV	DPTR,#(SLVtxData + 2)
+        MOVX	A,@DPTR
+        CLR	0xE0 /* A   */.0
+        MOVX	@DPTR,A
+??main_21:
+        ORL	0x80,#0xc0             ; * 
+        ; Setup parameters for call to function rfSendPacket
+        MOV	R2,#0x3
+        MOV	R1,#-0x63
+        LCALL	rfSendPacket
+        ANL	0x80,#0x3f             ; * 
+        MOV	0xe1,#0x4              ; * 
+        ; Setup parameters for call to function setChannel
+        MOV	DPTR,#ActiveChIdx
+        MOVX	A,@DPTR
+        ADD	A,#HoppingChannels
+        MOV	R0,A
+        MOV	A,@R0
+        MOV	R1,A
+        LCALL	setChannel
+        MOV	DPTR,#ActiveChIdx
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+        MOV	DPTR,#ActiveChIdx
+        MOVX	A,@DPTR
+        XRL	A,#0x4
+        JNZ	??main_24
+        MOV	A,#0x0
+        MOV	DPTR,#ActiveChIdx
+        MOVX	@DPTR,A
+??main_24:
+        MOV	0xe1,#0x1              ; * 
+        MOV	DPTR,#rxPacketStatus
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x4
+        JNZ	??main_25
+        SETB	0x90.3                ; * 
+        MOV	R0,#j
+        MOV	@R0,#0x0
+        LJMP	??main_3
+//  480     }
+//  481     else {                          // A packet was received
+//  482       LED_RED_REG &= ~LED_RED;      // extinguish the Red (Paket Lost) LED
+??main_25:
+        CLR	0x90.3                 ; * 
+//  483       lostpkts = 0;
+        MOV	R0,#lostpkts
+        MOV	@R0,#0x0
+//  484 
+//  485       if (rxPacketStatus == PKT_OK) {                               // if a packet was sucessfully received ...
+        MOV	DPTR,#rxPacketStatus
+        MOVX	A,@DPTR               ; * 
+        XRL	A,#0x1
+        JZ	$+5
+        LJMP	??main_26
+//  486         for (j = 0; j < AF_BUF_SIZE; j++)                           // Move audio samples from rxbuffer to audioIn buffer
+        MOV	R0,#j
+        MOV	@R0,#0x0
+        SJMP	??main_27
+//  487           audioIn[activeIn][j] = SLVrxData.payload[j];            
+??main_28:
+        MOV	R0,#j
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#((SLVrxData + 7) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((SLVrxData + 7) >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	R0,#j
+        MOV	A,@R0
+        MOV	R2,A
+        MOV	R3,#0x0
+        MOV	DPTR,#activeIn
+        MOVX	A,@DPTR
+        MOV	R0,A
+        MOV	R1,#0x0
+        MOV	A,R0
+        MOV	B,#0x36
+        MUL	AB
+        XCH	A,R0
+        MOV	R4,B
+        MOV	B,#0x0
+        MUL	AB
+        ADD	A,R4
+        MOV	R4,A
+        MOV	B,#0x36
+        MOV	A,R1
+        MUL	AB
+        ADD	A,R4
+        MOV	R1,A
+        MOV	A,R0
+        ADD	A,#(audioIn & 0xff)
+        MOV	R0,A
+        MOV	A,R1
+        ADDC	A,#((audioIn >> 8) & 0xff)
+        MOV	R1,A
+        MOV	A,R2
+        ADD	A,R0
+        MOV	DPL,A
+        MOV	A,R3
+        ADDC	A,R1
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        MOV	R0,#j
+        INC	@R0
+??main_27:
+        MOV	R0,#j
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x36
+        JC	??main_28
+//  488  
+//  489         if ((SLVrxData.statusField & RS232_DATA_AVAILABLE > 0) &&   // if a RS232 message was sent ...
+//  490            (rs232TXbufr.last_byte_sent == 0)) {                     // and the RS232 RX data buffer is free                                
+        MOV	DPTR,#(SLVrxData + 2)
+        MOVX	A,@DPTR
+        MOV	C,0xE0 /* A   */.0
+        JC	$+5
+        LJMP	??main_1
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	A,@DPTR
+        JZ	$+5
+        LJMP	??main_1
+//  491           if (rs232TXbufr.length == 0) {                            // if this is the first byte of the message
+        MOV	DPTR,#rs232TXbufr
+        MOVX	A,@DPTR
+        JNZ	??main_29
+//  492             rs232TXbufr.length = SLVrxData.databytes[0];            // first byte of message is the length
+        MOV	DPTR,#(SLVrxData + 61)
+        MOVX	A,@DPTR
+        MOV	DPTR,#rs232TXbufr
+        MOVX	@DPTR,A
+//  493             rs232TXbufr.index = 0;                                  // reset index
+        MOV	A,#0x0
+        MOV	DPTR,#(rs232TXbufr + 1)
+        MOVX	@DPTR,A
+//  494             first_byte = 1;
+        MOV	R0,#first_byte
+        MOV	@R0,#0x1
+        SJMP	??main_30
+//  495           }
+//  496           else
+//  497             first_byte = 0;
+??main_29:
+        MOV	R0,#first_byte
+        MOV	@R0,#0x0
+//  498           for (i = first_byte; i < DF_LEN; i++) {                   // transfer message data from the RF buffer to the RS232 buffer
+??main_30:
+        MOV	R0,#first_byte
+        MOV	A,@R0
+        MOV	R0,#i
+        MOV	@R0,A
+        SJMP	??main_31
+??main_32:
+        MOV	R0,#i
+        INC	@R0
+??main_31:
+        MOV	R0,#i
+        MOV	A,@R0
+        CLR	C
+        SUBB	A,#0x10
+        JC	$+5
+        LJMP	??main_1
+//  499             rs232TXbufr.data[rs232TXbufr.index++] = SLVrxData.databytes[i];
+        MOV	R0,#i
+        MOV	A,@R0
+        MOV	R1,#0x0
+        ADD	A,#((SLVrxData + 61) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((SLVrxData + 61) >> 8) & 0xff)
+        MOV	DPH,A
+        MOVX	A,@DPTR
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	DPTR,#(rs232TXbufr + 1)
+        MOVX	A,@DPTR
+        MOV	R0,A
+        MOV	R1,#0x0
+        ADD	A,#((rs232TXbufr + 3) & 0xff)
+        MOV	DPL,A
+        MOV	A,R1
+        ADDC	A,#(((rs232TXbufr + 3) >> 8) & 0xff)
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        MOV	DPTR,#(rs232TXbufr + 1)
+        MOVX	A,@DPTR
+        ADD	A,#0x1
+        MOVX	@DPTR,A
+//  500             if (rs232TXbufr.index == rs232TXbufr.length) {          // if the end of the message has been reached
+        MOV	DPTR,#(rs232TXbufr + 1)
+        MOVX	A,@DPTR
+        MOV	R2,A
+        MOV	DPTR,#rs232TXbufr
+        MOVX	A,@DPTR
+        XRL	A,R2
+        JNZ	??main_32
+//  501               U0DBUF = rs232TXbufr.data[0];                         // TX first byte
+        MOV	DPTR,#(rs232TXbufr + 3)
+        MOVX	A,@DPTR
+        MOV	0xc1,A                 ; * 
+//  502               rs232TXbufr.last_byte_sent = 1;                       // one byte has been sent
+        MOV	A,#0x1
+        MOV	DPTR,#(rs232TXbufr + 2)
+        MOVX	@DPTR,A
+//  503               IEN2 |= UTX0IE;                                       // and more data needs to be sent, so enable USART0 TX interrupts
+        ORL	0x9a,#0x4              ; * 
+//  504               break;                                                // and exit the loop
+        LJMP	??main_1
+//  505             }     // end of 'index = length' if
+//  506           }       // end of 'for' loop
+//  507         }         // end of 'data available' if
+//  508       }
+//  509       else {
+//  510         for (UINT8 i = 0; i < AF_BUF_SIZE; i++)     // Mute the audio for the duration of the packet 
+??main_26:
+        MOV	R3,#0x0
+??main_33:
+        MOV	A,R3
+        CLR	C
+        SUBB	A,#0x36
+        JC	$+5
+        LJMP	??main_1
+//  511           audioIn[activeIn][i] = 0xCF;
+        MOV	A,#-0x31
+        PUSH	A
+        CFI CFA_SP SP+-3
+        MOV	?V0 + 0,R3
+        MOV	?V0 + 1,#0x0
+        MOV	DPTR,#activeIn
+        MOVX	A,@DPTR
+        MOV	R0,A
+        MOV	R1,#0x0
+        MOV	A,R0
+        MOV	B,#0x36
+        MUL	AB
+        XCH	A,R0
+        MOV	R2,B
+        MOV	B,#0x0
+        MUL	AB
+        ADD	A,R2
+        MOV	R2,A
+        MOV	B,#0x36
+        MOV	A,R1
+        MUL	AB
+        ADD	A,R2
+        MOV	R1,A
+        MOV	A,R0
+        ADD	A,#(audioIn & 0xff)
+        MOV	R0,A
+        MOV	A,R1
+        ADDC	A,#((audioIn >> 8) & 0xff)
+        MOV	R1,A
+        MOV	A,?V0 + 0
+        ADD	A,R0
+        MOV	DPL,A
+        MOV	A,?V0 + 1
+        ADDC	A,R1
+        MOV	DPH,A
+        POP	A
+        CFI CFA_SP SP+-2
+        MOVX	@DPTR,A
+        INC	R3
+        SJMP	??main_33
+        CFI EndBlock cfiBlock1
+//  512       }
+//  513     }     // end of TIMEOUT_ERROR 'else' (i.e., packet received)
+//  514   }       // end of 'while (1)' (main program) loop
+//  515 
+//  516 #endif
+//  517 }
+
+        RSEG IDATA_ID:CODE:NOROOT(0)
+`?<Initializer for waitingforbeacon>`:
+        DB 1
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0c0H
+// union <unnamed> volatile __sfr _A_IRCON
+_A_IRCON:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a0H
+// union <unnamed> volatile __sfr _A_P2
+_A_P2:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DS 1
+
+        END
+//  518 
+// 
+//     1 byte  in segment IDATA_I
+//     1 byte  in segment IDATA_ID
+//     6 bytes in segment IDATA_Z
+// 1 234 bytes in segment NEAR_CODE
+//    36 bytes in segment SFR_AN
+//   297 bytes in segment XDATA_Z
+// 
+// 1 235 bytes of CODE  memory
+//     0 bytes of DATA  memory (+ 36 bytes shared)
+//   297 bytes of XDATA memory
+//     7 bytes of IDATA memory
+//
+//Errors: none
+//Warnings: none

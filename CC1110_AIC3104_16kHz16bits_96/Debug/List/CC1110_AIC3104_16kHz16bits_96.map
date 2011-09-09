@@ -1,0 +1,1213 @@
+################################################################################
+#                                                                              #
+#      IAR Universal Linker V4.61T/W32                                         #
+#                                                                              #
+#           Link time     =  08/Sep/2011  23:43:37                             #
+#           Target CPU    =  x51                                               #
+#           List file     =  "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\List\CC1110_ #
+#                            AIC3104_16kHz16bits_96.map"                       #
+#           Output file 1 =  "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Exe\CC1110_A #
+#                            IC3104_16kHz16bits_96.hex"                        #
+#                            Format: simple-code                               #
+#           Output file 2 =  "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Exe\CC1110_A #
+#                            IC3104_16kHz16bits_96.d51"                        #
+#                            Format: debug                                     #
+#                            UBROF version 10.0.3                              #
+#                            Using library modules for C-SPY (-rt)             #
+#           Command line  =  -D_NR_OF_BANKS=0 -D_CODEBANK_END=0                #
+#                            -D_CODEBANK_START=0                               #
+#                            "-IC:\Program Files (x86)\IAR Systems\Embedded Wo #
+#                            rkbench 5.4 Evaluation\8051\CONFIG\"              #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\i2c.r51" #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\init_Cod #
+#                            ec.r51"                                           #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\init_per #
+#                            ipherals.r51"                                     #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_dma.r #
+#                            51"                                               #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_inter #
+#                            rupt.r51"                                         #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_mac.r #
+#                            51"                                               #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_main. #
+#                            r51"                                              #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_rf.r5 #
+#                            1"                                                #
+#                            -e_small_write=_formatted_write                   #
+#                            -e_medium_read=_formatted_read -o                 #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\Exe\CC1110_A #
+#                            IC3104_16kHz16bits_96.d51"                        #
+#                            -l                                                #
+#                            "C:\Users\Chris\Dropbox\oygo\wireless mic\swra368 #
+#                            \CC1110_AIC3104_16kHz16bits_96\Debug\List\CC1110_ #
+#                            AIC3104_16kHz16bits_96.map"                       #
+#                            -xms                                              #
+#                            "-IC:\Program Files (x86)\IAR Systems\Embedded Wo #
+#                            rkbench 5.4 Evaluation\8051\LIB\"                 #
+#                            -f                                                #
+#                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
+#                            bench 5.4 Evaluation\8051\config\devices\Texas In #
+#                            struments\lnk51ew_CC1110F32.xcl"                  #
+#                            (-D_IDATA0_START=0x00 -D_IDATA0_END=0xFF          #
+#                            -D_PDATA0_START=0xF000 -D_PDATA0_END=0xF0FF       #
+#                            -D_IXDATA0_START=0x00F000                         #
+#                            -D_IXDATA0_END=0x00FDA1                           #
+#                            -D_XDATA0_START=0x00F000 -D_XDATA0_END=0x00FDA1   #
+#                            -D_CODE0_START=0x000000 -D_CODE0_END=0x007FFF     #
+#                            -D?REGISTER_BANK=0x0 -D_REGISTER_BANK_START=0x0   #
+#                            -D?PBANK_NUMBER=0xF0 -D_BREG_START=0x00           #
+#                            -D?VB=0x20 -D?ESP=0x9B -Z(BIT)BREG=_BREG_START    #
+#                            -Z(BIT)BIT_N=0-7F                                 #
+#                            -Z(DATA)REGISTERS+8=_REGISTER_BANK_START          #
+#                            -Z(DATA)BDATA_Z,BDATA_N,BDATA_I=20-2F             #
+#                            -Z(DATA)VREG+_NR_OF_VIRTUAL_REGISTERS=08-7F       #
+#                            -Z(DATA)PSP,XSP=08-7F -Z(DATA)DOVERLAY=08-7F      #
+#                            -Z(DATA)DATA_I,DATA_Z,DATA_N=08-7F                #
+#                            -U(IDATA)0-7F=(DATA)0-7F                          #
+#                            -Z(IDATA)IDATA_I,IDATA_Z,IDATA_N=08-_IDATA0_END   #
+#                            -Z(IDATA)ISTACK+_IDATA_STACK_SIZE#08-_IDATA0_END  #
+#                            -Z(IDATA)IOVERLAY=08-FF -Z(CODE)INTVEC=0          #
+#                            -Z(CODE)CSTART=_CODE0_START-_CODE0_END            #
+#                            -Z(CODE)BIT_ID,BDATA_ID,DATA_ID,IDATA_ID,IXDATA_I #
+#                            D,PDATA_ID,XDATA_ID=_CODE0_START-_CODE0_END       #
+#                            -Z(CODE)RCODE,DIFUNCT,CODE_C,CODE_N,NEAR_CODE=_CO #
+#                            DE0_START-_CODE0_END                              #
+#                            -Z(CODE)CHECKSUM#_CODE0_END                       #
+#                            -Z(XDATA)EXT_STACK+_EXTENDED_STACK_SIZE=_EXTENDED #
+#                            _STACK_START                                      #
+#                            -Z(XDATA)PSTACK+_PDATA_STACK_SIZE=_PDATA0_START-_ #
+#                            PDATA0_END                                        #
+#                            -Z(XDATA)XSTACK+_XDATA_STACK_SIZE=_XDATA0_START-_ #
+#                            XDATA0_END                                        #
+#                            -Z(XDATA)PDATA_Z,PDATA_I=_PDATA0_START-_PDATA0_EN #
+#                            D                                                 #
+#                            -P(XDATA)PDATA_N=_PDATA0_START-_PDATA0_END        #
+#                            -Z(XDATA)IXDATA_Z,IXDATA_I=_IXDATA0_START-_IXDATA #
+#                            0_END                                             #
+#                            -P(XDATA)IXDATA_N=_IXDATA0_START-_IXDATA0_END     #
+#                            -Z(XDATA)XDATA_Z,XDATA_I=_XDATA0_START-_XDATA0_EN #
+#                            D                                                 #
+#                            -P(XDATA)XDATA_N=_XDATA0_START-_XDATA0_END        #
+#                            -Z(XDATA)XDATA_HEAP+_XDATA_HEAP_SIZE=_XDATA0_STAR #
+#                            T-_XDATA0_END                                     #
+#                            -Z(CONST)XDATA_ROM_C=_XDATA0_START-_XDATA0_END    #
+#                            -cx51 -Z(XDATA)XDATA_SCRATCH=0xFDA2-0xFEFF)       #
+#                            -D_NR_OF_VIRTUAL_REGISTERS=8 -D?PBANK=0x93 -rt    #
+#                            "-Osimple-code=C:\Users\Chris\Dropbox\oygo\wirele #
+#                            ss mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debu #
+#                            g\Exe\CC1110_AIC3104_16kHz16bits_96.hex"          #
+#                            -s __program_start                                #
+#                            "C:\Program Files (x86)\IAR Systems\Embedded Work #
+#                            bench 5.4 Evaluation\8051\LIB\CLIB\cl-pli-nlxd-1e #
+#                            16x01.r51"                                        #
+#                            -D_IDATA_STACK_SIZE=0x80                          #
+#                            -D_EXTENDED_STACK_START=0x00                      #
+#                            -D_EXTENDED_STACK_SIZE=0x00                       #
+#                            -D_PDATA_STACK_SIZE=0x80                          #
+#                            -D_XDATA_STACK_SIZE=0x1FF                         #
+#                            -D_XDATA_HEAP_SIZE=0xFF -D_FAR_HEAP_SIZE=0xFFF    #
+#                            -D_HUGE_HEAP_SIZE=0xFFF                           #
+#                            -D_FAR22_HEAP_SIZE=0xFFF                          #
+#                                                                              #
+#                           Copyright (C) 1987-2010 IAR Systems AB.            #
+################################################################################
+
+
+
+
+
+                ****************************************
+                *                                      *
+                *           CROSS REFERENCE            *
+                *                                      *
+                ****************************************
+
+       Program entry at : CODE      000000D3  Relocatable, from module : CSTARTUP
+
+
+
+
+                ****************************************
+                *                                      *
+                *            RUNTIME MODEL             *
+                *                                      *
+                ****************************************
+
+  __calling_convention     = xdata_reentrant
+  __code_model             = near
+  __core                   = plain
+  __data_model             = large
+  __dptr_size              = 16
+  __extended_stack         = disabled
+  __location_for_constants = data
+  __number_of_dptrs        = 1
+  __rt_version             = 1
+
+
+
+                ****************************************
+                *                                      *
+                *              MODULE MAP              *
+                *                                      *
+                ****************************************
+
+
+  DEFINED ABSOLUTE ENTRIES
+    *************************************************************************
+
+  DEFINED ABSOLUTE ENTRIES
+  PROGRAM MODULE, NAME : ?ABS_ENTRY_MOD
+
+Absolute parts
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _FAR22_HEAP_SIZE        00000FFF 
+           _HUGE_HEAP_SIZE         00000FFF 
+           _FAR_HEAP_SIZE          00000FFF 
+           _XDATA_HEAP_SIZE        000000FF 
+           _XDATA_STACK_SIZE       000001FF 
+           _PDATA_STACK_SIZE       00000080 
+           _EXTENDED_STACK_SIZE    00000000 
+           _EXTENDED_STACK_START   00000000 
+           _IDATA_STACK_SIZE       00000080 
+           ?PBANK                  00000093 
+           _NR_OF_VIRTUAL_REGISTERS
+                                   00000008 
+           ?ESP                    0000009B 
+           ?VB                     00000020        ?FUNC_ENTER_XDATA (?FUNC_ENTER_XDATA)
+                                                   ?FUNC_LEAVE_XDATA (?FUNC_LEAVE_XDATA)
+                                                   ?INTERRUPT_ENTER_XSP (?INTERRUPT_ENTER_XSP)
+                                                   ?INTERRUPT_LEAVE_XSP (?INTERRUPT_LEAVE_XSP)
+           _BREG_START             00000000 
+           ?PBANK_NUMBER           000000F0 
+           _REGISTER_BANK_START    00000000 
+           ?REGISTER_BANK          00000000        Segment part 6 (CSTARTUP)
+           _CODE0_END              00007FFF 
+           _CODE0_START            00000000 
+           _XDATA0_END             0000FDA1 
+           _XDATA0_START           0000F000 
+           _IXDATA0_END            0000FDA1 
+           _IXDATA0_START          0000F000 
+           _PDATA0_END             0000F0FF 
+           _PDATA0_START           0000F000 
+           _IDATA0_END             000000FF 
+           _IDATA0_START           00000000 
+           _CODEBANK_START         00000000 
+           _CODEBANK_END           00000000 
+           _NR_OF_BANKS            00000000 
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\i2c.r51
+  PROGRAM MODULE, NAME : i2c
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 00000080 - 00000080 (0x1 bytes), align: 0
+  Segment part 1. ROOT.       Intra module refs:   I2Cwrite
+                                                   init_peripherals (init_peripherals)
+                                                   main (tw_main)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P0                   00000080 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000A0 - 000000A0 (0x1 bytes), align: 0
+  Segment part 2. ROOT.       Intra module refs:   I2Cwrite
+                                                   init_peripherals (init_peripherals)
+                                                   main (tw_main)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P2                   000000A0 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000FD - 000000FD (0x1 bytes), align: 0
+  Segment part 3. ROOT.       Intra module refs:   I2Cwrite
+                                                   init_peripherals (init_peripherals)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P0DIR                   000000FD 
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F1FF - 0000F200 (0x2 bytes), align: 0
+  Segment part 9.             Intra module refs:   I2Cwrite
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           junk                    0000F1FF 
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 0000024D - 000003F5 (0x1a9 bytes), align: 0
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           I2Cwrite                0000024D        init_codec (init_Codec)
+                                                   main (tw_main)
+               ISTACK = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\init_Codec.r51
+  PROGRAM MODULE, NAME : init_Codec
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 000000EB - 000000EB (0x1 bytes), align: 0
+  Segment part 1. ROOT.       Intra module refs:   init_codec
+                                                   init_peripherals (init_peripherals)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T4CTL                   000000EB 
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 000003F6 - 00000453 (0x5e bytes), align: 0
+  Segment part 7.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           init_codec              000003F6        main (tw_main)
+               calls direct
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\init_peripherals.r51
+  PROGRAM MODULE, NAME : init_peripherals
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 00000090 - 00000090 (0x1 bytes), align: 0
+  Segment part 2. ROOT.       Intra module refs:   T1_IRQ (tw_interrupt)
+                                                   init_peripherals
+                                                   main (tw_main)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_P1                   00000090 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000B4 - 000000B4 (0x1 bytes), align: 0
+  Segment part 4. ROOT.       Intra module refs:   T1_IRQ (tw_interrupt)
+                                                   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADCCON1                 000000B4 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000B5 - 000000B5 (0x1 bytes), align: 0
+  Segment part 5. ROOT.       Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADCCON2                 000000B5 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000CB - 000000CB (0x1 bytes), align: 0
+  Segment part 6. ROOT.       Intra module refs:   macTimer3Init
+                                                   macsetT3TimeoutAndWait (tw_mac)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T3CTL                   000000CB 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000CC - 000000CC (0x1 bytes), align: 0
+  Segment part 7. ROOT.       Intra module refs:   macTimer3Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T3CCTL0                 000000CC 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000CE - 000000CE (0x1 bytes), align: 0
+  Segment part 8. ROOT.       Intra module refs:   macTimer3Init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T3CCTL1                 000000CE 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000DA - 000000DA (0x1 bytes), align: 0
+  Segment part 9. ROOT.       Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T1CC0L                  000000DA 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000DB - 000000DB (0x1 bytes), align: 0
+  Segment part 10. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T1CC0H                  000000DB 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000E4 - 000000E4 (0x1 bytes), align: 0
+  Segment part 11. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T1CTL                   000000E4 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000E5 - 000000E5 (0x1 bytes), align: 0
+  Segment part 12. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T1CCTL0                 000000E5 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000EC - 000000EC (0x1 bytes), align: 0
+  Segment part 14. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T4CCTL0                 000000EC 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000ED - 000000ED (0x1 bytes), align: 0
+  Segment part 15. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T4CC0                   000000ED 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000F1 - 000000F1 (0x1 bytes), align: 0
+  Segment part 16. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           PERCFG                  000000F1 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000F2 - 000000F2 (0x1 bytes), align: 0
+  Segment part 17. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADCCFG                  000000F2 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000F3 - 000000F3 (0x1 bytes), align: 0
+  Segment part 18. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P0SEL                   000000F3 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000F4 - 000000F4 (0x1 bytes), align: 0
+  Segment part 19. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1SEL                   000000F4 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000F5 - 000000F5 (0x1 bytes), align: 0
+  Segment part 20. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P2SEL                   000000F5 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000FE - 000000FE (0x1 bytes), align: 0
+  Segment part 22. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1DIR                   000000FE 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000FF - 000000FF (0x1 bytes), align: 0
+  Segment part 23. ROOT.      Intra module refs:   init_peripherals
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P2DIR                   000000FF 
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000454 - 000004B9 (0x66 bytes), align: 0
+  Segment part 29.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           init_peripherals        00000454        main (tw_main)
+               ISTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 000004BA - 000004C3 (0xa bytes), align: 0
+  Segment part 30.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           macTimer3Init           000004BA        main (tw_main)
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_dma.r51
+  PROGRAM MODULE, NAME : tw_dma
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 00000088 - 00000088 (0x1 bytes), align: 0
+  Segment part 1. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   rfSendPacket (tw_rf)
+                                                   spp_rf_IRQ (tw_interrupt)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TCON                 00000088 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 00000098 - 00000098 (0x1 bytes), align: 0
+  Segment part 2. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   spp_rf_IRQ (tw_interrupt)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_S0CON                00000098 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 0000009B - 0000009B (0x1 bytes), align: 0
+  Segment part 3. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   spp_rf_IRQ (tw_interrupt)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           S1CON                   0000009B 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000A8 - 000000A8 (0x1 bytes), align: 0
+  Segment part 4. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   spp_rf_IRQ (tw_interrupt)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_IEN0                 000000A8 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000C0 - 000000C0 (0x1 bytes), align: 0
+  Segment part 5. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   spp_rf_IRQ (tw_interrupt)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_IRCON                000000C0 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D1 - 000000D1 (0x1 bytes), align: 0
+  Segment part 6. ROOT.       Intra module refs:   dma_IRQ
+                                                   main (tw_main)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMAIRQ                  000000D1 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D6 - 000000D6 (0x1 bytes), align: 0
+  Segment part 7. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   rfSendPacket (tw_rf)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMAARM                  000000D6 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000E8 - 000000E8 (0x1 bytes), align: 0
+  Segment part 8. ROOT.       Intra module refs:   dma_IRQ
+                                                   initRf (tw_rf)
+                                                   main (tw_main)
+                                                   spp_rf_IRQ (tw_interrupt)
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_IRCON2               000000E8 
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F201 - 0000F208 (0x8 bytes), align: 0
+  Segment part 15.            Intra module refs:   dmaMemtoMem
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DmaDesc0                0000F201        main (tw_main)
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F209 - 0000F228 (0x20 bytes), align: 0
+  Segment part 16.            Intra module refs:   dmaAudio
+                                                   dmaToRadio
+                                                   dma_IRQ
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DmaDesc1_4              0000F209        main (tw_main)
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 000004C4 - 00000532 (0x6f bytes), align: 0
+  Segment part 17.            Intra module refs:   dma_IRQ::??INTVEC 67
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           dma_IRQ                 000004C4 
+               interrupt function
+               ISTACK = 00000000 ( 00000006 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000533 - 000005B6 (0x84 bytes), align: 0
+  Segment part 18.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           dmaToRadio              00000533        initRf (tw_rf)
+               ISTACK = 00000000 ( 00000003 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 000005B7 - 0000062E (0x78 bytes), align: 0
+  Segment part 19.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           dmaAudio                000005B7        main (tw_main)
+               ISTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 0000062F - 0000067E (0x50 bytes), align: 0
+  Segment part 20.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           dmaMemtoMem             0000062F        main (tw_main)
+               ISTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000045 (0x46 bytes), align: 0
+  Segment part 9. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           dma_IRQ::??INTVEC 67    00000043 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_interrupt.r51
+  PROGRAM MODULE, NAME : tw_interrupt
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 00000091 - 00000091 (0x1 bytes), align: 0
+  Segment part 3. ROOT.       Intra module refs:   initRf (tw_rf)
+                                                   spp_rf_IRQ
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RFIM                    00000091 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000BA - 000000BA (0x1 bytes), align: 0
+  Segment part 8. ROOT.       Intra module refs:   T1_IRQ
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADCL                    000000BA 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000BB - 000000BB (0x1 bytes), align: 0
+  Segment part 9. ROOT.       Intra module refs:   T1_IRQ
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ADCH                    000000BB 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000E9 - 000000E9 (0x1 bytes), align: 0
+  Segment part 12. ROOT.      Intra module refs:   initRf (tw_rf)
+                                                   spp_rf_IRQ
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RFIF                    000000E9 
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F229 - 0000F229 (0x1 bytes), align: 0
+  Segment part 22.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           audioFrameReady         0000F229        dma_IRQ (tw_dma)
+                                                   main (tw_main)
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F22A - 0000F22B (0x2 bytes), align: 0
+  Segment part 28.            Intra module refs:   T1_IRQ
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           bvoltage                0000F22A 
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 0000067F - 000006B5 (0x37 bytes), align: 0
+  Segment part 29.            Intra module refs:   spp_rf_IRQ::??INTVEC 131
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           spp_rf_IRQ              0000067F 
+               interrupt function
+               ISTACK = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 000006B6 - 0000070A (0x55 bytes), align: 0
+  Segment part 30.            Intra module refs:   T1_IRQ::??INTVEC 75
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T1_IRQ                  000006B6 
+               interrupt function
+               ISTACK = 00000000 ( 00000010 )
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 0000004D (0x4e bytes), align: 0
+  Segment part 13. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T1_IRQ::??INTVEC 75     0000004B 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000085 (0x86 bytes), align: 0
+  Segment part 14. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           spp_rf_IRQ::??INTVEC 131
+                                   00000083 
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_mac.r51
+  PROGRAM MODULE, NAME : tw_mac
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 000000CD - 000000CD (0x1 bytes), align: 0
+  Segment part 2. ROOT.       Intra module refs:   macsetT3TimeoutAndWait
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           T3CC0                   000000CD 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D8 - 000000D8 (0x1 bytes), align: 0
+  Segment part 3. ROOT.       Intra module refs:   macsetT3TimeoutAndWait
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_TIMIF                000000D8 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000E1 - 000000E1 (0x1 bytes), align: 0
+  Segment part 4. ROOT.       Intra module refs:   main (tw_main)
+                                                   rfConfigRadio (tw_rf)
+                                                   rfSendPacket (tw_rf)
+                                                   setChannel
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RFST                    000000E1 
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 0000070B - 00000744 (0x3a bytes), align: 0
+  Segment part 10.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           macsetT3TimeoutAndWait
+                                   0000070B        rfSendPacket (tw_rf)
+               ISTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000745 - 00000777 (0x33 bytes), align: 0
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           setChannel              00000745        main (tw_main)
+               ISTACK = 00000000 ( 00000002 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_main.r51
+  PROGRAM MODULE, NAME : tw_main
+
+  SEGMENTS IN THE MODULE
+  ======================
+SFR_AN
+  Relative segment, address: DATA 0000009A - 0000009A (0x1 bytes), align: 0
+  Segment part 5. ROOT.       Intra module refs:   initRf (tw_rf)
+                                                   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           IEN2                    0000009A 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000B8 - 000000B8 (0x1 bytes), align: 0
+  Segment part 9. ROOT.       Intra module refs:   initRf (tw_rf)
+                                                   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_IEN1                 000000B8 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000BE - 000000BE (0x1 bytes), align: 0
+  Segment part 10. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SLEEP                   000000BE 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000C6 - 000000C6 (0x1 bytes), align: 0
+  Segment part 12. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           CLKCON                  000000C6 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D2 - 000000D2 (0x1 bytes), align: 0
+  Segment part 14. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1CFGL                000000D2 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D3 - 000000D3 (0x1 bytes), align: 0
+  Segment part 15. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA1CFGH                000000D3 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D4 - 000000D4 (0x1 bytes), align: 0
+  Segment part 16. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA0CFGL                000000D4 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D5 - 000000D5 (0x1 bytes), align: 0
+  Segment part 17. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMA0CFGH                000000D5 
+    -------------------------------------------------------------------------
+SFR_AN
+  Relative segment, address: DATA 000000D7 - 000000D7 (0x1 bytes), align: 0
+  Segment part 19. ROOT.      Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           DMAREQ                  000000D7 
+    -------------------------------------------------------------------------
+XDATA_I
+  Relative segment, address: XDATA 0000F471 - 0000F47C (0xc bytes), align: 0
+  Segment part 27.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           channel                 0000F471 
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F22C - 0000F22C (0x1 bytes), align: 0
+  Segment part 29.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ActiveChIdx             0000F22C 
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F22D - 0000F22D (0x1 bytes), align: 0
+  Segment part 30.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           band                    0000F22D 
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F22E - 0000F22E (0x1 bytes), align: 0
+  Segment part 31.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           activeOut               0000F22E        dma_IRQ (tw_dma)
+    -------------------------------------------------------------------------
+XDATA_Z
+  Relative segment, address: XDATA 0000F22F - 0000F3AE (0x180 bytes), align: 0
+  Segment part 32.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           audioOut                0000F22F        dmaAudio (tw_dma)
+                                                   dma_IRQ (tw_dma)
+    -------------------------------------------------------------------------
+XDATA_I
+  Relative segment, address: XDATA 0000F47D - 0000F47D (0x1 bytes), align: 0
+  Segment part 35.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           agc_option_status       0000F47D 
+    -------------------------------------------------------------------------
+XDATA_I
+  Relative segment, address: XDATA 0000F47E - 0000F47E (0x1 bytes), align: 0
+  Segment part 37.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           aux_option_status       0000F47E 
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000778 - 00000971 (0x1fa bytes), align: 0
+  Segment part 39.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    00000778        ?call_main (?cmain)
+               calls direct
+    -------------------------------------------------------------------------
+XDATA_ID
+  Relative segment, address: CODE 000000E5 - 000000F0 (0xc bytes), align: 0
+  Segment part 28.            Intra module refs:   channel
+    -------------------------------------------------------------------------
+XDATA_ID
+  Relative segment, address: CODE 000000F1 - 000000F1 (0x1 bytes), align: 0
+  Segment part 36.            Intra module refs:   agc_option_status
+    -------------------------------------------------------------------------
+XDATA_ID
+  Relative segment, address: CODE 000000F2 - 000000F2 (0x1 bytes), align: 0
+  Segment part 38.            Intra module refs:   aux_option_status
+
+    *************************************************************************
+
+  FILE NAME : C:\Users\Chris\Dropbox\oygo\wireless mic\swra368\CC1110_AIC3104_16kHz16bits_96\Debug\Obj\tw_rf.r51
+  PROGRAM MODULE, NAME : tw_rf
+
+  SEGMENTS IN THE MODULE
+  ======================
+XDATA_Z
+  Relative segment, address: XDATA 0000F3AF - 0000F470 (0xc2 bytes), align: 0
+  Segment part 20.            Intra module refs:   initRf
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           MAStxData               0000F3AF        main (tw_main)
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000972 - 00000A3D (0xcc bytes), align: 0
+  Segment part 23.            Intra module refs:   initRf
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rfConfigRadio           00000972 
+               XSTACK = 00000009 ( 00000000 )
+               ISTACK = 00000000 ( 00000002 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000A3E - 00000A76 (0x39 bytes), align: 0
+  Segment part 24.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           initRf                  00000A3E        main (tw_main)
+               calls direct
+               XSTACK = 00000000 ( 00000009 )
+    -------------------------------------------------------------------------
+NEAR_CODE
+  Relative segment, address: CODE 00000A77 - 00000AC6 (0x50 bytes), align: 0
+  Segment part 25.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           rfSendPacket            00000A77        main (tw_main)
+               calls direct
+               XSTACK = 00000000 ( 00000008 )
+
+    *************************************************************************
+
+  FILE NAME : C:\Program Files (x86)\IAR Systems\Embedded Workbench 5.4 Evaluation\8051\LIB\CLIB\cl-pli-nlxd-1e16x01.r51
+  LIBRARY MODULE, NAME : ?cexit
+
+  SEGMENTS IN THE MODULE
+  ======================
+CSTART
+  Relative segment, address: CODE 00000086 - 0000008A (0x5 bytes), align: 0
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           exit                    00000086        ?call_main (?cmain)
+           ?C_EXIT                 00000086 
+           ?ROM_MONITOR_NOPS       00000086 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?cmain
+
+  SEGMENTS IN THE MODULE
+  ======================
+CSTART
+  Relative segment, address: CODE 0000008B, align: 0
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?cmain                  0000008B        Segment part 12 (CSTARTUP)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 0000008B - 00000093 (0x9 bytes), align: 0
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init_call   0000008B        __low_level_init (?low_level_init)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 00000094 - 000000A3 (0x10 bytes), align: 0
+  Segment part 11.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __INIT_XDATA_Z          00000094        ActiveChIdx (tw_main)
+                                                   DmaDesc0 (tw_dma)
+                                                   DmaDesc1_4 (tw_dma)
+                                                   MAStxData (tw_rf)
+                                                   activeOut (tw_main)
+                                                   audioFrameReady (tw_interrupt)
+                                                   audioOut (tw_main)
+                                                   band (tw_main)
+                                                   bvoltage (tw_interrupt)
+                                                   junk (i2c)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 000000A4 - 000000CC (0x29 bytes), align: 0
+  Segment part 28.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __INIT_XDATA_I          000000A4        agc_option_status (tw_main)
+                                                   aux_option_status (tw_main)
+                                                   channel (tw_main)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 000000CD, align: 0
+  Segment part 32.            Intra module refs:   __low_level_init_call
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 000000CD - 000000D2 (0x6 bytes), align: 0
+  Segment part 33.            Intra module refs:   ?cmain
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?call_main              000000CD 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : CSTARTUP
+
+  SEGMENTS IN THE MODULE
+  ======================
+REGISTERS
+  Relative segment, address: DATA 00000000, align: 0
+  Segment part 0.             Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?REGISTERS              00000000 
+    -------------------------------------------------------------------------
+ISTACK
+  Relative segment, address: IDATA 00000080, align: 0
+  Segment part 1.             Intra module refs:   Segment part 6
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ISTACK_START           00000080 
+    -------------------------------------------------------------------------
+XSTACK
+  Relative segment, address: XDATA 0000F000, align: 0
+  Segment part 3.             Intra module refs:   ?RESET_XSP
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?XSTACK_START           0000F000 
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: CODE 00000000 - 00000002 (0x3 bytes), align: 0
+  Segment part 5. ROOT.       Intra module refs:   Segment part 6
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 000000D3 - 000000D8 (0x6 bytes), align: 0
+  Segment part 6. ROOT.       Intra module refs:   Segment part 5
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __program_start         000000D3        Absolute parts (?ABS_ENTRY_MOD)
+           ?RESET_SP               000000D6 
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 000000D9 - 000000DE (0x6 bytes), align: 0
+  Segment part 8.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?RESET_XSP              000000D9        ?XSP (VIRTUAL_REGISTERS)
+    -------------------------------------------------------------------------
+CSTART
+  Relative segment, address: CODE 000000DF - 000000E1 (0x3 bytes), align: 0
+  Segment part 12.            Intra module refs:   Absolute parts
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : VIRTUAL_REGISTERS
+
+  SEGMENTS IN THE MODULE
+  ======================
+BREG
+  Relative segment, address: BIT 00000020.0 - 00000020.7 (0x8 bits), align: 0
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?B0                     00000020.0      Absolute parts (CSTARTUP)
+    -------------------------------------------------------------------------
+VREG
+  Relative segment, address: DATA 00000008, align: 0
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?V0                     00000008        ?FUNC_ENTER_XDATA (?FUNC_ENTER_XDATA)
+                                                   ?FUNC_LEAVE_XDATA (?FUNC_LEAVE_XDATA)
+                                                   ?INTERRUPT_ENTER_XSP (?INTERRUPT_ENTER_XSP)
+                                                   ?INTERRUPT_LEAVE_XSP (?INTERRUPT_LEAVE_XSP)
+                                                   T1_IRQ (tw_interrupt)
+                                                   macsetT3TimeoutAndWait (tw_mac)
+                                                   spp_rf_IRQ (tw_interrupt)
+    -------------------------------------------------------------------------
+XSP
+  Relative segment, address: DATA 00000010 - 00000011 (0x2 bytes), align: 0
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?XSP                    00000010        ?FUNC_ENTER_XDATA (?FUNC_ENTER_XDATA)
+                                                   ?FUNC_LEAVE_XDATA (?FUNC_LEAVE_XDATA)
+                                                   ?INTERRUPT_ENTER_XSP (?INTERRUPT_ENTER_XSP)
+                                                   ?INTERRUPT_LEAVE_XSP (?INTERRUPT_LEAVE_XSP)
+                                                   ?RESET_XSP (CSTARTUP)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?S_SHL
+
+  SEGMENTS IN THE MODULE
+  ======================
+RCODE
+  Relative segment, address: CODE 000000F3 - 000000F5 (0x3 bytes), align: 0
+  Segment part 0.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?S_SHL                  000000F3        T1_IRQ (tw_interrupt)
+    -------------------------------------------------------------------------
+RCODE
+  Relative segment, address: CODE 000000F6 - 000000F8 (0x3 bytes), align: 0
+  Segment part 1.             Intra module refs:   Segment part 2
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?S_SHL_REW              000000F6 
+    -------------------------------------------------------------------------
+RCODE
+  Relative segment, address: CODE 000000F9 - 00000105 (0xd bytes), align: 0
+  Segment part 2.             Intra module refs:   ?S_SHL
+                                                   ?S_SHL_REW
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?FUNC_ENTER_XDATA
+
+  SEGMENTS IN THE MODULE
+  ======================
+RCODE
+  Relative segment, address: CODE 00000106 - 00000165 (0x60 bytes), align: 0
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?FUNC_ENTER_XDATA       00000106        initRf (tw_rf)
+                                                   rfSendPacket (tw_rf)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?FUNC_LEAVE_XDATA
+
+  SEGMENTS IN THE MODULE
+  ======================
+RCODE
+  Relative segment, address: CODE 00000166 - 0000019D (0x38 bytes), align: 0
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?FUNC_LEAVE_XDATA       00000166        initRf (tw_rf)
+                                                   rfSendPacket (tw_rf)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?INTERRUPT_ENTER_XSP
+
+  SEGMENTS IN THE MODULE
+  ======================
+RCODE
+  Relative segment, address: CODE 0000019E - 000001FC (0x5f bytes), align: 0
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?INTERRUPT_ENTER_XSP    0000019E        T1_IRQ (tw_interrupt)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?INTERRUPT_LEAVE_XSP
+
+  SEGMENTS IN THE MODULE
+  ======================
+RCODE
+  Relative segment, address: CODE 000001FD - 0000024C (0x50 bytes), align: 0
+  Segment part 1.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?INTERRUPT_LEAVE_XSP    000001FD        T1_IRQ (tw_interrupt)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?low_level_init
+
+  SEGMENTS IN THE MODULE
+  ======================
+CSTART
+  Relative segment, address: CODE 000000E2 - 000000E4 (0x3 bytes), align: 0
+  Segment part 6. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           __low_level_init        000000E2        __low_level_init_call (?cmain)
+
+
+
+
+                ****************************************
+                *                                      *
+                *      SEGMENTS IN ADDRESS ORDER       *
+                *                                      *
+                ****************************************
+
+
+SEGMENT              SPACE    START ADDRESS   END ADDRESS     SIZE  TYPE  ALIGN
+=======              =====    =============   ===========     ====  ====  =====
+INTVEC               CODE          00000000 - 00000085          86   com    0
+CSTART               CODE          00000086 - 000000E4          5F   rel    0
+BDATA_ID             CODE               000000E5                     dse    0
+BIT_ID               CODE               000000E5                     dse    0
+DATA_ID              CODE               000000E5                     dse    0
+IDATA_ID             CODE               000000E5                     dse    0
+IXDATA_ID            CODE               000000E5                     dse    0
+PDATA_ID             CODE               000000E5                     dse    0
+XDATA_ID             CODE          000000E5 - 000000F2           E   rel    0
+RCODE                CODE          000000F3 - 0000024C         15A   rel    0
+CODE_C               CODE               0000024D                     dse    0
+CODE_N               CODE               0000024D                     dse    0
+DIFUNCT              CODE               0000024D                     dse    0
+NEAR_CODE            CODE          0000024D - 00000AC6         87A   rel    0
+REGISTERS            DATA          00000000 - 00000007           8   rel    0
+VREG                 DATA          00000008 - 0000000F           8   rel    0
+PSP                  DATA               00000010                     dse    0
+XSP                  DATA          00000010 - 00000011           2   rel    0
+BREG                 BIT        00000020.0  -  00000020.7        8   rel    0
+SFR_AN               DATA          00000080 - 00000080           1   rel    0
+                     DATA          00000088 - 00000088           1 
+                     DATA          00000090 - 00000091           2 
+                     DATA          00000098 - 00000098           1 
+                     DATA          0000009A - 0000009B           2 
+                     DATA          000000A0 - 000000A0           1 
+                     DATA          000000A8 - 000000A8           1 
+                     DATA          000000B4 - 000000B5           2 
+                     DATA          000000B8 - 000000B8           1 
+                     DATA          000000BA - 000000BB           2 
+                     DATA          000000BE - 000000BE           1 
+                     DATA          000000C0 - 000000C0           1 
+                     DATA          000000C6 - 000000C6           1 
+                     DATA          000000CB - 000000CE           4 
+                     DATA          000000D1 - 000000D8           8 
+                     DATA          000000DA - 000000DB           2 
+                     DATA          000000E1 - 000000E1           1 
+                     DATA          000000E4 - 000000E5           2 
+                     DATA          000000E8 - 000000E9           2 
+                     DATA          000000EB - 000000ED           3 
+                     DATA          000000F1 - 000000F5           5 
+                     DATA          000000FD - 000000FF           3 
+XSTACK               XDATA         0000F000 - 0000F1FE         1FF   rel    0
+XDATA_Z              XDATA         0000F1FF - 0000F470         272   rel    0
+XDATA_I              XDATA         0000F471 - 0000F47E           E   rel    0
+ISTACK               IDATA         00000080 - 000000FF          80   rel    0
+
+                ****************************************
+                *                                      *
+                *        END OF CROSS REFERENCE        *
+                *                                      *
+                ****************************************
+
+ 2 759 bytes of CODE  memory
+    18 bytes of DATA  memory (+ 47 absolute )
+ 1 151 bytes of XDATA memory
+   128 bytes of IDATA memory
+     8 bits  of BIT   memory
+
+Errors: none
+Warnings: none
+

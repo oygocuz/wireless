@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>simple_audio_dongle/rfusb_cc2511</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>214</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>688</ColumnWidth1><ColumnWidth2>319</ColumnWidth2><ColumnWidth3>45</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Find-in-Files><ColumnWidth0>396</ColumnWidth0><ColumnWidth1>83</ColumnWidth1><ColumnWidth2>898</ColumnWidth2></Find-in-Files><Debug-Log><ColumnWidth0>19</ColumnWidth0><ColumnWidth1>1223</ColumnWidth1></Debug-Log><Disassembly><MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow></Disassembly></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-21013-9703</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>simple_audio_dongle</ExpandedNode><ExpandedNode>simple_audio_dongle/RF</ExpandedNode><ExpandedNode>simple_audio_dongle/RF_inc</ExpandedNode><ExpandedNode>simple_audio_dongle/application</ExpandedNode><ExpandedNode>simple_audio_dongle/application/common</ExpandedNode><ExpandedNode>simple_audio_dongle/hal</ExpandedNode><ExpandedNode>simple_audio_dongle/hal/common</ExpandedNode><ExpandedNode>simple_audio_dongle/hal/interface</ExpandedNode><ExpandedNode>simple_audio_dongle/hal/rfusb</ExpandedNode><ExpandedNode>simple_audio_dongle/usb</ExpandedNode><ExpandedNode>simple_audio_dongle/usb/class_audio</ExpandedNode><ExpandedNode>simple_audio_dongle/usb/library</ExpandedNode><ExpandedNode>simple_audio_dongle/usb/library/ccxx11</ExpandedNode><ExpandedNode>simple_audio_dongle/utilities</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27579-9784</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-1893-7996</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-15939-4801</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\usb_interrupt.h</Filename><XPos>0</XPos><YPos>98</YPos><SelStart>4143</SelStart><SelEnd>4143</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\usb_standard_requests.c</Filename><XPos>0</XPos><YPos>120</YPos><SelStart>13573</SelStart><SelEnd>13573</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\radios\ccxx10\hal_mcu.c</Filename><XPos>0</XPos><YPos>18</YPos><SelStart>527</SelStart><SelEnd>527</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\radios\ccxx10\clock.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>159</SelStart><SelEnd>159</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_suspend.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>589</SelStart><SelEnd>589</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_inc\hal.h</Filename><XPos>0</XPos><YPos>60</YPos><SelStart>593</SelStart><SelEnd>593</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\common\hal_defs.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>681</SelStart><SelEnd>681</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\common\cc8051\hal_cc8051.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\common\hal_int.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\common\hal_types.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_assert.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>346</SelStart><SelEnd>346</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.c</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>513</SelStart><SelEnd>513</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_fh.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2590</SelStart><SelEnd>2590</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_interrupt.c</Filename><XPos>0</XPos><YPos>16</YPos><SelStart>1026</SelStart><SelEnd>1026</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_mac.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>1490</SelStart><SelEnd>1490</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_rf.c</Filename><XPos>0</XPos><YPos>107</YPos><SelStart>5555</SelStart><SelEnd>5555</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_inc\hal_CC2510.h</Filename><XPos>0</XPos><YPos>1297</YPos><SelStart>55401</SelStart><SelEnd>55405</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_audio.c</Filename><XPos>0</XPos><YPos>7</YPos><SelStart>2089</SelStart><SelEnd>2089</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_interrupt.c</Filename><XPos>0</XPos><YPos>1</YPos><SelStart>708</SelStart><SelEnd>712</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\utils\util_buffer.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>341</SelStart><SelEnd>341</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_descriptor.s51</Filename><XPos>0</XPos><YPos>33</YPos><SelStart>1505</SelStart><SelEnd>1505</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\radios\ccxx10\clock.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>725</SelStart><SelEnd>725</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\usb_framework.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>745</SelStart><SelEnd>745</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>575</SelStart><SelEnd>575</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\init_peripherals.c</Filename><XPos>0</XPos><YPos>75</YPos><SelStart>453</SelStart><SelEnd>453</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_dma.c</Filename><XPos>0</XPos><YPos>121</YPos><SelStart>6637</SelStart><SelEnd>6637</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_hooks.c</Filename><XPos>0</XPos><YPos>125</YPos><SelStart>5591</SelStart><SelEnd>5591</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_firmware_library_config.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>931</SelStart><SelEnd>931</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_inc\twoway.h</Filename><XPos>0</XPos><YPos>189</YPos><SelStart>8252</SelStart><SelEnd>8252</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\apps\simple_audio\simple_audio_dongle.c</Filename><XPos>0</XPos><YPos>67</YPos><SelStart>3271</SelStart><SelEnd>3271</SelEnd></Tab><ActiveTab>29</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00aba5b8><key>iaridepm.enu1</key></Toolbar-00aba5b8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>495</Bottom><Right>303</Right><x>-2</x><y>-2</y><xscreen>204</xscreen><yscreen>264</yscreen><sizeHorzCX>159375</sizeHorzCX><sizeHorzCY>360656</sizeHorzCY><sizeVertCX>238281</sizeVertCX><sizeVertCY>678962</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>193</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>195</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>266393</sizeHorzCY><sizeVertCX>159375</sizeVertCX><sizeVertCY>360656</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

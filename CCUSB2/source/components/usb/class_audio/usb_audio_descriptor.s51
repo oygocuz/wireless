@@ -1,0 +1,346 @@
+/***********************************************************************************
+
+  Filename:		usb_hid_descriptor.s51
+
+  Description:	USB descriptor for audio-devices (based on info from Guillemot).
+
+***********************************************************************************/
+#define ASM_FILE
+#include "../library/usb_descriptor.h"
+
+
+   MODULE  usb_descriptor
+
+   RSEG    RCODE
+
+   PUBLIC usbDescStart;
+   PUBLIC usbDescEnd;
+   PUBLIC deviceDesc;
+   PUBLIC configDesc;
+   PUBLIC interface0Desc;
+   PUBLIC interface1Desc;
+   PUBLIC interface2Desc;
+   PUBLIC endpoint2aDesc;
+   PUBLIC endpoint2bDesc;
+   PUBLIC string0Desc;
+   PUBLIC string1Desc;
+   PUBLIC string2Desc;
+   PUBLIC usbDescLut;
+   PUBLIC usbDescLutEnd;
+   PUBLIC usbDblbufLut;
+   PUBLIC usbDblbufLutEnd;
+
+;;-------------------------------------------------------------------------------------------------------
+;; USB descriptors
+
+
+usbDescStart:
+deviceDesc:     ; Device descriptor
+               DB deviceDescEnd - deviceDesc    ; bLength
+               DB DESC_TYPE_DEVICE              ; bDescriptorType
+               DW 0110H                         ; bcdUSB (USB 1.1)
+               DB 00H                           ; bDeviceClass (given by interface)
+               DB 00H                           ; bDeviceSubClass
+               DB 00H                           ; bDeviceProtocol
+               DB EP0_PACKET_SIZE
+               DW 0451H                         ; idVendor (Texas Instruments)
+               #if (chip==2531)
+               DW 16A9H                         ; idProduct (CC2531 HID)
+               #elif (chip==2511)
+               DW 16A5H                         ; idProduct (CC2511 HID)
+               #else
+               DW 16A7H                         ; idProduct (CC1111 HID)
+               #endif
+               DW 0100H                         ; bcdDevice (v1.0)
+               DB 01H                           ; iManufacturer
+               DB 02H                           ; iProduct
+               DB 00H                           ; iSerialNumber
+               DB 01H                           ; bNumConfigurations
+deviceDescEnd:
+
+
+config1LengthStart:
+configDesc:     ; Configuration descriptor
+                DB configDescEnd - configDesc   ; bLength
+                DB DESC_TYPE_CONFIG             ; bDescriptorType
+                DW config1LengthEnd - config1LengthStart ; wTotalLength
+                DB 02H                          ; bNumInterfaces
+                DB 01H                          ; bConfigurationValue
+                DB 00H                          ; iConfiguration
+                DB 80H                          ; bmAttributes
+                DB 250                          ; bMaxPower (max 2 * 250 = 500 mA)
+configDescEnd:
+
+interface0Desc: ; Audio control interface
+                DB interface0DescEnd - interface0Desc ; bLength
+                DB DESC_TYPE_INTERFACE          ; bDescriptorType
+                DB 00H                          ; bInterfaceNumber (use default)
+                DB 00H                          ; bAlternateSetting (none)
+                DB 00H                          ; bNumEndpoints (use default)
+                DB 01H                          ; bInterfaceClass (AUDIO)
+                DB 01H                          ; bInterfaceSubClass (AUDIO_CONTROL)
+                DB 00H                          ; bInterfaceProcotol (none)
+                DB 00H                          ; iInterface
+interface0DescEnd:
+
+audiospec0aDesc: ; Audio class-specific interface header
+                DB audiospec0aDescEnd - audiospec0aDesc ; bLength
+                DB DESC_TYPE_CS_INTERFACE       ; bDescriptorType
+                DB DESC_SUBTYPE_HEADER          ; bDescriptorSubType
+                DW 0100H                        ; bcdADC (1.0)
+                DW audiospec0dDescEnd-audiospec0aDesc ; wTotalLength
+                DB 01H                          ; bInCollection (1 streaming interface)
+                DB 01H                          ; baInterfaceNr (interface 1 is streaming)
+audiospec0aDescEnd:
+
+audiospec0bDesc: ; Audio class-specific interface input terminal
+                DB audiospec0bDescEnd - audiospec0bDesc ; bLength
+                DB DESC_TYPE_CS_INTERFACE       ; bDescriptorType
+                DB DESC_SUBTYPE_INPUT_TERMINAL  ; bDescriptorSubType
+                DB 01H                          ; bTerminalID (1)
+                DW 0201H                        ; wTerminalType (microphone)
+                DB 00H                          ; bAssopcTerminal (none)
+                DB 01H                          ; bNrChannels (1)
+                DW 0001H                        ; wChannelConfig 
+                DB 00H                          ; iChannelNames (none)
+                DB 00H                          ; iTerminal (none)
+audiospec0bDescEnd:
+
+audiospec0cDesc: ; Audio class-specific feature unit
+                DB audiospec0cDescEnd - audiospec0cDesc ; bLength
+                DB DESC_TYPE_CS_INTERFACE       ; bDescriptorType
+                DB DESC_SUBTYPE_FEATURE_UNIT    ; bDescriptorSubType
+                DB 02H                          ; bUnitID (2)
+                DB 01H                          ; bSourceID (input terminal 1)
+                DB 01H                          ; bControlSize (1 byte)
+                DB 03H                          ; Master controls (volume and mute)
+                DB 00H                          ; Channel 0 controls (none)
+                DB 00H                          ; iFeature (none)
+audiospec0cDescEnd:
+
+audiospec0dDesc: ; Audio class-specifc output terminal
+                DB audiospec0dDescEnd - audiospec0dDesc ; bLength
+                DB DESC_TYPE_CS_INTERFACE       ; bDescriptorType
+                DB DESC_SUBTYPE_OUTPUT_TERMINAL ; bDescriptorSubType
+                DB 04H                          ; bTerminalID (4)
+                DW 0101H                        ; bTerminalType (USB streaming)
+                DB 00H                          ; bAssocTerminal (none)
+                DB 02H                          ; bSourceID (feature unit 2)
+                DB 00H                          ; iTerminal (none)
+audiospec0dDescEnd:
+
+
+interface1Desc: ; Audio zero-bandwidth interface
+                DB interface1DescEnd - interface1Desc ; bLength
+                DB DESC_TYPE_INTERFACE          ; bDescriptorType
+                DB 01H                          ; bInterfaceNumber
+                DB 00H                          ; bAlternateSetting (none)
+                DB 00H                          ; bNumEndpoints
+                DB 01H                          ; bInterfaceClass (AUDIO)
+                DB 02H                          ; bInterfaceSubClass (AUDIO_STREAMING)
+                DB 00H                          ; bInterfaceProcotol (none)
+                DB 00H                          ; iInterface
+interface1DescEnd:
+
+interface2Desc: ; Audio streaming interface (alternate)
+                DB interface1DescEnd - interface1Desc ; bLength
+                DB DESC_TYPE_INTERFACE          ; bDescriptorType
+                DB 01H                          ; bInterfaceNumber
+                DB 01H                          ; bAlternateSetting (1)
+                DB 01H                          ; bNumEndpoints (1)
+                DB 01H                          ; bInterfaceClass (AUDIO)
+                DB 02H                          ; bInterfaceSubClass (AUDIO_STREAMING)
+                DB 00H                          ; bInterfaceProcotol (none)
+                DB 00H                          ; iInterface
+interface2DescEnd:
+
+audiospec2aDesc: ; Audio class-specific stream interface
+                DB audiospec2aDescEnd - audiospec2aDesc ; bLength
+                DB DESC_TYPE_CS_INTERFACE       ; bDescriptorType
+                DB DESC_SUBTYPE_AS_GENERAL      ; bDescriptorSubType
+                DB 04H                          ; bTerminalLink (terminal 4)
+                DB 01H                          ; bDelay 
+                DW 0001H                        ; wFormatTag (PCM format)
+audiospec2aDescEnd:
+
+audiospec2bDesc: ; Audio class-specific type I format
+                DB audiospec2bDescEnd - audiospec2bDesc ; bLength
+                DB DESC_TYPE_CS_INTERFACE       ; bDescriptorType
+                DB DESC_SUBTYPE_FORMAT_TYPE     ; bDescriptorSubType
+                DB 01H                          ; bFormatType (TYPE_I)
+                DB 01H                          ; bNrChannels (1)
+                DB 02H                          ; bSubFrameSize (2)
+                DB 10H                          ; bBitResolution (16)
+                DB 01H                          ; bSamFreqType (1 sampling frequency)
+                DB 80H                          ; 48 kHz (byte 0)
+                DB 00BBH                        ; 48 kHz (byte 1)
+                DB 00H                          ; 48 kHz (byte 2)
+audiospec2bDescEnd;
+
+endpoint2aDesc:  ; Audio streaming isochronous endpoint
+                DB endpoint2aDescEnd - endpoint2aDesc ; bLength
+                DB DESC_TYPE_ENDPOINT           ; bDescriptorType
+                DB 84H                          ; bEndpointAddress (EP4 in)
+                DB 0DH                          ; bmAttributes (synchronous)
+                DW 100                           ; wMaxPacketSize 
+                DB 01H                          ; bInterval (1 ms)
+                DB 00H                          ; bRefresh (0)
+                DB 00H                          ; bSynchAddress (no synchronization)
+endpoint2aDescEnd:
+
+endpoint2bDesc:  ; Audio isochronous endpoint
+                DB endpoint2bDescEnd - endpoint2bDesc ; bLength
+                DB DESC_TYPE_CS_ENDPOINT        ; bDescriptorType
+                DB DESC_SUBTYPE_EP_GENERAL      ; bDescriptorSubType (EP_GENERAL)
+                DB 00H                          ; bmAttributes (none)
+                DB 00H                          ; bLockDelayUnits (PCM samples)
+                DW 0000H                        ; wLockDelay (0)
+endpoint2bDescEnd:
+
+
+config1LengthEnd:
+;;-------------------------------------------------------------------------------------------------------
+
+
+;;-------------------------------------------------------------------------------------------------------
+;; String descriptors
+string0Desc:    ; Language ID
+                DB string0DescEnd - string0Desc ; bLength
+                DB DESC_TYPE_STRING             ; bDescriptorType
+                DW 0409H                        ; wLangID (English-US)
+string0DescEnd:
+
+string1Desc:    ; Manufacturer
+                DB string1DescEnd - string1Desc ; bLength
+                DB DESC_TYPE_STRING             ; bDescriptorType
+                DB 'T', 0                       ; unicode string
+                DB 'e', 0
+                DB 'x', 0
+                DB 'a', 0
+                DB 's', 0
+                DB ' ', 0
+                DB 'I', 0
+                DB 'n', 0
+                DB 's', 0
+                DB 't', 0
+                DB 'r', 0
+                DB 'u', 0
+                DB 'm', 0
+                DB 'e', 0
+                DB 'n', 0
+                DB 't', 0
+                DB 's', 0
+string1DescEnd:
+
+string2Desc:    ; Product
+                DB string2DescEnd - string2Desc ; bLength
+                DB DESC_TYPE_STRING             ; bDescriptorType
+                DB 'U', 0                       ; unicode string
+                DB 'S', 0
+                DB 'B', 0
+                DB ' ', 0
+                DB 'C', 0
+                DB 'C', 0
+
+                #if (chip==2531)
+                DB '2', 0
+                DB '5', 0
+                DB '3', 0
+                DB '1', 0
+                #elif (chip==2511)
+                DB '2', 0
+                DB '5', 0
+                DB '1', 0
+                DB '1', 0
+                #else
+                DB '1', 0
+                DB '1', 0
+                DB '1', 0
+                DB '1', 0
+                #endif
+                DB ' ', 0
+                DB 'M', 0
+                DB 'I', 0
+                DB 'C', 0
+string2DescEnd:
+usbDescEnd:
+;;-------------------------------------------------------------------------------------------------------
+
+
+;;-------------------------------------------------------------------------------------------------------
+;; HID report descriptors
+
+
+
+;;-------------------------------------------------------------------------------------------------------
+
+
+;;-------------------------------------------------------------------------------------------------------
+;; Look-up table for descriptors that are not returned through requests for DSC_DEVICE, DSC_CONFIG or
+;; DSC_STRING (e.g. HID report descriptors)
+;; Not used
+usbDescLut:    
+
+usbDescLutEnd:
+;;-------------------------------------------------------------------------------------------------------
+
+
+;;-------------------------------------------------------------------------------------------------------
+;; Look-up table for double buffer settings (one set of bit masks for each defined interface)
+usbDblbufLut:   DW interface0Desc  ; pInterface
+                DB 00H             ; inMask
+                DB 00H             ; outMask
+
+                DW interface1Desc  ; pInterface
+                DB 00H             ; inMask
+                DB 00H             ; outMask
+
+                DW interface2Desc  ; pInterface
+                DB 10H             ; inMask
+                DB 00H             ; outMask
+
+usbDblbufLutEnd:
+;;-------------------------------------------------------------------------------------------------------
+
+
+                END;
+
+/*
++------------------------------------------------------------------------------
+|  Copyright 2004-2007 Texas Instruments Incorporated. All rights reserved.
+|
+|  IMPORTANT: Your use of this Software is limited to those specific rights
+|  granted under the terms of a software license agreement between the user who
+|  downloaded the software, his/her employer (which must be your employer) and
+|  Texas Instruments Incorporated (the "License"). You may not use this Software
+|  unless you agree to abide by the terms of the License. The License limits
+|  your use, and you acknowledge, that the Software may not be modified, copied
+|  or distributed unless embedded on a Texas Instruments microcontroller or used
+|  solely and exclusively in conjunction with a Texas Instruments radio
+|  frequency transceiver, which is integrated into your product. Other than for
+|  the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+|  works of, modify, distribute, perform, display or sell this Software and/or
+|  its documentation for any purpose.
+|
+|  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+|  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+|  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+|  NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+|  TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+|  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+|  LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING
+|  BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
+|  CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
+|  SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+|  (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+|
+|  Should you have any questions regarding your right to use this Software,
+|  contact Texas Instruments Incorporated at www.TI.com.
+|
++------------------------------------------------------------------------------
+|The default USB descriptor defines a minimum configuration, with no endpoints
+|apart from EP0. The application can define 3 IN and OUT endpoints, and override
+|the configuration and interface descriptor (only one of each).
+|The device and string descriptors are locked.
++------------------------------------------------------------------------------*/
+

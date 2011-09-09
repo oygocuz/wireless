@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1429</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1071</ColumnWidth1><ColumnWidth2>285</ColumnWidth2><ColumnWidth3>71</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>290</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        
+        
+        
+      <MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow><InstrProfShow>0</InstrProfShow></Disassembly>
+    <Find-in-Files><ColumnWidth0>440</ColumnWidth0><ColumnWidth1>62</ColumnWidth1><ColumnWidth2>754</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+      
+    <Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-26884-5441</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-26361-5451</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-9216-14343</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3><Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-4865-5444</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>CC1110_AIC3104_16kHz16bits_96</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-15613-5447</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\init_Codec.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2966</SelStart><SelEnd>2966</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_rf.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>4426</SelStart><SelEnd>4426</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_main.c</Filename><XPos>0</XPos><YPos>32</YPos><SelStart>2530</SelStart><SelEnd>2530</SelEnd></Tab><ActiveTab>2</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\i2c.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>768</SelStart><SelEnd>768</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\INC\board.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>934</SelStart><SelEnd>934</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\init_peripherals.c</Filename><XPos>0</XPos><YPos>24</YPos><SelStart>2118</SelStart><SelEnd>2118</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\INC\TLV320AIC3104.h</Filename><XPos>0</XPos><YPos>144</YPos><SelStart>10676</SelStart><SelEnd>10676</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_dma.c</Filename><XPos>0</XPos><YPos>134</YPos><SelStart>5963</SelStart><SelEnd>8051</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_interrupt.c</Filename><XPos>0</XPos><YPos>42</YPos><SelStart>2550</SelStart><SelEnd>2550</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_mac.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>1787</SelStart><SelEnd>1813</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\INC\hal.h</Filename><XPos>0</XPos><YPos>2277</YPos><SelStart>89375</SelStart><SelEnd>89375</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01dd5968><key>iaridepm.enu1</key></Toolbar-01dd5968></Sizes></Row0><Row1><Sizes><Toolbar-05de9c78><key>debuggergui.enu1</key></Toolbar-05de9c78></Sizes></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>625</Bottom><Right>364</Right><x>-2</x><y>-2</y><xscreen>172</xscreen><yscreen>182</yscreen><sizeHorzCX>134375</sizeHorzCX><sizeHorzCY>208477</sizeHorzCY><sizeVertCX>285938</sizeVertCX><sizeVertCY>718213</sizeVertCY></Rect></Wnd4></Sizes></Row0></Left><Right><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>625</Bottom><Right>170</Right><x>-2</x><y>-2</y><xscreen>172</xscreen><yscreen>182</yscreen><sizeHorzCX>134375</sizeHorzCX><sizeHorzCY>208477</sizeHorzCY><sizeVertCX>134375</sizeVertCX><sizeVertCY>718213</sizeVertCY></Rect></Wnd5></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>180</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>182</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>208477</sizeHorzCY><sizeVertCX>134375</sizeVertCX><sizeVertCY>208477</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+
