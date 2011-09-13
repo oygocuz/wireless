@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>simple_audio_dongle/rfusb_cc2511</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>210</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>688</ColumnWidth1><ColumnWidth2>183</ColumnWidth2><ColumnWidth3>45</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Find-in-Files><ColumnWidth0>396</ColumnWidth0><ColumnWidth1>56</ColumnWidth1><ColumnWidth2>680</ColumnWidth2></Find-in-Files><Debug-Log><ColumnWidth0>19</ColumnWidth0><ColumnWidth1>1430</ColumnWidth1></Debug-Log><Disassembly><MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow></Disassembly></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-21013-9703</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>simple_audio_dongle</ExpandedNode><ExpandedNode>simple_audio_dongle/Output</ExpandedNode><ExpandedNode>simple_audio_dongle/RF</ExpandedNode><ExpandedNode>simple_audio_dongle/RF_inc</ExpandedNode><ExpandedNode>simple_audio_dongle/application</ExpandedNode><ExpandedNode>simple_audio_dongle/application/common</ExpandedNode><ExpandedNode>simple_audio_dongle/hal</ExpandedNode><ExpandedNode>simple_audio_dongle/hal/radio</ExpandedNode><ExpandedNode>simple_audio_dongle/hal/radio/ccxx10</ExpandedNode><ExpandedNode>simple_audio_dongle/usb</ExpandedNode><ExpandedNode>simple_audio_dongle/usb/class_audio</ExpandedNode><ExpandedNode>simple_audio_dongle/usb/library</ExpandedNode><ExpandedNode>simple_audio_dongle/usb/library/ccxx11</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-27579-9784</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-1893-7996</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-15939-4801</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\usb_interrupt.h</Filename><XPos>0</XPos><YPos>98</YPos><SelStart>4143</SelStart><SelEnd>4143</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\usb_framework.h</Filename><XPos>0</XPos><YPos>267</YPos><SelStart>13759</SelStart><SelEnd>13767</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\usb_standard_requests.c</Filename><XPos>0</XPos><YPos>120</YPos><SelStart>13573</SelStart><SelEnd>13573</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_inc\hal.h</Filename><XPos>0</XPos><YPos>440</YPos><SelStart>16852</SelStart><SelEnd>16852</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\radios\ccxx10\hal_mcu.c</Filename><XPos>0</XPos><YPos>18</YPos><SelStart>527</SelStart><SelEnd>527</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\radios\ccxx10\clock.c</Filename><XPos>0</XPos><YPos>29</YPos><SelStart>1340</SelStart><SelEnd>1340</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\common\hal_defs.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>558</SelStart><SelEnd>558</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_suspend.c</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>1346</SelStart><SelEnd>1346</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_controls.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_firmware_library_config.c</Filename><XPos>0</XPos><YPos>12</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_hooks.c</Filename><XPos>0</XPos><YPos>125</YPos><SelStart>7042</SelStart><SelEnd>7042</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_interrupt.c</Filename><XPos>0</XPos><YPos>58</YPos><SelStart>2440</SelStart><SelEnd>2440</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_inc\twoway.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>10914</SelStart><SelEnd>10914</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_audio.c</Filename><XPos>0</XPos><YPos>83</YPos><SelStart>1577</SelStart><SelEnd>1577</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\init_peripherals.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>186</SelStart><SelEnd>186</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_led.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_rf.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>7610</SelStart><SelEnd>7610</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_dma.c</Filename><XPos>0</XPos><YPos>157</YPos><SelStart>7405</SelStart><SelEnd>9492</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\components\usb\class_audio\usb_class_requests.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2390</SelStart><SelEnd>2390</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_src\tw_interrupt.c</Filename><XPos>0</XPos><YPos>76</YPos><SelStart>875</SelStart><SelEnd>875</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\apps\simple_audio\simple_audio_dongle.c</Filename><XPos>0</XPos><YPos>56</YPos><SelStart>2122</SelStart><SelEnd>2122</SelEnd></Tab><ActiveTab>21</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\RF_inc\hal_CC2510.h</Filename><XPos>0</XPos><YPos>531</YPos><SelStart>25102</SelStart><SelEnd>25102</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00aca1f8><key>iaridepm.enu1</key></Toolbar-00aca1f8></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>605</Bottom><Right>301</Right><x>-2</x><y>-2</y><xscreen>324</xscreen><yscreen>299</yscreen><sizeHorzCX>201995</sizeHorzCX><sizeHorzCY>316068</sizeHorzCY><sizeVertCX>188903</sizeVertCX><sizeVertCY>641649</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>297</Bottom><Right>1606</Right><x>-2</x><y>-2</y><xscreen>1608</xscreen><yscreen>299</yscreen><sizeHorzCX>1002494</sizeHorzCX><sizeHorzCY>316068</sizeHorzCY><sizeVertCX>201995</sizeVertCX><sizeVertCY>316068</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

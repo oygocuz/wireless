@@ -2,187 +2,193 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>1816093477</fileChecksum>
+  <fileChecksum>1346143147</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC1110_12kHz16bits.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_llca.r51</file>
-      <file>$PROJ_DIR$\inc\ioCC1110.h</file>
-      <file>F:\Users\Burns\CCxxxHex\CodecEVM_OneWay_Master_CC2510.hex</file>
-      <file>$PROJ_DIR$\src\codec_TLV320AIC26.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\AudioplusDataCC2510.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_main.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_main.pbi</file>
-      <file>$PROJ_DIR$\..\temp\MasterCodecCC1110_MSP.hex</file>
-      <file>$PROJ_DIR$\..\temp\AudioplusDataCC1110_RevE.hex</file>
-      <file>$PROJ_DIR$\Debug\List\tw_mac.i</file>
-      <file>$PROJ_DIR$\Debug\Obj\AudioplusDataCC1110_FCC.pbd</file>
-      <file>$PROJ_DIR$\inc\ioCC2510.h</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC2510_12kHz16bits.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\CC1110_PCM1870_12kHz16bits.pbd</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC1110.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_mac.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\init_Codec.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_dma.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\codec_TLV320AIC26.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\codec_TLV320AIC26.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_aio.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\CodecEVM_OneWay_CC2510.pbd</file>
-      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nsid-1e16x01.r51</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC1110_12kHz16bits.hex</file>
-      <file>$TOOLKIT_DIR$\config\lnk51ew_cc2510.xcl</file>
-      <file>$PROJ_DIR$\Debug\List\MasterAudioPlusDataCC1110.map</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_aio.r51</file>
-      <file>$PROJ_DIR$\..\temp\SlaveAudioplusDataCC1110_RevE.hex</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC1110.hex</file>
-      <file>$PROJ_DIR$\Debug\List\tw_rf.i</file>
-      <file>$PROJ_DIR$\Debug\Exe\CodecEVM_OneWay_CC2510.d51</file>
-      <file>$PROJ_DIR$\Debug\Obj\codec_PCM1870.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_adc.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_dma.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_interrupt.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\codec_PCM1870.r51</file>
-      <file>$PROJ_DIR$\..\temp\SlaveCodec.hex</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC2510.hex</file>
-      <file>$PROJ_DIR$\Debug\Exe\AudioplusDataCC1110.d51</file>
-      <file>$PROJ_DIR$\..\temp\SlaveAudioplusDataCC2510.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_interrupt.r51</file>
-      <file>$PROJ_DIR$\Debug\List\CC1110_AIC3104_16kHz16bits_96.map</file>
-      <file>$PROJ_DIR$\Debug\Exe\AudioplusDataCC1110.hex</file>
-      <file>$PROJ_DIR$\Debug\Exe\AudioplusDataCC1110_RevE_FCC.d51</file>
-      <file>$PROJ_DIR$\..\MasterAudioplusDataCC1110.hex</file>
-      <file>$PROJ_DIR$\src\tw_dsm.c</file>
-      <file>$PROJ_DIR$\..\temp\TestTwoWay.hex</file>
-      <file>$PROJ_DIR$\Debug\Exe\CodecEVM_OneWay_CC2510_12kHz16bits.d51</file>
-      <file>$PROJ_DIR$\..\temp\Slave2channels.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
-      <file>$PROJ_DIR$\..\temp\Master2channels.hex</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC2510_8kHz16bits.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_dsm.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\TwoWayCC1110_Codec_MSP.pbd</file>
-      <file>$PROJ_DIR$\Debug\List\tw_fh.i</file>
-      <file>$PROJ_DIR$\Debug\Exe\TwoWay.d51</file>
-      <file>$PROJ_DIR$\src\tw_fh.c</file>
-      <file>$PROJ_DIR$\src\tw_aio.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_adc.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\AudioplusDataCC1110.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\i2c.r51</file>
-      <file>$PROJ_DIR$\Debug\List\i2c.i</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_mac.r51</file>
-      <file>$PROJ_DIR$\..\temp\MasterAudioplusDataCC1110_RevE.hex</file>
-      <file>$PROJ_DIR$\..\temp\MasterAudioplusDataCC1110.a51</file>
-      <file>$TOOLKIT_DIR$\config\lnk_base.xcl</file>
-      <file>$PROJ_DIR$\Debug\Obj\TwoWay.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\AudioplusDataCC1110_RevE_FCC.pbd</file>
-      <file>$PROJ_DIR$\Debug\Obj\init_peripherals.r51</file>
-      <file>$PROJ_DIR$\Debug\Exe\C;\temp\MasterAudioplusDataCC1110.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\init_peripherals.pbi</file>
-      <file>F:\Users\Burns\CCxxxxHex\CodecEVM_OneWay_Slave_CC2510.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_llca.pbi</file>
-      <file>$PROJ_DIR$\src\tw_llca.c</file>
-      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC1110F32.xcl</file>
-      <file>$PROJ_DIR$\Debug\List\codec_PCM1870.i</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC2510_8kHz16bits.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\CodecEVM_OneWay_CC1110_12kHz16bits.pbd</file>
-      <file>$PROJ_DIR$\inc\codec_TLV320AIC26.h</file>
-      <file>$PROJ_DIR$\..\temp\MasterCodec.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_fh.pbi</file>
-      <file>$PROJ_DIR$\..\temp\MasterAudioplusDataCC2510.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_fh.r51</file>
-      <file>$PROJ_DIR$\..\temp\SlaveAudioPlusDataCC1110.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_dsm.r51</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC2510_12kHz16bits.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\CC1110_AIC3104_12kHz16bits_96.pbd</file>
-      <file>$PROJ_DIR$\..\temp\SlaveCodecCC1110_MSP.hex</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_rf.pbi</file>
-      <file>$PROJ_DIR$\Debug\Exe\CC1110_AIC3104_16kHz16bits_96.hex</file>
-      <file>$PROJ_DIR$\..\temp\SlaveCodecCC1110.hex</file>
-      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nlxd-1e16x01.r51</file>
-      <file>$PROJ_DIR$\src\tw_adc.c</file>
-      <file>$PROJ_DIR$\Debug\Exe\c:temp\MasterAudioplusDataCC1110.hex</file>
-      <file>$PROJ_DIR$\src\codec_PCM1870.c</file>
-      <file>F:\Users\Burns\CCxxxxHex\CodecEVM_OneWay_Master_CC2510.hex</file>
-      <file>$PROJ_DIR$\Debug\Exe\CC1110_AIC3104_12kHz16bits_96.d51</file>
-      <file>$PROJ_DIR$\..\Documents and Settings\a0270603\My Documents\radioSonic_fp_demo\lib\HAL\include\hal.h</file>
-      <file>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC2510.hex</file>
-      <file>$PROJ_DIR$\Debug\Exe\base.hex</file>
-      <file>$TOOLKIT_DIR$\inc\ioCC1110.h</file>
-      <file>$PROJ_DIR$\..\temp\MasterAudioPlusDataCC1110.hex</file>
-      <file>$PROJ_DIR$\Debug\Exe\CC1110_AIC3104_16kHz16bits_96.d51</file>
-      <file>$PROJ_DIR$\Debug\List\init_Codec.i</file>
-      <file>$PROJ_DIR$\inc\RF04EB.h</file>
-      <file>$PROJ_DIR$\Debug\List\codec_TLV320AIC26.i</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\Debug\List\tw_interrupt.i</file>
-      <file>$PROJ_DIR$\Debug\List\tw_dma.i</file>
-      <file>$PROJ_DIR$\Debug\Obj\tw_rf.r51</file>
-      <file>$PROJ_DIR$\inc\twoway.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\CC1110_AIC3104_16kHz16bits_96.pbd</file>
-      <file>$PROJ_DIR$\..\temp\SlaveAudioplusDataCC1110.a51</file>
       <file>$PROJ_DIR$\src\i2c.c</file>
-      <file>$PROJ_DIR$\Debug\List\tw_main.i</file>
-      <file>$PROJ_DIR$\..\temp\Slave.hex</file>
-      <file>$PROJ_DIR$\Debug\List\init_peripherals.i</file>
-      <file>$PROJ_DIR$\Debug\Obj\init_Codec.r51</file>
-      <file>$PROJ_DIR$\Debug\Obj\CodecEVM_OneWay_CC2510_12kHz16bits.pbd</file>
-      <file>$PROJ_DIR$\inc\board.h</file>
-      <file>$PROJ_DIR$\inc\hal.h</file>
       <file>$PROJ_DIR$\src\init_Codec.c</file>
       <file>$PROJ_DIR$\src\init_peripherals.c</file>
-      <file>$PROJ_DIR$\inc\TLV320AIC3104.h</file>
-      <file>$PROJ_DIR$\src\tw_dma.c</file>
-      <file>$PROJ_DIR$\src\tw_interrupt.c</file>
-      <file>$PROJ_DIR$\src\tw_mac.c</file>
+      <file>$PROJ_DIR$\inc\hal.h</file>
       <file>$PROJ_DIR$\src\tw_main.c</file>
       <file>$PROJ_DIR$\src\tw_rf.c</file>
-      <file>$PROJ_DIR$\..\temp\Master.hex</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_mac.pbi</file>
+      <file>$PROJ_DIR$\inc\board.h</file>
+      <file>$PROJ_DIR$\src\tw_dma.c</file>
+      <file>$PROJ_DIR$\src\tw_mac.c</file>
+      <file>$PROJ_DIR$\src\tw_interrupt.c</file>
+      <file>$PROJ_DIR$\inc\TLV320AIC3104.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_mac.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_rf.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\init_peripherals.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\init_Codec.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_main.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_dma.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_rf.r51</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC1110.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\CC1110_AIC3104_16kHz16bits_96.pbd</file>
+      <file>$PROJ_DIR$\Debug\Exe\CC1110_AIC3104_16kHz16bits_96.d51</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_dma.pbi</file>
+      <file>$PROJ_DIR$\src\TLV320AIC3104.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\init_Codec.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_interrupt.pbi</file>
+      <file>$PROJ_DIR$\src\board.h</file>
+      <file>$PROJ_DIR$\src\hal.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_interrupt.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\tw_main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\init_peripherals.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC1110_12kHz16bits.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>F:\Users\Burns\CCxxxHex\CodecEVM_OneWay_Master_CC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\codec_TLV320AIC26.c</name>
+      <name>$PROJ_DIR$\src\i2c.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 108 20</file>
+          <name>BICOMP</name>
+          <file> 32</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 21</file>
+          <name>ICC8051</name>
+          <file> 15</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 113 123 2 81</file>
+          <name>BICOMP</name>
+          <file> 27 20 28 24</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\Debug\Obj\AudioplusDataCC2510.pbd</name>
+      <name>$PROJ_DIR$\src\init_Codec.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
       <inputs>
         <tool>
-          <name>BILINK</name>
-          <file> 35 83 36 17 7 91</file>
+          <name>BICOMP</name>
+          <file> 27 20 28 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\init_peripherals.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 28 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_rf.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_dma.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_mac.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 28</file>
         </tool>
       </inputs>
     </file>
@@ -191,598 +197,7 @@
       <outputs>
         <tool>
           <name>XLINK</name>
-          <file> 105 43 92 27</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\MasterCodecCC1110_MSP.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\AudioplusDataCC1110_RevE.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\AudioplusDataCC1110_FCC.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC2510_12kHz16bits.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\CC1110_PCM1870_12kHz16bits.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 33 72 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\CodecEVM_OneWay_CC2510.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 21 72 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC1110_12kHz16bits.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveAudioplusDataCC1110_RevE.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\CodecEVM_OneWay_CC2510.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveCodec.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\AudioplusDataCC1110.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveAudioplusDataCC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\AudioplusDataCC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\AudioplusDataCC1110_RevE_FCC.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\MasterAudioplusDataCC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_dsm.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 87</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 54</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 113 123 12</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 113 123 12 107</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\TestTwoWay.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 60 19 87 85 42 1 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\CodecEVM_OneWay_CC2510_12kHz16bits.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\Slave2channels.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\Master2channels.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 60 19 87 85 42 1 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Slave_CC2510_8kHz16bits.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\TwoWayCC1110_Codec_MSP.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\TwoWay.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 60 28 19 87 85 42 1 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_fh.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 56 85</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 83</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 123 2</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 123 2</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_aio.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 28</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
           <file> 22</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 113 123 12 107 100</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 113 123 12 107</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\AudioplusDataCC1110.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\MasterAudioplusDataCC1110_RevE.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\MasterAudioplusDataCC1110.a51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\TwoWay.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 21 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\AudioplusDataCC1110_RevE_FCC.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\C;\temp\MasterAudioplusDataCC1110.hex</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 27</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>F:\Users\Burns\CCxxxxHex\CodecEVM_OneWay_Slave_CC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_llca.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 1</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 74</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 113 123 12</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 113 123 12 107</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC2510_8kHz16bits.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\CodecEVM_OneWay_CC1110_12kHz16bits.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 21 72 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\MasterCodec.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\MasterAudioplusDataCC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveAudioPlusDataCC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC2510_12kHz16bits.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 20 70 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\CC1110_AIC3104_12kHz16bits_96.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 79 18 72 35 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveCodecCC1110_MSP.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveCodecCC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_adc.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 60</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 113 123 12</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 113 123 12 107</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\c:temp\MasterAudioplusDataCC1110.hex</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 27</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\codec_PCM1870.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 77 37</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 33</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>F:\Users\Burns\CCxxxxHex\CodecEVM_OneWay_Master_CC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\CC1110_AIC3104_12kHz16bits_96.d51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 62 120 70 19 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\CodecEVM_OneWay_Master_CC2510.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\base.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 60 28 19 87 85 42 1 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\MasterAudioPlusDataCC1110.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\CC1110_AIC3104_16kHz16bits_96.d51</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 43 92</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 76 62 120 70 19 42 64 6 112 94</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 51</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 14</file>
         </tool>
       </outputs>
     </file>
@@ -791,234 +206,10 @@
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 79 18 72 35 36 17 7 91</file>
+          <file> 32 16 31 23 26 6 30 13</file>
         </tool>
       </inputs>
     </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\SlaveAudioplusDataCC1110.a51</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 19 85 42 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\i2c.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 63 62</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 79</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123 126</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123 126</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\Slave.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 60 19 87 85 42 1 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\CodecEVM_OneWay_CC2510_12kHz16bits.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 21 72 35 83 36 17 7 91</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\init_Codec.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 106 120</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 18</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123 126</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123 126</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\init_peripherals.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 119 70</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 72</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_dma.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 111 19</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 35</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_interrupt.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 110 42</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_mac.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 10 64</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 17</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_main.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 117 6</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 7</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123 126</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123 126</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_rf.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 31 112</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 91</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 122 103 123</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 122 103 123</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\temp\Master.hex</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 26 67 60 28 19 87 85 42 1 64 6 112 24</file>
-        </tool>
-      </inputs>
-    </file>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\src\codec_PCM1870.c</name>
-      <tool>ICC8051</tool>
-    </forcedrebuild>
     <forcedrebuild>
       <name>[REBUILD_ALL]</name>
     </forcedrebuild>
@@ -1026,74 +217,70 @@
   <configuration>
     <name>Release</name>
     <outputs>
-      <file>$PROJ_DIR$\Release\Obj\CC1110_AIC3104_16kHz16bits_96.pbd</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_dma.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_interrupt.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\i2c.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\init_peripherals.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_mac.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_main.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_rf.r51</file>
-      <file>$PROJ_DIR$\Release\Obj\i2c.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\init_Codec.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\init_peripherals.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_dma.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\init_Codec.r51</file>
-      <file>$TOOLKIT_DIR$\inc\ioCC1110.h</file>
-      <file>$PROJ_DIR$\src\TLV320AIC3104.h</file>
-      <file>$PROJ_DIR$\src\hal.h</file>
-      <file>$PROJ_DIR$\Release\Exe\CC1110_AIC3104_16kHz16bits_96.a51</file>
-      <file>$PROJ_DIR$\src\board.h</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_interrupt.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_mac.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_main.pbi</file>
-      <file>$PROJ_DIR$\Release\Obj\tw_rf.pbi</file>
       <file>$PROJ_DIR$\src\i2c.c</file>
-      <file>$PROJ_DIR$\inc\board.h</file>
-      <file>$PROJ_DIR$\inc\hal.h</file>
       <file>$PROJ_DIR$\src\init_Codec.c</file>
       <file>$PROJ_DIR$\src\init_peripherals.c</file>
-      <file>$PROJ_DIR$\inc\TLV320AIC3104.h</file>
-      <file>$PROJ_DIR$\src\tw_dma.c</file>
-      <file>$PROJ_DIR$\src\tw_interrupt.c</file>
-      <file>$PROJ_DIR$\src\tw_mac.c</file>
       <file>$PROJ_DIR$\src\tw_main.c</file>
       <file>$PROJ_DIR$\src\tw_rf.c</file>
+      <file>$PROJ_DIR$\src\tw_dma.c</file>
+      <file>$PROJ_DIR$\src\tw_mac.c</file>
+      <file>$PROJ_DIR$\src\tw_interrupt.c</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nsid-1e16x01.r51</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC1110F32.xcl</file>
+      <file>$PROJ_DIR$\Release\Obj\i2c.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\init_peripherals.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\init_Codec.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_rf.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\CC1110_AIC3104_16kHz16bits_96.pbd</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_dma.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\i2c.r51</file>
+      <file>$PROJ_DIR$\Release\Exe\CC1110_AIC3104_16kHz16bits_96.hex</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_dma.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_rf.r51</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC1110.h</file>
+      <file>$PROJ_DIR$\src\TLV320AIC3104.h</file>
+      <file>$PROJ_DIR$\src\board.h</file>
+      <file>$PROJ_DIR$\src\hal.h</file>
+      <file>$PROJ_DIR$\Release\List\i2c.i</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_mac.r51</file>
+      <file>$PROJ_DIR$\Release\List\tw_mac.i</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_main.r51</file>
+      <file>$PROJ_DIR$\Release\Exe\CC1110_AIC3104_16kHz16bits_96.a51</file>
+      <file>$PROJ_DIR$\Release\List\tw_rf.i</file>
+      <file>$PROJ_DIR$\Release\List\tw_main.i</file>
+      <file>$PROJ_DIR$\Release\List\init_Codec.i</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_interrupt.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_interrupt.r51</file>
+      <file>$PROJ_DIR$\Release\Obj\tw_mac.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\Release\Exe\CC1110_AIC3104_16kHz16bits_96.d51</file>
+      <file>$PROJ_DIR$\Release\Obj\init_Codec.pbi</file>
+      <file>$PROJ_DIR$\Release\List\tw_dma.i</file>
+      <file>$PROJ_DIR$\Release\Obj\init_peripherals.r51</file>
+      <file>$PROJ_DIR$\Release\List\init_peripherals.i</file>
+      <file>$PROJ_DIR$\Release\List\tw_interrupt.i</file>
     </outputs>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 16</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Release\Obj\CC1110_AIC3104_16kHz16bits_96.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 8 9 10 11 18 19 20 21</file>
-        </tool>
-      </inputs>
-    </file>
     <file>
       <name>$PROJ_DIR$\src\i2c.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 3</file>
+          <name>BICOMP</name>
+          <file> 10</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 8</file>
+          <name>ICC8051</name>
+          <file> 24 16</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17 13 15 14</file>
+          <file> 22 20 23 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23 21</file>
         </tool>
       </inputs>
     </file>
@@ -1101,18 +288,22 @@
       <name>$PROJ_DIR$\src\init_Codec.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 12</file>
+          <name>BICOMP</name>
+          <file> 38</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 9</file>
+          <name>ICC8051</name>
+          <file> 31 12</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17 13 15 14</file>
+          <file> 22 20 23 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23 21</file>
         </tool>
       </inputs>
     </file>
@@ -1120,75 +311,22 @@
       <name>$PROJ_DIR$\src\init_peripherals.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 4</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 10</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 17 13 15</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_dma.c</name>
-      <outputs>
-        <tool>
-          <name>ICC8051</name>
-          <file> 1</file>
-        </tool>
-        <tool>
           <name>BICOMP</name>
           <file> 11</file>
         </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 17 13 15</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_interrupt.c</name>
-      <outputs>
         <tool>
           <name>ICC8051</name>
-          <file> 2</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 18</file>
+          <file> 41 40</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17 13 15</file>
+          <file> 22 20 23</file>
         </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\tw_mac.c</name>
-      <outputs>
         <tool>
           <name>ICC8051</name>
-          <file> 5</file>
-        </tool>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 17 13 15</file>
+          <file> 22 20 23</file>
         </tool>
       </inputs>
     </file>
@@ -1196,18 +334,22 @@
       <name>$PROJ_DIR$\src\tw_main.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 6</file>
+          <name>BICOMP</name>
+          <file> 33</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 20</file>
+          <name>ICC8051</name>
+          <file> 30 27</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17 13 15 14</file>
+          <file> 22 20 23 21</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23 21</file>
         </tool>
       </inputs>
     </file>
@@ -1215,21 +357,140 @@
       <name>$PROJ_DIR$\src\tw_rf.c</name>
       <outputs>
         <tool>
-          <name>ICC8051</name>
-          <file> 7</file>
+          <name>BICOMP</name>
+          <file> 13</file>
         </tool>
         <tool>
-          <name>BICOMP</name>
-          <file> 21</file>
+          <name>ICC8051</name>
+          <file> 29 19</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17 13 15</file>
+          <file> 22 20 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23</file>
         </tool>
       </inputs>
     </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_dma.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 39 18</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 20 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_mac.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 26 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 20 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\src\tw_interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 20 23</file>
+        </tool>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22 20 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Obj\CC1110_AIC3104_16kHz16bits_96.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 10 38 11 15 32 35 33 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 17 28</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\CC1110_AIC3104_16kHz16bits_96.a51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 9 16 12 40 18 34 25 27 19 8</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Release\Exe\CC1110_AIC3104_16kHz16bits_96.d51</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 9 16 12 40 18 34 25 27 19 36</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
     <forcedrebuild>
       <name>[REBUILD_ALL]</name>
     </forcedrebuild>

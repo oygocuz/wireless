@@ -50,12 +50,12 @@
         <option>
           <name>Data Memory Model</name>
           <version>0</version>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>Data Memory Model slave</name>
           <version>0</version>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>Use extended stack</name>
@@ -72,7 +72,7 @@
         <option>
           <name>Calling convention</name>
           <version>0</version>
-          <state>4</state>
+          <state>2</state>
         </option>
         <option>
           <name>Workseg Size</name>
@@ -102,11 +102,11 @@
         </option>
         <option>
           <name>DPS Address</name>
-          <state></state>
+          <state>0x92</state>
         </option>
         <option>
           <name>Sfr Visibility</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>DPTR Addresses</name>
@@ -160,7 +160,7 @@
         </option>
         <option>
           <name>RTLibraryPath</name>
-          <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nlxd-1e16x01.r51</state>
+          <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nsid-1e16x01.r51</state>
         </option>
         <option>
           <name>Input variant</name>
@@ -754,7 +754,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC1110F32.xcl</state>
+          <state>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC1111F32.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -887,7 +887,7 @@
         <option>
           <name>ExtraOutputFormat</name>
           <version>11</version>
-          <state>60</state>
+          <state>22</state>
         </option>
         <option>
           <name>ExtraFormatVariant</name>
@@ -1067,12 +1067,12 @@
         <option>
           <name>Data Memory Model</name>
           <version>0</version>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>Data Memory Model slave</name>
           <version>0</version>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>Use extended stack</name>
@@ -1089,7 +1089,7 @@
         <option>
           <name>Calling convention</name>
           <version>0</version>
-          <state>4</state>
+          <state>2</state>
         </option>
         <option>
           <name>Workseg Size</name>
@@ -1177,25 +1177,25 @@
         </option>
         <option>
           <name>RTLibraryPath</name>
-          <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nlxd-1e16x01.r51</state>
+          <state>$TOOLKIT_DIR$\LIB\CLIB\cl-pli-nsid-1e16x01.r51</state>
         </option>
         <option>
           <name>Input variant</name>
           <version>0</version>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>Input description</name>
-          <state>Full formatting.</state>
+          <state>No float.</state>
         </option>
         <option>
           <name>Output variant</name>
           <version>0</version>
-          <state>1</state>
+          <state>3</state>
         </option>
         <option>
           <name>Output description</name>
-          <state>Full formatting.</state>
+          <state>No float, no field width, no precision.</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -1207,7 +1207,7 @@
         </option>
         <option>
           <name>General Idata Stack Size</name>
-          <state>0x40</state>
+          <state>0x80</state>
         </option>
         <option>
           <name>General Pdata Stack Size</name>
@@ -1215,7 +1215,7 @@
         </option>
         <option>
           <name>General Xdata Stack Size</name>
-          <state>0x100</state>
+          <state>0x1FF</state>
         </option>
         <option>
           <name>General Ext Stack Size</name>
@@ -1292,11 +1292,12 @@
         <option>
           <name>CCDefines</name>
           <state>NDEBUG</state>
+          <state>CC1110</state>
           <state>chip=1111</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCPreprocComments</name>
@@ -1304,7 +1305,7 @@
         </option>
         <option>
           <name>CCPreprocLine</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCListCFile</name>
@@ -1496,7 +1497,7 @@
         <option>
           <name>CCOptStrategy</name>
           <version>0</version>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>CCOptLevelSlave</name>
@@ -1904,7 +1905,7 @@
         <option>
           <name>ExtraOutputFormat</name>
           <version>11</version>
-          <state>60</state>
+          <state>22</state>
         </option>
         <option>
           <name>ExtraFormatVariant</name>

@@ -3,7 +3,7 @@
 <Workspace>
   <ConfigDictionary>
     
-  <CurrentConfigs><Project>CC1110_AIC3104_16kHz16bits_96/Release</Project></CurrentConfigs></ConfigDictionary>
+  <CurrentConfigs><Project>CC1110_AIC3104_16kHz16bits_96/Debug</Project></CurrentConfigs></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
@@ -12,7 +12,7 @@
           
           
           
-        <Column0>287</Column0><Column1>10</Column1><Column2>27</Column2><Column3>11462272</Column3></ColumnWidths>
+        <Column0>317</Column0><Column1>10</Column1><Column2>27</Column2><Column3>11462272</Column3></ColumnWidths>
       </Workspace>
       <Find-in-Files>
         
@@ -30,7 +30,7 @@
     <Windows>
       
       
-    <Wnd2>
+    <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-30877-31789</Identity>
@@ -42,7 +42,7 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-21614-1855</Identity>
@@ -58,20 +58,20 @@
           </Tab>
         <Tab><Identity>TabID-14192-30855</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>1</SelectedTab></Wnd3></Windows>
+      <SelectedTab>1</SelectedTab></Wnd1></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\init_Codec.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2966</SelStart><SelEnd>2966</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_rf.c</Filename><XPos>0</XPos><YPos>156</YPos><SelStart>362</SelStart><SelEnd>362</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>878</SelStart><SelEnd>878</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\i2c.c</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>1565</SelStart><SelEnd>1565</SelEnd></Tab><ActiveTab>3</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\INC\board.h</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>2539</SelStart><SelEnd>2539</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\init_peripherals.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>2118</SelStart><SelEnd>2118</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\INC\TLV320AIC3104.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>10676</SelStart><SelEnd>10676</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_dma.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>6682</SelStart><SelEnd>6682</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_interrupt.c</Filename><XPos>0</XPos><YPos>48</YPos><SelStart>2550</SelStart><SelEnd>2550</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\SRC\tw_mac.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>366</SelStart><SelEnd>366</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\SWRA368\CC1110_AIC3104_16KHZ16BITS_96\INC\hal.h</Filename><XPos>0</XPos><YPos>1878</YPos><SelStart>74212</SelStart><SelEnd>74212</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\inc\hal.h</Filename><XPos>0</XPos><YPos>448</YPos><SelStart>16974</SelStart><SelEnd>16974</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\hal.h</Filename><XPos>0</XPos><YPos>948</YPos><SelStart>37200</SelStart><SelEnd>37200</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_main.c</Filename><XPos>0</XPos><YPos>25</YPos><SelStart>2530</SelStart><SelEnd>2530</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\src\tw_rf.c</Filename><XPos>0</XPos><YPos>186</YPos><SelStart>1292</SelStart><SelEnd>1589</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\inc\board.h</Filename><XPos>0</XPos><YPos>138</YPos><SelStart>3423</SelStart><SelEnd>3423</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\inc\TLV320AIC3104.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>399</SelStart><SelEnd>399</SelEnd></Tab><ActiveTab>5</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-00aba5b8><key>iaridepm.enu1</key></Toolbar-00aba5b8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>538</Bottom><Right>344</Right><x>-2</x><y>-2</y><xscreen>172</xscreen><yscreen>152</yscreen><sizeHorzCX>134375</sizeHorzCX><sizeHorzCY>207650</sizeHorzCY><sizeVertCX>270313</sizeVertCX><sizeVertCY>737705</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>150</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>152</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>207650</sizeHorzCY><sizeVertCX>134375</sizeVertCX><sizeVertCY>207650</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01d456d8><key>iaridepm.enu1</key></Toolbar-01d456d8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>704</Bottom><Right>374</Right><x>-2</x><y>-2</y><xscreen>172</xscreen><yscreen>196</yscreen><sizeHorzCX>134375</sizeHorzCX><sizeHorzCY>208068</sizeHorzCY><sizeVertCX>293750</sizeVertCX><sizeVertCY>749469</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>194</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>196</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>208068</sizeHorzCY><sizeVertCX>134375</sizeVertCX><sizeVertCY>208068</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

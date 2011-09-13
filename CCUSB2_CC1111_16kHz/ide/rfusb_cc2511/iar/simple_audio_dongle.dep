@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>682085227</fileChecksum>
+  <configuration>
+    <name>rfusb_cc2511</name>
+    <outputs>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_mac.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_suspend.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\simple_audio_dongle.r51</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_fh.c</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_standard_requests.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_firmware_library_config.r51</file>
+      <file>$PROJ_DIR$\..\..\..\RF_inc\ioCC2510.h</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_suspend.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_board.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_rf.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio_controls.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_descriptor_parser.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\simple_audio_dongle.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2511.h</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\init_peripherals.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_int.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_dsm.c</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_mac.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\util_buffer.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\clock.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio_controls.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_interrupt.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_interrupt.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_firmware_library_config.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\hal_defs.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\apps\simple_audio\simple_audio_dongle.c</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_dsm.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_main.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_dma.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_int.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio.pbi</file>
+      <file>$TOOLKIT_DIR$\config\lnk_base.xcl</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_audio_controls.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\clock.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\dma_CC2510.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_button.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_audio_hooks.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio_descriptor.r51</file>
+      <file>$PROJ_DIR$\..\..\..\RF_inc\hal.h</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\codec_TLV320AIC26.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_fh.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_suspend.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_timer_32k.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\init_peripherals.r51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_framework.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_button.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio_hooks.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_rf.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\simple_audio_dongle.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_dsm.r51</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\codec_TLV320AIC26.c</file>
+      <file>$PROJ_DIR$\..\..\..\RF_inc\hal_CC2510.h</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_led.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_descriptor_parser.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_mcu.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\..\temp\OneWay_USB.hex</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_mcu.r51</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_fh.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_interrupt.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_audio.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_framework.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\simple_audio_dongle.pbd</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_board.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_firmware_library_config.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\util_buffer.pbi</file>
+      <file>$PROJ_DIR$\simple_audio_dongle.d51</file>
+      <file>$PROJ_DIR$\simple_audio_dongle.hex</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_mac.c</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_int.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_led.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_main.c</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle.map</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\dma_CC2510.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_interrupt.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_audio_hooks.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\simple_audio_dongle.pbd</file>
+      <file>$PROJ_DIR$\..\..\..\..\temp\One_Way_USB.hex</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_framework.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_board.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_descriptor_parser.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\tw_dma.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_timer_32k.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_timer_32k.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_button.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\clock.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\source\apps\simple_hid\simple_audio_dongle.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\hal_timer_32k.c</file>
+      <file>$PROJ_DIR$\..\..\..\RF_inc\codec_TLV320AIC26.h</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_class_requests.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_interrupt.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_standard_requests.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_led.r51</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\dma_CC2510.c</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdbool.h</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_assert.r51</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_class_requests.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\hal_assert.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2510.h</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\usb_class_requests.r51</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_assert.pbi</file>
+      <file>$TOOLKIT_DIR$\config\lnk51ew_cc2510.xcl</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\hal_mcu.pbi</file>
+      <file>$PROJ_DIR$\temp\simple_audio_dongle\util_buffer.r51</file>
+      <file>$PROJ_DIR$\..\..\..\..\temp\OneWay_USB_Play.hex</file>
+      <file>$PROJ_DIR$\temp\simple_hid_dongle\usb_standard_requests.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\hal_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_button.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_int.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_led.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_mcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_timer_32k.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\clock.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\radios\ccxx10\clock.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\hal_mcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_assert.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_button.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_led.c</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\init_peripherals.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\class_audio\usb_audio.h</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_dma.c</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_interrupt.c</file>
+      <file>$PROJ_DIR$\..\..\..\RF_src\tw_rf.c</file>
+      <file>$PROJ_DIR$\..\..\..\RF_inc\twoway.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_controls.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_controls.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_descriptor.s51</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_hooks.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_class_requests.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_class_requests.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_firmware_library_config.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\class_audio\usb_firmware_library_config.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\class_audio\usb_firmware_library_headers.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_interrupt.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_suspend.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_descriptor.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_descriptor_parser.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_descriptor_parser.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_framework.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_framework.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_framework_structs.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_interrupt.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_reg.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_standard_requests.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_standard_requests.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_suspend.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util_buffer.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util_buffer.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\cc8051\hal_cc8051.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\hal_int.c</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 69 75 70</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_fh.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_dsm.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\apps\simple_audio\simple_audio_dongle.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 122 110 13 102 157 114 115 126 139 133 137 147 148 130 39 6 97 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\codec_TLV320AIC26.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 130 39 13 102 6 91 125 127 3 128 71 129 97 15 158 110 25 113 122 157 117 118 119 115 90 116 111 120 114 121 123 112 124 141 140 139 143 148 145 149 147 150 152 154 142 144 146 151 155 156 26 126 133 137 131 132 135 136 138</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6 91</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\temp\OneWay_USB.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 105 32 34 99 65 87 30 95 58 85 44 2 29 60 77 18 9 67 21 38 78 103 83 5 46 23 4 42 107 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\temp\simple_audio_dongle\simple_audio_dongle.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 20 104 8 36 72 73 106 14 12 84 61 49 31 10 48 92 55 66 63 22 94 1 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\simple_audio_dongle.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 75 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 105 34 99 65 87 30 95 58 44 2 29 77 9 67 21 38 78 103 83 5 46 23 4 42 107 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_mac.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6 91 59 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\temp\simple_hid_dongle\simple_audio_dongle.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 88 101 82 47 16 54 56 43 50 62 33 37 100 11 24 81 93 109 7 68</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\temp\One_Way_USB.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 105 32 34 99 65 87 30 95 58 85 44 2 29 60 77 18 9 67 21 38 78 103 83 5 46 23 4 42 107 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\apps\simple_hid\simple_audio_dongle.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\hal_timer_32k.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 25 116 122 13 102 157 113 111</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\dma_CC2510.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 76</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 53 13 102</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\..\temp\OneWay_USB_Play.hex</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 105 32 34 99 65 87 30 95 58 85 44 2 29 60 77 18 9 67 21 38 78 103 83 5 46 23 4 42 107 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\clock.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 118 110 13 102</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\hal_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 58</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 106</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 115 118 13 102</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_assert.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 99</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 104</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 111 25 114 110 115</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 115 122 25 13 102 157</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_button.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 122 25 13 102 157 112</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_led.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 114 122 25 13 102 157</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\init_peripherals.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 44 29 77 9 30 34 58 99 65 87 95 23 42 83 46 4 107 2 67 21 78 103 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 130 39 13 102 6 127 128 129 97 15 158 110 25 113 122 157 117 118 119 115 120 111 114 121 123 112 124 141 140 139 143 148 145 149 147 150 152 154 142 144 146 151 155 156 26 126 133 137 131 132 135 136 138</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 84</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 77</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_rf.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 130 39 13 102 6 97 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113 110 115 130 39 13 102 6 140 25 122 157 139 143 148 145 149 147 150 152 154 133 137</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_controls.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154 137 113 133</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_descriptor.s51</name>
+      <outputs>
+        <tool>
+          <name>A8051</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A8051</name>
+          <file> 143</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_hooks.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 113 110 140 25 122 13 102 157 139 143 148 145 149 147 150 152 154 137 130 39 6</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_class_requests.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 103</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 137 133 110 147 25 148 139</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_firmware_library_config.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_interrupt.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154 118</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_suspend.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154 113 115</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_descriptor_parser.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_framework.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154 113</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_standard_requests.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 140 25 110 122 13 102 157 139 143 148 145 149 147 150 152 154</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\utils\util_buffer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 107</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 156 110 122 25 13 102 157 113 111</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\common\hal_int.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 72</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 110 25 113 122 13 102 157</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_fh.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_dsm.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\apps\simple_audio\simple_audio_dongle.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\codec_TLV320AIC26.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_mac.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_main.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\hal_timer_32k.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\dma_CC2510.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\clock.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\ccxx10\hal_mcu.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_assert.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_board.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_button.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\ccxx11_dongle\hal_led.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_dma.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_interrupt.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\RF_src\tw_rf.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_controls.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_audio_hooks.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_class_requests.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\components\usb\class_audio\usb_firmware_library_config.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_interrupt.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\ccxx11\usb_suspend.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_descriptor_parser.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_framework.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\usb\library\usb_standard_requests.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\utils\util_buffer.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\..\..\..\source\Components\common\hal_int.c</name>
+      <tool>ICC8051</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
